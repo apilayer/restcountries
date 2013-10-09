@@ -9,6 +9,7 @@ Work in Progress
 ---------
 - Define domain for the REST Service
 - Create landing page
+- More REST search options
 
 Available Data
 ---------
