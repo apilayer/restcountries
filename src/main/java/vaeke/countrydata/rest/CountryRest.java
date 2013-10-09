@@ -92,7 +92,6 @@ public class CountryRest {
 	public Object getByCallingCode(@PathParam("callingcode") String callingcode) {
 		try {
 			List<Country> countries = getAll();
-			List<Country> result = new ArrayList<Country>();
 			for(Country country : countries) {
 				if(country.getCallingcode().equals(callingcode))
 					return country;
