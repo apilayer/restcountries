@@ -85,7 +85,23 @@ public class CountryRest {
 		} catch (IOException e) {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).build(); 
 		}
-		
+	}
+	
+	@GET
+	@Path("callingcode/{callingcode}")
+	public Object getByCallingCode(@PathParam("callingcode") String callingcode) {
+		try {
+			List<Country> countries = getAll();
+			List<Country> result = new ArrayList<Country>();
+			for(Country country : countries) {
+				if(country.getCallingcode().equals(callingcode))
+					return country;
+			}
+			
+		} catch (IOException e) {
+			return Response.status(Status.INTERNAL_SERVER_ERROR).build(); 
+		}
+		return Response.status(Status.NOT_FOUND).build();
 	}
 	
 	private List<Country> getAll() throws IOException {

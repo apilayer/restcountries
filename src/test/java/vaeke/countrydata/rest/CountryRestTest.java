@@ -42,5 +42,11 @@ public class CountryRestTest {
 		Assert.assertOk(response);
 		org.junit.Assert.assertTrue(response.getBody().contains("Colombia"));
 	}
+	
+	@HttpTest(method = Method.GET, path = "/callingcode/57")
+	public void callingcode() {
+		Assert.assertOk(response);
+		org.junit.Assert.assertTrue(response.getBody().contains("Colombia"));
+	}
 
 }
