@@ -1,9 +1,14 @@
 REST Country Data
 =====================
 
-Get country information via REST
+Get country information via REST. 
 
 ----------
+
+Work in Progress
+---------
+- Define domain for the REST Service
+- Create landing page
 
 Available Data
 ---------
