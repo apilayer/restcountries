@@ -27,7 +27,7 @@ Available Data
 
 REST Services
 ---------
-#### By code ISO 3166-1 alpha-2
+### By code ISO 3166-1 alpha-2
 http://domain.com/rest/alpha2/NO
 
 ### By code ISO 3166-1 alpha-3
