@@ -88,6 +88,23 @@ public class CountryRest {
 	}
 	
 	@GET
+	@Path("name/{name}")
+	public Object getByName(@PathParam("name") String name) {
+		try {
+			List<Country> countries = getAll();
+			List<Country> result = new ArrayList<Country>();
+			for(Country country : countries) {
+				if(country.getName().toLowerCase().contains(name.toLowerCase())) {
+					result.add(country);
+				}
+			}
+			return result;
+		} catch (IOException e) {
+			return Response.status(Status.INTERNAL_SERVER_ERROR).build(); 
+		}
+	}
+	
+	@GET
 	@Path("callingcode/{callingcode}")
 	public Object getByCallingCode(@PathParam("callingcode") String callingcode) {
 		try {
