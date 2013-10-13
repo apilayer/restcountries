@@ -50,10 +50,11 @@ public class CountryRest {
 					return country;
 				}
 			}
+			return Response.status(Status.NOT_FOUND).build();
 		} catch (IOException e) {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).build(); 
 		}
-		return Response.status(Status.NOT_FOUND).build();
+		
 	}
 	
 	@GET
@@ -66,10 +67,10 @@ public class CountryRest {
 					return country;
 				}
 			}
+			return Response.status(Status.NOT_FOUND).build();
 		} catch (IOException e) {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).build(); 
 		}
-		return Response.status(Status.NOT_FOUND).build();
 	}
 	
 	@GET
