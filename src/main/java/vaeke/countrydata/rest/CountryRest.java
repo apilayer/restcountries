@@ -134,7 +134,7 @@ public class CountryRest {
 	@GET
 	@Path("capital/{capital}")
 	public Object getByCapital(@PathParam("capital") String capital) {
-		LOG.info("Getting by calling capital " + capital);
+		LOG.info("Getting by capital " + capital);
 		try {
 			List<Country> countries = getAll();
 			for(Country country : countries) {
