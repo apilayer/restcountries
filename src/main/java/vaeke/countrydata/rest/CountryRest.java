@@ -36,7 +36,7 @@ public class CountryRest {
 
 	@GET
 	public Object getCountries() {
-		LOG.info("Getting all countries");
+		LOG.info("Getting all");
 		try {
 			return getAll();
 		} catch (IOException e) {
@@ -47,7 +47,7 @@ public class CountryRest {
 	@GET
 	@Path("alpha2/{alpha2code}")
 	public Object getByAlpha2(@PathParam("alpha2code") String alpha2) {
-		LOG.info("Getting countries");
+		LOG.info("Getting by alpha2 " + alpha2);
 		try {
 			List<Country> countries = getAll();
 			for(Country country : countries) {
@@ -65,6 +65,7 @@ public class CountryRest {
 	@GET
 	@Path("alpha3/{alpha3code}")
 	public Object getByAlpha3(@PathParam("alpha3code") String alpha3) {
+		LOG.info("Getting by alpha3 " + alpha3);
 		try {
 			List<Country> countries = getAll();
 			for(Country country : countries) {
@@ -81,6 +82,7 @@ public class CountryRest {
 	@GET
 	@Path("currency/{currency}")
 	public Object getByCurrency(@PathParam("currency") String currency) {
+		LOG.info("Getting by currency " + currency);
 		try {
 			List<Country> countries = getAll();
 			List<Country> result = new ArrayList<Country>();
@@ -98,6 +100,7 @@ public class CountryRest {
 	@GET
 	@Path("name/{name}")
 	public Object getByName(@PathParam("name") String name) {
+		LOG.info("Getting by name " + name);
 		try {
 			List<Country> countries = getAll();
 			List<Country> result = new ArrayList<Country>();
@@ -115,6 +118,7 @@ public class CountryRest {
 	@GET
 	@Path("callingcode/{callingcode}")
 	public Object getByCallingCode(@PathParam("callingcode") String callingcode) {
+		LOG.info("Getting by calling code " + callingcode);
 		try {
 			List<Country> countries = getAll();
 			for(Country country : countries) {
@@ -130,6 +134,7 @@ public class CountryRest {
 	@GET
 	@Path("capital/{capital}")
 	public Object getByCapital(@PathParam("capital") String capital) {
+		LOG.info("Getting by calling capital " + capital);
 		try {
 			List<Country> countries = getAll();
 			for(Country country : countries) {
