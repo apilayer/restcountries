@@ -40,6 +40,9 @@ http://domain.com/rest/currency/NOK
 ### By callingcode
 http://domain.com/rest/callingcode/47
 
+### By name (english)
+http://domain.com/rest/name/Norway
+
 Credits
 ---------
 JSON Data is taken from https://github.com/mledoze/countries
