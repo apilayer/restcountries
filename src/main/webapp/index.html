@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="REST Service for Country Data">
+<title>REST Countries</title>
+<!-- bootstrap -->
+<link rel="stylesheet" media="screen" href="css/bootstrap-flaty.min.css">
+<link rel="shortcut icon" href="favicon.ico" />
+<!--link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-responsive-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">REST Countries</a>
+			</div>
+			<div class="navbar-collapse collapse navbar-responsive-collapse">
+				<ul class="nav navbar-nav">
+					<li><a class="rc-navbar-link" href="#">Demos</a></li>
+					<li><a class="rc-navbar-link" href="#">Github</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="jumbotron" style="text-align: center;">
+		<h1>REST Countries</h1>
+		<p>Get information about any country via a RESTful API</p>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<h2>Search by 2-letter country code</h2>
+				<div class="input-group">
+					<input id="rc-input-alpha2" type="text" class="form-control" value="http://restcountries.eu/rest/alpha2/ee"></input>
+					<span class="input-group-btn"><a id="rc-a-alpha2" class="btn btn-default rc-a-tryit" href="#">Try it!</a></span>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<h2>Search by 3-letter country code</h2>
+				<div class="input-group">
+					<input id="rc-input-alpha3" type="text" class="form-control" value="http://restcountries.eu/rest/alpha3/est"></input>
+					<span class="input-group-btn"><a id="rc-a-alpha3" class="btn btn-default rc-a-tryit" href="#">Try it!</a></span>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<h2>Search by name</h2>
+				<div class="input-group">
+					<input type="text" class="form-control" value="http://restcountries.eu/rest/name/estonia"></input>
+					<span class="input-group-btn"><a class="btn btn-default rc-a-tryit" href="#">Try it!</a></span>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<h2>Search by Currency</h2>
+				<div class="input-group">
+					<input type="text" class="form-control" value="http://restcountries.eu/rest/currency/eur"></input>
+					<span class="input-group-btn"><a class="btn btn-default rc-a-tryit" href="#">Try it!</a></span>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<h2>Search by Calling Code</h2>
+				<div class="input-group">
+					<input type="text" class="form-control" value="http://restcountries.eu/rest/callingcode/372"></input>
+					<span class="input-group-btn"><a class="btn btn-default rc-a-tryit" href="#">Try it!</a></span>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<h2>Search by Capital City</h2>
+				<div class="input-group">
+					<input type="text" class="form-control" value="http://restcountries.eu/rest/capital/tallinn"></input>
+					<span class="input-group-btn"><a class="btn btn-default rc-a-tryit" href="#">Try it!</a></span>
+				</div>
+			</div>
+			
+			<!-- json preview -->
+			<div class="col-lg-11">
+				<div id="rc-json-well" class="well hidden"></div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript"
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script
+		src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="js/restcountries.js"></script>
+</body>
+</html>
