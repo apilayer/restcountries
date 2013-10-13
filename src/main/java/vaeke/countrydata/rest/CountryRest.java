@@ -6,6 +6,8 @@ package vaeke.countrydata.rest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.Normalizer;
+import java.text.Normalizer.Form;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -125,7 +127,7 @@ public class CountryRest {
 		try {
 			List<Country> countries = getAll();
 			for(Country country : countries) {
-				if(country.getCapital().toLowerCase().equals(capital.toLowerCase())) {
+				if(removeDiacriticalMarks(country.getCapital().toLowerCase()).equals(removeDiacriticalMarks(capital.toLowerCase()))) {
 					return country;
 				}
 			}
@@ -133,6 +135,11 @@ public class CountryRest {
 		} catch (IOException e) {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).build(); 
 		}
+	}
+	
+	private String removeDiacriticalMarks(String string) {
+	    return Normalizer.normalize(string, Form.NFD)
+	        .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
 	}
 	
 	private List<Country> getAll() throws IOException {
