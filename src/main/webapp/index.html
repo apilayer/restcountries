@@ -7,7 +7,7 @@
 <title>REST Countries</title>
 <!-- bootstrap -->
 <link rel="stylesheet" media="screen" href="css/bootstrap-flaty.min.css">
-<link rel="shortcut icon" href="favicon.ico" />
+<link rel="shortcut icon" href="img/favicon.ico" />
 <!--link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -20,14 +20,16 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">REST Countries</a>
+				<a class="navbar-brand" href="https://github.com/vaeke/countrydata" target="blank_">
+					Source at Github<img alt="github-octocat" src="img/octocat.png">
+				</a>
 			</div>
-			<div class="navbar-collapse collapse navbar-responsive-collapse">
+			<!--div class="navbar-collapse collapse navbar-responsive-collapse">
 				<ul class="nav navbar-nav">
 					<li><a class="rc-navbar-link" href="#">Demos</a></li>
 					<li><a class="rc-navbar-link" href="#">Github</a></li>
 				</ul>
-			</div>
+			</div-->
 		</div>
 	</div>
 	<div class="jumbotron" style="text-align: center;">
@@ -46,12 +48,12 @@
 			<div class="col-lg-6">
 				<h2>Search by 3-letter country code</h2>
 				<div class="input-group">
-					<input id="rc-input-alpha3" type="text" class="form-control" value="http://restcountries.eu/rest/alpha3/est"></input>
+					<input id="rc-input-alpha3" type="text" class="form-control" value="http://restcountries.eu/rest/alpha3/col"></input>
 					<span class="input-group-btn"><a id="rc-a-alpha3" class="btn btn-default rc-a-tryit" href="#">Try it!</a></span>
 				</div>
 			</div>
 			<div class="col-lg-6">
-				<h2>Search by name</h2>
+				<h2>Search by Name (English)</h2>
 				<div class="input-group">
 					<input type="text" class="form-control" value="http://restcountries.eu/rest/name/estonia"></input>
 					<span class="input-group-btn"><a class="btn btn-default rc-a-tryit" href="#">Try it!</a></span>
@@ -74,13 +76,13 @@
 			<div class="col-lg-6">
 				<h2>Search by Capital City</h2>
 				<div class="input-group">
-					<input type="text" class="form-control" value="http://restcountries.eu/rest/capital/tallinn"></input>
+					<input type="text" class="form-control" value="http://restcountries.eu/rest/capital/bogota"></input>
 					<span class="input-group-btn"><a class="btn btn-default rc-a-tryit" href="#">Try it!</a></span>
 				</div>
 			</div>
 			
 			<!-- json preview -->
-			<div class="col-lg-11">
+			<div class="col-lg-11" style="margin-top: 10px;">
 				<div id="rc-json-well" class="well hidden"></div>
 			</div>
 		</div>
