@@ -10,7 +10,7 @@
 	<developers>
 		<developer>
 			<id>vaeke</id>
-			<url>fayder.eu</url>
+			<url>http://restcountries.eu</url>
 		</developer>
 	</developers>
 
@@ -31,6 +31,11 @@
 			<artifactId>resteasy-jackson-provider</artifactId>
 			<version>3.0.4.Final</version>
 		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-servlets</artifactId>
+			<version>9.1.0.RC0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
@@ -44,7 +49,7 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
