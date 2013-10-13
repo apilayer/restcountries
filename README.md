@@ -1,7 +1,7 @@
 REST Country Data
 =====================
 
-Get country information via REST. 
+Get information about any country via a RESTful API
 
 ----------
 
