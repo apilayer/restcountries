@@ -1,4 +1,4 @@
-REST Country Data
+REST Countries
 =====================
 
 Get information about any country via a RESTful API
@@ -8,7 +8,6 @@ Get information about any country via a RESTful API
 Work in Progress
 ---------
 - Define domain for the REST Service
-- Create landing page
 - More REST search options
 
 Available Data
