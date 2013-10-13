@@ -113,11 +113,26 @@ public class CountryRest {
 				if(country.getCallingcode().equals(callingcode))
 					return country;
 			}
-			
+			return Response.status(Status.NOT_FOUND).build();
 		} catch (IOException e) {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).build(); 
 		}
-		return Response.status(Status.NOT_FOUND).build();
+	}
+	
+	@GET
+	@Path("capital/{capital}")
+	public Object getByCapital(@PathParam("capital") String capital) {
+		try {
+			List<Country> countries = getAll();
+			for(Country country : countries) {
+				if(country.getCapital().toLowerCase().equals(capital.toLowerCase())) {
+					return country;
+				}
+			}
+			return Response.status(Status.NOT_FOUND).build();
+		} catch (IOException e) {
+			return Response.status(Status.INTERNAL_SERVER_ERROR).build(); 
+		}
 	}
 	
 	private List<Country> getAll() throws IOException {
