@@ -20,6 +20,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.ext.Provider;
 
+import org.apache.log4j.Logger;
+
 import vaeke.countrydata.domain.Country;
 
 import com.google.gson.Gson;
@@ -29,9 +31,12 @@ import com.google.gson.stream.JsonReader;
 @Path("rest")
 @Produces(MediaType.APPLICATION_JSON)
 public class CountryRest {
+	
+	private static final Logger LOG = Logger.getLogger(CountryRest.class);
 
 	@GET
 	public Object getCountries() {
+		LOG.info("Getting all countries");
 		try {
 			return getAll();
 		} catch (IOException e) {
@@ -42,7 +47,7 @@ public class CountryRest {
 	@GET
 	@Path("alpha2/{alpha2code}")
 	public Object getByAlpha2(@PathParam("alpha2code") String alpha2) {
-		
+		LOG.info("Getting countries");
 		try {
 			List<Country> countries = getAll();
 			for(Country country : countries) {
