@@ -6,6 +6,7 @@ $(function () {
 	restc.ui = {
 		navbarlink 	: $('.rc-navbar-link'),
 		tryit 		: $('.rc-a-tryit'),
+		inputTryit 	: $('.rc-input-tryit'),
 		jsonwell 	: $('#rc-json-well')
 	};
 	
@@ -19,6 +20,12 @@ $(function () {
 			restc.ui.jsonwell.removeClass('hidden');
 			restc.ui.jsonwell.html(getCodeHtml(data));
 		});
+	});
+
+	restc.ui.inputTryit.keypress(function(e) {
+		if(e.keyCode == 13) {
+			$(e.target).next().get(0).firstChild.click();
+		}
 	});
 	
 	var navbarLinkActive = function(target) {
