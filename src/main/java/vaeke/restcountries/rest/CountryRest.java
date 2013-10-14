@@ -1,7 +1,7 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-package vaeke.countrydata.rest;
+package vaeke.restcountries.rest;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,7 +22,7 @@ import javax.ws.rs.ext.Provider;
 
 import org.apache.log4j.Logger;
 
-import vaeke.countrydata.domain.Country;
+import vaeke.restcountries.domain.Country;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
