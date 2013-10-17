@@ -9,7 +9,8 @@ $(function () {
 		inputTryit 	: $('.rc-input-tryit'),
 		jsonwell 	: $('#rc-json-well'),
 		warning 	: $('#rc-warning'),
-		errorMsg	: $('#rc-error')
+		errorMsg	: $('#rc-error'),
+		searchers 	: $('#rc-searchers')
 	};
 	
 	restc.ui.navbarlink.click(function(e) {
@@ -21,6 +22,7 @@ $(function () {
 			var codeWell = $(e.target).parent().parent().next().next(); 
 			restc.ui.jsonwell.removeClass('hidden');
 			restc.ui.jsonwell.html(getCodeHtml(data));
+			$(document).scrollTop(restc.ui.searchers.get(0).clientHeight);
 		});
 	});
 
