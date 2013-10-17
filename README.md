@@ -7,7 +7,6 @@ Get information about any country via a RESTful API
 
 Work in Progress
 ---------
-- Define domain for the REST Service
 - More REST search options
 
 Available Data
@@ -28,19 +27,19 @@ Available Data
 REST Services
 ---------
 ### By code ISO 3166-1 alpha-2
-http://domain.com/rest/alpha2/NO
+http://restcountries.eu/rest/alpha2/NO
 
 ### By code ISO 3166-1 alpha-3
-http://domain.com/rest/alpha3/NOR
+http://restcountries.eu/rest/alpha3/NOR
 
 ### By currency
-http://domain.com/rest/currency/NOK
+http://restcountries.eu/rest/currency/NOK
 
 ### By callingcode
-http://domain.com/rest/callingcode/47
+http://restcountries.eu/rest/callingcode/47
 
 ### By name (english)
-http://domain.com/rest/name/Norway
+http://restcountries.eu/rest/name/Norway
 
 Credits
 ---------
