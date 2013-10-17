@@ -1,13 +1,12 @@
 REST Countries
 =====================
 
-Get information about any country via a RESTful API
+Get information about any country via a RESTful API. This branch uses Java6 and Servlet API 2
 
 ----------
 
 Work in Progress
 ---------
-- Define domain for the REST Service
 - More REST search options
 
 Available Data
