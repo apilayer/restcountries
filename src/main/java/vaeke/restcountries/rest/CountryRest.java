@@ -100,6 +100,7 @@ public class CountryRest {
 				return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
 			}
 		} catch (IOException e) {
+			LOG.error(e.getMessage(), e);
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
 		}
 	}
@@ -122,6 +123,7 @@ public class CountryRest {
 				return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
 			}
 		} catch (IOException e) {
+			LOG.error(e.getMessage(), e);
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
 		}
 	}
@@ -138,6 +140,7 @@ public class CountryRest {
 			}
 			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
 		} catch (IOException e) {
+			LOG.error(e.getMessage(), e);
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
 		}
 	}
@@ -155,6 +158,7 @@ public class CountryRest {
 			}
 			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
 		} catch (IOException e) {
+			LOG.error(e.getMessage(), e);
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
 		}
 	}
