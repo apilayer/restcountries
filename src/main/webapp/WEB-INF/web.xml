@@ -20,7 +20,7 @@
 	</servlet-mapping>
 	
 	<filter>
-		<filter-name>cross-origin</filter-name>
+		<filter-name>CORS</filter-name>
 		<filter-class>org.eclipse.jetty.servlets.CrossOriginFilter</filter-class>
 		<init-param>
 			<param-name>allowedOrigins</param-name>
@@ -31,5 +31,10 @@
 			<param-value>GET,OPTIONS</param-value>
 		</init-param>
 	</filter>
+
+	<filter-mapping>
+		<filter-name>CORS</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
  
 </web-app>
