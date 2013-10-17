@@ -94,7 +94,11 @@ public class CountryRest {
 					result.add(country);
 				}
 			}
-			return result;
+			if (!result.isEmpty()) {
+				return result;
+			} else {
+				return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+			}
 		} catch (IOException e) {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
 		}
@@ -112,7 +116,11 @@ public class CountryRest {
 					result.add(country);
 				}
 			}
-			return result;
+			if (!result.isEmpty()) {
+				return result;
+			} else {
+				return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+			}
 		} catch (IOException e) {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
 		}

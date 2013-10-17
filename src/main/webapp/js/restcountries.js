@@ -7,7 +7,9 @@ $(function () {
 		navbarlink 	: $('.rc-navbar-link'),
 		tryit 		: $('.rc-a-tryit'),
 		inputTryit 	: $('.rc-input-tryit'),
-		jsonwell 	: $('#rc-json-well')
+		jsonwell 	: $('#rc-json-well'),
+		warning 	: $('#rc-warning'),
+		errorMsg	: $('#rc-error')
 	};
 	
 	restc.ui.navbarlink.click(function(e) {
@@ -39,10 +41,20 @@ $(function () {
 			type: 'GET',
 			dataType: 'json',
 			success: function(data, textStatus, jqXHR) {
+				restc.ui.warning.addClass('hidden');
 				callback(data);
 			},
-			error: function(jqXHR, textStatus, errorThrown) {
-				alert("An error has occurred while requesting " + url);
+			 statusCode: {
+				404: function() {
+					restc.ui.warning.removeClass('hidden');
+					restc.ui.errorMsg.addClass('hidden');
+					restc.ui.jsonwell.addClass('hidden');
+				},
+				500: function() {
+					restc.ui.warning.addClass('hidden');
+					restc.ui.errorMsg.removeClass('hidden');
+					restc.ui.jsonwell.addClass('hidden');
+				}
 			}
 		});
 	};
