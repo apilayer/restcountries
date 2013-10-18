@@ -47,6 +47,9 @@ $(function () {
 	};
 	
 	var ajax = function(url, callback) {
+		if(!url.contains('restcountries.eu'))
+			return;
+		
 		$.ajax({
 			url: url,
 			type: 'GET',
