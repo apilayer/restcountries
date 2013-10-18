@@ -10,16 +10,24 @@ $(function () {
 		jsonwell 	: $('#rc-json-well'),
 		warning 	: $('#rc-warning'),
 		errorMsg	: $('#rc-error'),
-		searchers 	: $('#rc-searchers')
+		searchers 	: $('#rc-searchers'),
+		tryityou	: $('.rc-a-tryityou'),
 	};
 	
 	restc.ui.navbarlink.click(function(e) {
 		navbarLinkActive(e.target);
 	});
+
+	restc.ui.tryityou.click(function(e) {
+		ajax($(e.target).parent().prev().val(), function(data) {
+			restc.ui.jsonwell.removeClass('hidden');
+			restc.ui.jsonwell.html(getCodeHtml(data));
+			$(document).scrollTop(restc.ui.searchers.get(0).clientHeight);
+		});
+	});
 	
 	restc.ui.tryit.click(function(e) {
-		ajax($(e.target).parent().prev().val(), function(data) {
-			var codeWell = $(e.target).parent().parent().next().next(); 
+		ajax($(e.target).html(), function(data) {
 			restc.ui.jsonwell.removeClass('hidden');
 			restc.ui.jsonwell.html(getCodeHtml(data));
 			$(document).scrollTop(restc.ui.searchers.get(0).clientHeight);
@@ -31,6 +39,7 @@ $(function () {
 			$(e.target).next().get(0).firstChild.click();
 		}
 	});
+
 	
 	var navbarLinkActive = function(target) {
 		restc.ui.navbarlink.parent().removeClass('active');
@@ -68,5 +77,7 @@ $(function () {
 		html.push('</code></pre>');
 		return html.join('');
 	};
+
+	// $('#rc-a-alpha2').click();
 	
 });
