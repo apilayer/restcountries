@@ -88,7 +88,7 @@
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>8.1.11.v20130520</version>
+				<version>8.1.13.v20130916</version>
 				<configuration>
 					<contextPath>/</contextPath>
 					<useTestClasspath>true</useTestClasspath>
