@@ -1,7 +1,7 @@
 REST Countries
 =====================
 
-Get information about any country via a RESTful API
+Get information about any country via a RESTful API http://restcountries.eu
 
 ----------
 
