@@ -27,20 +27,17 @@ Available Data
 
 REST Services
 ---------
-### By code ISO 3166-1 alpha-2
-http://restcountries.eu/rest/alpha2/NO
+- By code ISO 3166-1 alpha-2 http://restcountries.eu/rest/alpha2/NO
 
-### By code ISO 3166-1 alpha-3
-http://restcountries.eu/rest/alpha3/NOR
+- By code ISO 3166-1 alpha-3 http://restcountries.eu/rest/alpha3/NOR
 
-### By currency
-http://restcountries.eu/rest/currency/NOK
+- By currency http://restcountries.eu/rest/currency/NOK
 
-### By callingcode
-http://restcountries.eu/rest/callingcode/47
+- By callingcode http://restcountries.eu/rest/callingcode/47
 
-### By name (english)
-http://restcountries.eu/rest/name/Norway
+- By name (english) http://restcountries.eu/rest/name/Norway
+
+- By capital city http://restcountries.eu/rest/capital/oslo
 
 Credits
 ---------
