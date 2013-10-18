@@ -8,6 +8,7 @@ Get information about any country via a RESTful API. This branch uses Java6 and 
 Work in Progress
 ---------
 - More REST search options
+- Add Timezone to Available Data
 
 Available Data
 ---------
