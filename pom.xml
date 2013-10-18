@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>vaeke</groupId>
 	<artifactId>restcountries</artifactId>
-	<version>0.3</version>
+	<version>0.4</version>
 	<packaging>war</packaging>
 	<name>restcountries</name>
 	<description>REST interface to get data about countries</description>
@@ -93,6 +93,13 @@
 					</connectors>
 				</configuration>
 			</plugin>
+			<plugin>
+		        <artifactId>maven-war-plugin</artifactId>
+		        <version>2.4</version>
+		        <configuration>
+		          <packagingExcludes>js/restcountries.js</packagingExcludes>
+		        </configuration>
+	      	</plugin>
 		</plugins>
 	</build>
 </project>
