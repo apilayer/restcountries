@@ -14,7 +14,7 @@ $(function () {
 		warning 	: $('#rc-warning'),
 		errorMsg	: $('#rc-error'),
 		searchers 	: $('#rc-searchers'),
-		tryityou	: $('.rc-a-tryityou'),
+		tryityou	: $('.rc-a-diy')
 	};
 	
 	restc.ui.navbarlink.click(function(e) {
