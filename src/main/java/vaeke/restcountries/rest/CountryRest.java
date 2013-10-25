@@ -33,6 +33,7 @@ import com.google.gson.stream.JsonReader;
 public class CountryRest {
 	
 	private static final Logger LOG = Logger.getLogger(CountryRest.class);
+	private static List<Country> countries;
 
 	@GET
 	public Object getCountries() {
@@ -169,17 +170,20 @@ public class CountryRest {
 	}
 	
 	private List<Country> getAll() throws IOException {
+		if(countries != null) return countries; 
+		
+		LOG.debug("Loading JSON Database");
 		InputStream is = this.getClass().getClassLoader().getResourceAsStream("countries.json");
 		Gson gson = new Gson();
 		JsonReader reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
-		List<Country> list = new ArrayList<Country>();
+		countries = new ArrayList<Country>();
 		reader.beginArray();
 		while(reader.hasNext()) {
 			Country country = gson.fromJson(reader, Country.class);
-			list.add(country);
+			countries.add(country);
 		}
 		reader.endArray();
         reader.close();
-        return list;
+        return countries;
 	}
 }
