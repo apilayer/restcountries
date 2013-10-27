@@ -2,6 +2,7 @@ REST Countries
 =====================
 
 Get information about any country via a RESTful API http://restcountries.eu
+<br />This branch uses Java6 and Servlet API 2
 
 ----------
 
