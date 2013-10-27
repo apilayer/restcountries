@@ -31,6 +31,8 @@ public class Country {
 	private String region;
 	
 	private String subregion;
+	
+	private String altSpellings;
 
 	public String getName() {
 		return name;
@@ -111,8 +113,14 @@ public class Country {
 	public void setSubregion(String subregion) {
 		this.subregion = subregion;
 	}
-	
-	
+
+	public String getAltSpellings() {
+		return altSpellings;
+	}
+
+	public void setAltSpellings(String altSpellings) {
+		this.altSpellings = altSpellings;
+	}
 	
 }
 	
