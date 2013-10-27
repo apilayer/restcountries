@@ -37,7 +37,7 @@ REST Services
 
 - By callingcode http://restcountries.eu/rest/callingcode/47
 
-- By name (english) http://restcountries.eu/rest/name/Norway
+- By name (english or native) http://restcountries.eu/rest/name/norge
 
 - By capital city http://restcountries.eu/rest/capital/oslo
 

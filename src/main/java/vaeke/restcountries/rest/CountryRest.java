@@ -117,6 +117,9 @@ public class CountryRest {
 				if(country.getName().toLowerCase().contains(name.toLowerCase())) {
 					result.add(country);
 				}
+				if(country.getAltSpellings().toLowerCase().contains(name.toLowerCase()) && !result.contains(country)) {
+					result.add(country);
+				}
 			}
 			if (!result.isEmpty()) {
 				return result;
