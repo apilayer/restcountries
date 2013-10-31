@@ -138,11 +138,16 @@ public class CountryRest {
 		LOG.info("Getting by calling code " + callingcode);
 		try {
 			List<Country> countries = getAll();
+			List<Country> result = new ArrayList<Country>();
 			for(Country country : countries) {
 				if(country.getCallingcode().equals(callingcode))
-					return country;
+					result.add(country);
 			}
-			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+			if (!result.isEmpty()) {
+				return result;
+			} else {
+				return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+			}
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
