@@ -50,7 +50,7 @@ $(function () {
 	};
 	
 	var ajax = function(url, callback) {
-		if(url.indexOf('restcountries.eu') != 7 && url.indexOf('restcountries.eu') != 11)
+		if(url.indexOf('restcountries.eu') != 7 && url.indexOf('restcountries.eu') != 11 && url.indexOf('localhost') != 7)
 			return;
 		
 		$.ajax({
