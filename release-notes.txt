@@ -1,0 +1,3 @@
+- Corrected South Africa currency in countries.JSON
+- Corrected South Georgia currency in countries.JSON
+- Changed restriction for the "Try it yourself" input
