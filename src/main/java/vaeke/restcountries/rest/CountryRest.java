@@ -47,6 +47,31 @@ public class CountryRest {
 	}
 	
 	@GET
+	@Path("alpha/{alphacode}")
+	public Object getByAlpha(@PathParam("alphacode") String alpha) {
+		LOG.info("Getting by alpha " + alpha);
+		try {
+			List<Country> countries = getAll();
+			int alphaLength = alpha.length();
+			for(Country country : countries) {
+				if (alphaLength == 2) {
+					if (country.getCca2().toLowerCase().equals(alpha.toLowerCase())) {
+						return country;
+					}
+	                            } else if (alphaLength == 3) {
+					if (country.getCca3().toLowerCase().equals(alpha.toLowerCase())) {
+						return country;
+					}
+				}
+			}
+			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+		} catch (IOException e) {
+			LOG.error(e.getMessage(), e);
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+		}
+	}
+	
+	@GET
 	@Path("alpha2/{alpha2code}")
 	@Deprecated
 	public Object getByAlpha2(@PathParam("alpha2code") String alpha2) {
