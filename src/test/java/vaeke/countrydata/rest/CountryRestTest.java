@@ -28,13 +28,13 @@ public class CountryRestTest {
 		Assert.assertOk(response);
 	}
 	
-	@HttpTest(method = Method.GET, path = "/alpha2/co")
+	@HttpTest(method = Method.GET, path = "/alpha/co")
 	public void alpha2() {
 		Assert.assertOk(response);
 		org.junit.Assert.assertTrue(response.getBody().contains("Colombia"));
 	}
 	
-	@HttpTest(method = Method.GET, path = "/alpha3/col")
+	@HttpTest(method = Method.GET, path = "/alpha/col")
 	public void alpha3() {
 		Assert.assertOk(response);
 		org.junit.Assert.assertTrue(response.getBody().contains("Colombia"));
