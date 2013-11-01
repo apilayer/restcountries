@@ -27,14 +27,26 @@
 	</div>
 	<div class="jumbotron" style="text-align: center;">
 		<h1 style="margin-top: 40px;">REST Countries</h1>
-		<p>Get information about countries via a RESTful API</p>
+		<p>Get information about any country via a RESTful API</p>
 	</div>
 	<div id="rc-searchers" class="container">
 		<div class="row">
 			<div class="col-lg-6">
-				<h2>Get all the countries!</h2>
+				<h2>Search by 2-letter country code</h2>
 				<div class="input-group">
-					<a id="rc-a-all" class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/</a>
+					<a id="rc-a-alpha2" class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/alpha2/ee</a>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<h2>Search by 3-letter country code</h2>
+				<div class="input-group">
+					<a id="rc-a-alpha3" class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/alpha3/col</a>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<h2>Search by Name (English or native)</h2>
+				<div class="input-group">
+					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/name/norge</a>
 				</div>
 			</div>
 			<div class="col-lg-6">
@@ -43,27 +55,6 @@
 					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/currency/eur</a>
 				</div>
 			</div>
-			<div class="col-lg-6">
-				<h2>Search by Name</h2>
-				<div class="input-group">
-					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/name/norge</a>
-				</div>
-				<br />
-				<div class="input-group">
-					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/name/norway</a>
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<h2>Search by country code</h2>
-				<div class="input-group">
-					<a id="rc-a-alpha2" class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/alpha/co</a>
-				</div>
-				<br />
-				<div class="input-group">
-					<a id="rc-a-alpha3" class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/alpha/col</a>
-				</div>
-			</div>
-			
 			<div class="col-lg-6">
 				<h2>Search by Calling Code</h2>
 				<div class="input-group">

@@ -47,21 +47,14 @@ public class CountryRest {
 	}
 	
 	@GET
-	@Path("alpha/{alphacode}")
-	public Object getByAlpha(@PathParam("alphacode") String alpha) {
-		LOG.info("Getting by alpha " + alpha);
+	@Path("alpha2/{alpha2code}")
+	public Object getByAlpha2(@PathParam("alpha2code") String alpha2) {
+		LOG.info("Getting by alpha2 " + alpha2);
 		try {
 			List<Country> countries = getAll();
-			int alphaLength = alpha.length();
 			for(Country country : countries) {
-				if (alphaLength == 2) {
-					if (country.getCca2().toLowerCase().equals(alpha.toLowerCase())) {
-						return country;
-					}
-	                            } else if (alphaLength == 3) {
-					if (country.getCca3().toLowerCase().equals(alpha.toLowerCase())) {
-						return country;
-					}
+				if (country.getCca2().toLowerCase().equals(alpha2.toLowerCase())) {
+					return country;
 				}
 			}
 			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
@@ -70,6 +63,24 @@ public class CountryRest {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
 		}
 		
+	}
+	
+	@GET
+	@Path("alpha3/{alpha3code}")
+	public Object getByAlpha3(@PathParam("alpha3code") String alpha3) {
+		LOG.info("Getting by alpha3 " + alpha3);
+		try {
+			List<Country> countries = getAll();
+			for(Country country : countries) {
+				if (country.getCca3().toLowerCase().equals(alpha3.toLowerCase())) {
+					return country;
+				}
+			}
+			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+		} catch (IOException e) {
+			LOG.error(e.getMessage(), e);
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+		}
 	}
 	
 	@GET
