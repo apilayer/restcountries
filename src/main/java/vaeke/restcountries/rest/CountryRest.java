@@ -52,17 +52,17 @@ public class CountryRest {
 		LOG.info("Getting by alpha " + alpha);
 		try {
 			List<Country> countries = getAll();
-                        int alphaLength = alpha.length();
+			int alphaLength = alpha.length();
 			for(Country country : countries) {
-                            if (alphaLength == 2) {
-				if (country.getCca2().toLowerCase().equals(alpha.toLowerCase())) {
-					return country;
+				if (alphaLength == 2) {
+					if (country.getCca2().toLowerCase().equals(alpha.toLowerCase())) {
+						return country;
+					}
+	                            } else if (alphaLength == 3) {
+					if (country.getCca3().toLowerCase().equals(alpha.toLowerCase())) {
+						return country;
+					}
 				}
-                            } else if (alphaLength == 3) {
-				if (country.getCca3().toLowerCase().equals(alpha.toLowerCase())) {
-					return country;
-				}
-                            }
 			}
 			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
 		} catch (IOException e) {
