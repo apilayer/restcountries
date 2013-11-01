@@ -33,6 +33,7 @@ $(function () {
 		ajax($(e.target).html(), function(data) {
 			restc.ui.jsonwell.removeClass('hidden');
 			restc.ui.jsonwell.html(getCodeHtml(data));
+			restc.ui.inputTryit.val($(e.target).html());
 			$(document).scrollTop(restc.ui.searchers.get(0).clientHeight);
 		});
 	});
