@@ -48,6 +48,7 @@ public class CountryRest {
 	
 	@GET
 	@Path("alpha2/{alpha2code}")
+	@Deprecated
 	public Object getByAlpha2(@PathParam("alpha2code") String alpha2) {
 		LOG.info("Getting by alpha2 " + alpha2);
 		try {
@@ -67,6 +68,7 @@ public class CountryRest {
 	
 	@GET
 	@Path("alpha3/{alpha3code}")
+	@Deprecated
 	public Object getByAlpha3(@PathParam("alpha3code") String alpha3) {
 		LOG.info("Getting by alpha3 " + alpha3);
 		try {
