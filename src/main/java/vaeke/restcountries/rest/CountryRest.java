@@ -69,7 +69,45 @@ public class CountryRest {
 			LOG.error(e.getMessage(), e);
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
 		}
+	}
+	
+	@GET
+	@Path("alpha2/{alpha2code}")
+	@Deprecated
+	public Object getByAlpha2(@PathParam("alpha2code") String alpha2) {
+		LOG.info("Getting by alpha2 " + alpha2);
+		try {
+			List<Country> countries = getAll();
+			for(Country country : countries) {
+				if (country.getCca2().toLowerCase().equals(alpha2.toLowerCase())) {
+					return country;
+				}
+			}
+			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+		} catch (IOException e) {
+			LOG.error(e.getMessage(), e);
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+		}
 		
+	}
+	
+	@GET
+	@Path("alpha3/{alpha3code}")
+	@Deprecated
+	public Object getByAlpha3(@PathParam("alpha3code") String alpha3) {
+		LOG.info("Getting by alpha3 " + alpha3);
+		try {
+			List<Country> countries = getAll();
+			for(Country country : countries) {
+				if (country.getCca3().toLowerCase().equals(alpha3.toLowerCase())) {
+					return country;
+				}
+			}
+			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+		} catch (IOException e) {
+			LOG.error(e.getMessage(), e);
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+		}
 	}
 	
 	@GET
