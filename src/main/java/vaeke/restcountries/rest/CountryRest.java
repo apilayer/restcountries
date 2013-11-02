@@ -58,7 +58,7 @@ public class CountryRest {
 					if (country.getCca2().toLowerCase().equals(alpha.toLowerCase())) {
 						return country;
 					}
-	                            } else if (alphaLength == 3) {
+				} else if (alphaLength == 3) {
 					if (country.getCca3().toLowerCase().equals(alpha.toLowerCase())) {
 						return country;
 					}
