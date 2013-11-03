@@ -42,7 +42,7 @@ public class CountryRest {
 			return getAll();
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 	}
 	
@@ -64,10 +64,10 @@ public class CountryRest {
 					}
 				}
 			}
-			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+			return getResponse(Status.NOT_FOUND);
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 	}
 	
@@ -83,10 +83,10 @@ public class CountryRest {
 					return country;
 				}
 			}
-			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+			return getResponse(Status.NOT_FOUND);
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 		
 	}
@@ -103,10 +103,10 @@ public class CountryRest {
 					return country;
 				}
 			}
-			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+			return getResponse(Status.NOT_FOUND);
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 	}
 	
@@ -125,11 +125,11 @@ public class CountryRest {
 			if (!result.isEmpty()) {
 				return result;
 			} else {
-				return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+				return getResponse(Status.NOT_FOUND);
 			}
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 	}
 	
@@ -151,11 +151,11 @@ public class CountryRest {
 			if (!result.isEmpty()) {
 				return result;
 			} else {
-				return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+				return getResponse(Status.NOT_FOUND);
 			}
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 	}
 	
@@ -173,11 +173,11 @@ public class CountryRest {
 			if (!result.isEmpty()) {
 				return result;
 			} else {
-				return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+				return getResponse(Status.NOT_FOUND);
 			}
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 	}
 	
@@ -192,10 +192,10 @@ public class CountryRest {
 					return country;
 				}
 			}
-			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+			return getResponse(Status.NOT_FOUND);
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 	}
 	
@@ -220,5 +220,17 @@ public class CountryRest {
 		reader.endArray();
         reader.close();
         return countries;
+	}
+	
+	private String toJSON(Object object) {
+		Gson gson = new Gson();
+		return gson.toJson(object);
+	}
+	
+	private Response getResponse(Status status) {
+		return Response
+				.status(status)
+				.entity(this.toJSON(new ResponseEntity(status.getStatusCode(),
+						status.getReasonPhrase()))).build();
 	}
 }
