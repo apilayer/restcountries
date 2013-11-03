@@ -24,7 +24,7 @@ public class CountryRestTest {
 	private Response response;
 
 	@HttpTest(method = Method.GET, path = "/")
-	public void checkRestfuseOnlineStatus() {
+	public void checkOnlineStatus() {
 		Assert.assertOk(response);
 	}
 	
