@@ -141,10 +141,12 @@ public class CountryRest {
 			List<Country> countries = getAll();
 			List<Country> result = new ArrayList<Country>();
 			for(Country country : countries) {
-				if(country.getName().toLowerCase().contains(name.toLowerCase())) {
+				if(normalize(country.getName().toLowerCase()).contains(normalize(name.toLowerCase()))) {
 					result.add(country);
 				}
-				if(country.getAltSpellings().toLowerCase().contains(name.toLowerCase()) && !result.contains(country)) {
+				if(normalize(
+						country.getAltSpellings().toLowerCase()).contains(normalize(name.toLowerCase())) 
+						&& !result.contains(country)) {
 					result.add(country);
 				}
 			}
@@ -188,7 +190,7 @@ public class CountryRest {
 		try {
 			List<Country> countries = getAll();
 			for(Country country : countries) {
-				if(removeDiacriticalMarks(country.getCapital().toLowerCase()).equals(removeDiacriticalMarks(capital.toLowerCase()))) {
+				if(normalize(country.getCapital().toLowerCase()).equals(normalize(capital.toLowerCase()))) {
 					return country;
 				}
 			}
@@ -199,7 +201,7 @@ public class CountryRest {
 		}
 	}
 	
-	private String removeDiacriticalMarks(String string) {
+	private String normalize(String string) {
 	    return Normalizer.normalize(string, Form.NFD)
 	        .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
 	}
