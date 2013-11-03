@@ -90,13 +90,14 @@ public class CountryService {
 		return result;
 	}
 	
-	public Country getByCapital(String capital) {
+	public List<Country> getByCapital(String capital) {
+		List<Country> result = new ArrayList<Country>();
 		for(Country country : countries) {
 			if(normalize(country.getCapital().toLowerCase()).contains(normalize(capital.toLowerCase()))) {
-				return country;
+				result.add(country);
 			}
 		}
-		return null;
+		return result;
 	}
 	
 	public List<Country> getByRegion(String region) {

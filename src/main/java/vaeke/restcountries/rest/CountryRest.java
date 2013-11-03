@@ -123,9 +123,9 @@ public class CountryRest {
 	public Object getByCapital(@PathParam("capital") String capital) {
 		LOG.info("Getting by capital " + capital);
 		try {
-			Country country = CountryService.getInstance().getByCapital(capital);
-			if(country != null) {
-				return country;
+			List<Country> countries = CountryService.getInstance().getByCapital(capital);
+			if(!countries.isEmpty()) {
+				return countries;
 			}
 			return getResponse(Status.NOT_FOUND);
 		} catch (IOException e) {
