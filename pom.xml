@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>vaeke</groupId>
 	<artifactId>restcountries</artifactId>
-	<version>0.7</version>
+	<version>0.8</version>
 	<packaging>war</packaging>
 	<name>restcountries</name>
 	<description>REST interface to get data about countries</description>
@@ -92,6 +92,29 @@
 						</connector>
 					</connectors>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.google.code.maven-replacer-plugin</groupId>
+           		<artifactId>replacer</artifactId>
+           		<version>1.5.2</version>
+           		<executions>
+	               <execution>
+	                   <phase>prepare-package</phase>
+	                   <goals>
+	                       <goal>replace</goal>
+	                   </goals>                   
+	               </execution>
+	           </executions>
+	           <configuration>
+	           		<file>src/main/webapp/index.html</file>
+               		<replacements>
+                   		<replacement>
+                       		<token>PROJECT_VERSION</token>
+                       		<value>${project.version}</value>
+                   		</replacement>         
+               		</replacements>
+           		</configuration>
+
 			</plugin>
 		</plugins>
 	</build>

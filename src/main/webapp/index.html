@@ -4,7 +4,7 @@
 <title>REST Countries</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Information about any country via a RESTful API">
+<meta name="description" content="Information about countries via a RESTful API">
 <!-- bootstrap -->
 <link rel="stylesheet" media="screen" href="css/bootstrap-flatly.min.css">
 <link rel="shortcut icon" href="img/favicon.ico" />
@@ -27,24 +27,49 @@
 	</div>
 	<div class="jumbotron" style="text-align: center;">
 		<h1 style="margin-top: 40px;">REST Countries</h1>
-		<p>Get information about countries via a RESTful API</p>
+		<div>Get information about countries via a RESTful API</div>
+		<div>vPROJECT_VERSION</div>
 	</div>
 	<div id="rc-searchers" class="container">
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-lg-4">
 				<h2>Get all the countries!</h2>
 				<div class="input-group">
 					<a id="rc-a-all" class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/</a>
 				</div>
 			</div>
-			<div class="col-lg-6">
-				<h2>Search by Currency</h2>
+			<div class="col-lg-4">
+				<h2> Currency</h2>
 				<div class="input-group">
 					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/currency/eur</a>
 				</div>
 			</div>
-			<div class="col-lg-6">
-				<h2>Search by Name</h2>
+			<div class="col-lg-4">
+				<h2> Capital City</h2>
+				<div class="input-group">
+					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/name/norge</a>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<h2> Calling Code</h2>
+				<div class="input-group">
+					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/name/norway</a>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<h2> Region</h2>
+				<div class="input-group">
+					<a id="rc-a-alpha2" class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/alpha/co</a>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<h2> Sub Region</h2>
+				<div class="input-group">
+					<a id="rc-a-alpha3" class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/alpha/col</a>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<h2> Name</h2>
 				<div class="input-group">
 					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/name/norge</a>
 				</div>
@@ -53,31 +78,17 @@
 					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/name/norway</a>
 				</div>
 			</div>
-			<div class="col-lg-6">
-				<h2>Search by country code</h2>
+			<div class="col-lg-4">
+				<h2> Country Code</h2>
 				<div class="input-group">
-					<a id="rc-a-alpha2" class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/alpha/co</a>
+					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/alpha/co</a>
 				</div>
 				<br />
 				<div class="input-group">
 					<a id="rc-a-alpha3" class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/alpha/col</a>
 				</div>
 			</div>
-			
-			<div class="col-lg-6">
-				<h2>Search by Calling Code</h2>
-				<div class="input-group">
-					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/callingcode/7</a>
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<h2>Search by Capital City</h2>
-				<div class="input-group">
-					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/capital/reykjavik</a>
-				</div>
-			</div>
-
-			<div id="rc-div-diy" class="col-lg-11" style="margin-top: 10px; text-align: center;">
+			<div id="rc-div-diy" class="col-lg-11" style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
 				<h2>Try it yourself</h2>
 				<div class="input-group">
                     <input type="text" class="form-control rc-input-tryit" value="http://restcountries.eu/rest/name/united"></input>

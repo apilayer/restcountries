@@ -4,11 +4,6 @@
 package vaeke.restcountries.rest;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.text.Normalizer;
-import java.text.Normalizer.Form;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -23,9 +18,9 @@ import javax.ws.rs.ext.Provider;
 import org.apache.log4j.Logger;
 
 import vaeke.restcountries.domain.Country;
+import vaeke.restcountries.domain.ResponseEntity;
 
 import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
 
 @Provider
 @Path("rest")
@@ -33,16 +28,15 @@ import com.google.gson.stream.JsonReader;
 public class CountryRest {
 	
 	private static final Logger LOG = Logger.getLogger(CountryRest.class);
-	private static List<Country> countries;
 
 	@GET
 	public Object getCountries() {
 		LOG.info("Getting all");
 		try {
-			return getAll();
+			return CountryService.getInstance().getAll();
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 	}
 	
@@ -51,23 +45,14 @@ public class CountryRest {
 	public Object getByAlpha(@PathParam("alphacode") String alpha) {
 		LOG.info("Getting by alpha " + alpha);
 		try {
-			List<Country> countries = getAll();
-			int alphaLength = alpha.length();
-			for(Country country : countries) {
-				if (alphaLength == 2) {
-					if (country.getCca2().toLowerCase().equals(alpha.toLowerCase())) {
-						return country;
-					}
-	                            } else if (alphaLength == 3) {
-					if (country.getCca3().toLowerCase().equals(alpha.toLowerCase())) {
-						return country;
-					}
-				}
+			Country country = CountryService.getInstance().getByAlpha(alpha);
+			if(country != null) {
+				return country;
 			}
-			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+			return getResponse(Status.NOT_FOUND);
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 	}
 	
@@ -75,39 +60,14 @@ public class CountryRest {
 	@Path("alpha2/{alpha2code}")
 	@Deprecated
 	public Object getByAlpha2(@PathParam("alpha2code") String alpha2) {
-		LOG.info("Getting by alpha2 " + alpha2);
-		try {
-			List<Country> countries = getAll();
-			for(Country country : countries) {
-				if (country.getCca2().toLowerCase().equals(alpha2.toLowerCase())) {
-					return country;
-				}
-			}
-			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
-		} catch (IOException e) {
-			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
-		}
-		
+		return this.getByAlpha(alpha2);
 	}
 	
 	@GET
 	@Path("alpha3/{alpha3code}")
 	@Deprecated
 	public Object getByAlpha3(@PathParam("alpha3code") String alpha3) {
-		LOG.info("Getting by alpha3 " + alpha3);
-		try {
-			List<Country> countries = getAll();
-			for(Country country : countries) {
-				if (country.getCca3().toLowerCase().equals(alpha3.toLowerCase())) {
-					return country;
-				}
-			}
-			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
-		} catch (IOException e) {
-			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
-		}
+		return this.getByAlpha(alpha3);
 	}
 	
 	@GET
@@ -115,21 +75,14 @@ public class CountryRest {
 	public Object getByCurrency(@PathParam("currency") String currency) {
 		LOG.info("Getting by currency " + currency);
 		try {
-			List<Country> countries = getAll();
-			List<Country> result = new ArrayList<Country>();
-			for(Country country : countries) {
-				if(country.getCurrency().toLowerCase().contains(currency.toLowerCase())) {
-					result.add(country);
-				}
+			List<Country> countries = CountryService.getInstance().getByCurrency(currency);
+			if (!countries.isEmpty()) {
+				return countries;
 			}
-			if (!result.isEmpty()) {
-				return result;
-			} else {
-				return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
-			}
+			return getResponse(Status.NOT_FOUND);
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 	}
 	
@@ -138,24 +91,14 @@ public class CountryRest {
 	public Object getByName(@PathParam("name") String name) {
 		LOG.info("Getting by name " + name);
 		try {
-			List<Country> countries = getAll();
-			List<Country> result = new ArrayList<Country>();
-			for(Country country : countries) {
-				if(country.getName().toLowerCase().contains(name.toLowerCase())) {
-					result.add(country);
-				}
-				if(country.getAltSpellings().toLowerCase().contains(name.toLowerCase()) && !result.contains(country)) {
-					result.add(country);
-				}
-			}
-			if (!result.isEmpty()) {
-				return result;
-			} else {
-				return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
-			}
+			List<Country> countries = CountryService.getInstance().getByName(name);
+			if (!countries.isEmpty()) {
+				return countries;
+			} 
+			return getResponse(Status.NOT_FOUND);
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 	}
 	
@@ -164,20 +107,14 @@ public class CountryRest {
 	public Object getByCallingCode(@PathParam("callingcode") String callingcode) {
 		LOG.info("Getting by calling code " + callingcode);
 		try {
-			List<Country> countries = getAll();
-			List<Country> result = new ArrayList<Country>();
-			for(Country country : countries) {
-				if(country.getCallingcode().equals(callingcode))
-					result.add(country);
-			}
-			if (!result.isEmpty()) {
-				return result;
-			} else {
-				return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
-			}
+			List<Country> countries = CountryService.getInstance().getByCallingcode(callingcode);
+			if (!countries.isEmpty()) {
+				return countries;
+			} 
+			return getResponse(Status.NOT_FOUND);
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 	}
 	
@@ -186,39 +123,54 @@ public class CountryRest {
 	public Object getByCapital(@PathParam("capital") String capital) {
 		LOG.info("Getting by capital " + capital);
 		try {
-			List<Country> countries = getAll();
-			for(Country country : countries) {
-				if(removeDiacriticalMarks(country.getCapital().toLowerCase()).equals(removeDiacriticalMarks(capital.toLowerCase()))) {
-					return country;
-				}
+			List<Country> countries = CountryService.getInstance().getByCapital(capital);
+			if(!countries.isEmpty()) {
+				return countries;
 			}
-			return Response.status(Status.NOT_FOUND).entity("404: Not Found").build();
+			return getResponse(Status.NOT_FOUND);
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("500: Internal Server Error").build(); 
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
 	}
 	
-	private String removeDiacriticalMarks(String string) {
-	    return Normalizer.normalize(string, Form.NFD)
-	        .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
+	@GET
+	@Path("region/{region}")
+	public Object getByRegion(@PathParam("region") String region) {
+		LOG.info("Getting by region " + region);
+		try {
+			List<Country> countries = CountryService.getInstance().getByRegion(region);
+			if(!countries.isEmpty()) {
+				return countries;
+			}
+			return getResponse(Status.NOT_FOUND);
+		} catch(IOException e) {
+			LOG.error(e.getMessage(), e);
+			return getResponse(Status.INTERNAL_SERVER_ERROR);
+		}
 	}
 	
-	private List<Country> getAll() throws IOException {
-		if(countries != null) return countries; 
-		
-		LOG.debug("Loading JSON Database");
-		InputStream is = this.getClass().getClassLoader().getResourceAsStream("countries.json");
+	@GET
+	@Path("subregion/{subregion}")
+	public Object getBySubregion(@PathParam("subregion") String subregion) {
+		LOG.info("Getting by region " + subregion);
+		try {
+			List<Country> countries = CountryService.getInstance().getBySubregion(subregion);
+			if(!countries.isEmpty()) {
+				return countries;
+			}
+			return getResponse(Status.NOT_FOUND);
+		} catch(IOException e) {
+			LOG.error(e.getMessage(), e);
+			return getResponse(Status.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	private Response getResponse(Status status) {
 		Gson gson = new Gson();
-		JsonReader reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
-		countries = new ArrayList<Country>();
-		reader.beginArray();
-		while(reader.hasNext()) {
-			Country country = gson.fromJson(reader, Country.class);
-			countries.add(country);
-		}
-		reader.endArray();
-        reader.close();
-        return countries;
+		return Response
+				.status(status)
+				.entity(gson.toJson(new ResponseEntity(status.getStatusCode(),
+						status.getReasonPhrase()))).build();
 	}
 }
