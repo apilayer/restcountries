@@ -1,4 +1,4 @@
-REST Countries v0.7
+REST Countries v0.8
 =====================
 
 Get information about any country via a RESTful API http://restcountries.eu
@@ -33,21 +33,19 @@ Available Data
     capital city
     region
     subregion
+    relevance
 ----------
 
 REST Services
 ---------
 - By code ISO 3166-1 alpha-2 http://restcountries.eu/rest/alpha/NO
-
 - By code ISO 3166-1 alpha-3 http://restcountries.eu/rest/alpha/NOR
-
 - By currency http://restcountries.eu/rest/currency/NOK
-
 - By callingcode http://restcountries.eu/rest/callingcode/47
-
-- By name (english or native) http://restcountries.eu/rest/name/norge
-
+- By name http://restcountries.eu/rest/name/norway
 - By capital city http://restcountries.eu/rest/capital/oslo
+- By region http://restcountries.eu/rest/region/americas
+- By subregion http://restcountries.eu/rest/subregion/southern%20asia
 
 Credits
 ---------

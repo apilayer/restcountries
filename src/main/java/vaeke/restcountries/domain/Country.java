@@ -33,6 +33,8 @@ public class Country {
 	private String subregion;
 	
 	private String altSpellings;
+	
+	private String relevance;
 
 	public String getName() {
 		return name;
@@ -120,6 +122,14 @@ public class Country {
 
 	public void setAltSpellings(String altSpellings) {
 		this.altSpellings = altSpellings;
+	}
+
+	public String getRelevance() {
+		return relevance;
+	}
+
+	public void setRelevance(String relevance) {
+		this.relevance = relevance;
 	}
 	
 }
