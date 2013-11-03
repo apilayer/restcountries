@@ -33,6 +33,7 @@ Available Data
     capital city
     region
     subregion
+    relevance
 ----------
 
 REST Services
