@@ -134,6 +134,22 @@ public class CountryRest {
 		}
 	}
 	
+	@GET
+	@Path("region/{region}")
+	public Object getByRegion(@PathParam("region") String region) {
+		LOG.info("Getting by region " + region);
+		try {
+			List<Country> countries = CountryService.getInstance().getByRegion(region);
+			if(!countries.isEmpty()) {
+				return countries;
+			}
+			return getResponse(Status.NOT_FOUND);
+		} catch(IOException e) {
+			LOG.error(e.getMessage(), e);
+			return getResponse(Status.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
 	private Response getResponse(Status status) {
 		Gson gson = new Gson();
 		return Response

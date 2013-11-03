@@ -88,13 +88,22 @@ public class CountryService {
 	}
 	
 	public Country getByCapital(String capital) {
-		List<Country> countries = getAll();
 		for(Country country : countries) {
 			if(normalize(country.getCapital().toLowerCase()).equals(normalize(capital.toLowerCase()))) {
 				return country;
 			}
 		}
 		return null;
+	}
+	
+	public List<Country> getByRegion(String region) {
+		List<Country> result = new ArrayList<Country>();
+		for(Country country : countries) {
+			if(country.getRegion().toLowerCase().equals(region.toLowerCase())) {
+				result.add(country);
+			}
+		}
+		return result;
 	}
 	
 	private void initialize() throws IOException {
