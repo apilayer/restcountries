@@ -222,15 +222,11 @@ public class CountryRest {
         return countries;
 	}
 	
-	private String toJSON(Object object) {
-		Gson gson = new Gson();
-		return gson.toJson(object);
-	}
-	
 	private Response getResponse(Status status) {
+		Gson gson = new Gson();
 		return Response
 				.status(status)
-				.entity(this.toJSON(new ResponseEntity(status.getStatusCode(),
+				.entity(gson.toJson(new ResponseEntity(status.getStatusCode(),
 						status.getReasonPhrase()))).build();
 	}
 }
