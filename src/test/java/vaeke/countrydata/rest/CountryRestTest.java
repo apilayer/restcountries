@@ -68,6 +68,16 @@ public class CountryRestTest {
 		}
 	}
 	
+	@HttpTest(method = Method.GET, path = "/capital/washington")
+	public void capital() {
+		Assert.assertOk(response);
+		List<Country> countries = deserializeList(response.getBody());
+		org.junit.Assert.assertFalse(countries.isEmpty());
+		for(Country country : countries) {
+			org.junit.Assert.assertEquals("washington d.c.", country.getCapital().toLowerCase());
+		}
+	}
+	
 	@HttpTest(method = Method.GET, path = "/region/europe")
 	public void region() {
 		Assert.assertOk(response);
