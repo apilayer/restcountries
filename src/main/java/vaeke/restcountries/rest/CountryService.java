@@ -92,7 +92,7 @@ public class CountryService {
 	
 	public Country getByCapital(String capital) {
 		for(Country country : countries) {
-			if(normalize(country.getCapital().toLowerCase()).equals(normalize(capital.toLowerCase()))) {
+			if(normalize(country.getCapital().toLowerCase()).contains(normalize(capital.toLowerCase()))) {
 				return country;
 			}
 		}
