@@ -1,4 +1,4 @@
-package vaeke.restcountries.rest;
+package vaeke.restcountries.domain;
 
 public class ResponseEntity {
 	
