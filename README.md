@@ -45,7 +45,7 @@ REST Services
 - By name http://restcountries.eu/rest/name/norway
 - By capital city http://restcountries.eu/rest/capital/oslo
 - By region http://restcountries.eu/rest/region/americas
-- By subregion http://restcountries.eu/rest/region/southern%20asia
+- By subregion http://restcountries.eu/rest/subregion/southern%20asia
 
 Credits
 ---------
