@@ -106,6 +106,16 @@ public class CountryService {
 		return result;
 	}
 	
+	public List<Country> getBySubregion(String subregion) {
+		List<Country> result = new ArrayList<Country>();
+		for(Country country : countries) {
+			if(country.getSubregion().toLowerCase().equals(subregion.toLowerCase())) {
+				result.add(country);
+			}
+		}
+		return result;
+	}
+	
 	private void initialize() throws IOException {
 		LOG.debug("Loading JSON Database");
 		InputStream is = this.getClass().getClassLoader().getResourceAsStream("countries.json");
