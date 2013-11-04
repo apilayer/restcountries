@@ -49,7 +49,7 @@ REST Services
 
 Credits
 ---------
-JSON Data https://github.com/mledoze/countries
+JSON Data https://github.com/mledoze/countries <br />
 CSS http://bootswatch.com/flatly/
 
 License
