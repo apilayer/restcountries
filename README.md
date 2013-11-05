@@ -8,7 +8,7 @@ Get information about any country via a RESTful API http://restcountries.eu
 Branches
 ---------
 ##### dev
-* play around and make all changes here and, when ready, commit to other branches for new release
+* well... dev environment. all changes are made here before new releases.
 * using java7 and servlet api 3
 
 ##### master
