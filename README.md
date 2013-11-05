@@ -53,9 +53,12 @@ REST Services
 
 Credits
 ---------
-JSON Data is merged from https://github.com/mledoze/countries and https://github.com/jonathantneal/countries <br />
+JSON Data is merged from [@mledoze] and [@jonathantneal] <br />
 CSS http://bootswatch.com/flatly/
 
 License
 ---------
 Mozilla Public License http://www.mozilla.org/MPL/
+
+[@mledoze]: https://github.com/mledoze/countries
+[@jonathantneal]: https://github.com/jonathantneal/countries
