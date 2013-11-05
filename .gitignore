@@ -4,4 +4,4 @@
 target/
 *.DS_Store
 *.sh
-bootstrap-flatly.css
+*bootstrap-flatly.css
