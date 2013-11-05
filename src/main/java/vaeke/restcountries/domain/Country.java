@@ -43,6 +43,8 @@ public class Country {
 	private List<Double> latlng;
 	
 	private List<String> languages;
+	
+	private CountryTranslations translations;
 
 	public String getName() {
 		return name;
@@ -162,6 +164,14 @@ public class Country {
 
 	public void setLanguages(List<String> languages) {
 		this.languages = languages;
+	}
+
+	public CountryTranslations getTranslations() {
+		return translations;
+	}
+
+	public void setTranslations(CountryTranslations translations) {
+		this.translations = translations;
 	}
 	
 }
