@@ -60,6 +60,7 @@ $(function () {
 			dataType: 'json',
 			success: function(data, textStatus, jqXHR) {
 				restc.ui.warning.addClass('hidden');
+				restc.ui.errorMsg.addClass('hidden');
 				callback(data);
 			},
 			 statusCode: {

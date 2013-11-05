@@ -23,17 +23,19 @@ Available Data
 ---------
 
     name
-    top-level domain (tld)
-    code ISO 3166-1 alpha-2 (cca2)
-    code ISO 3166-1 numeric (ccn3)
-    code ISO 3166-1 alpha-3 (cca3)
-    alternative spellings
     currency code(s)
     calling code(s)
     capital city
     region
     subregion
+    alternative spellings
     relevance
+    nationality
+    geolocation (latlng)
+    top-level domain (tld)
+    code ISO 3166-1 alpha-2 (cca2)
+    code ISO 3166-1 numeric (ccn3)
+    code ISO 3166-1 alpha-3 (cca3)
 ----------
 
 REST Services
@@ -49,7 +51,7 @@ REST Services
 
 Credits
 ---------
-JSON Data https://github.com/mledoze/countries <br />
+JSON Data is merged from https://github.com/mledoze/countries and https://github.com/jonathantneal/countries <br />
 CSS http://bootswatch.com/flatly/
 
 License

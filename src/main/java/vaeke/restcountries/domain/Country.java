@@ -3,6 +3,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package vaeke.restcountries.domain;
 
+import java.util.List;
+
 import org.codehaus.jackson.annotate.JsonProperty;
 
 public class Country {
@@ -35,6 +37,12 @@ public class Country {
 	private String altSpellings;
 	
 	private String relevance;
+	
+	private String nationality;
+	
+	private List<Double> latlng;
+	
+	private List<String> languages;
 
 	public String getName() {
 		return name;
@@ -130,6 +138,30 @@ public class Country {
 
 	public void setRelevance(String relevance) {
 		this.relevance = relevance;
+	}
+
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+
+	public List<Double> getLatlng() {
+		return latlng;
+	}
+
+	public void setLatlng(List<Double> latlng) {
+		this.latlng = latlng;
+	}
+
+	public List<String> getLanguages() {
+		return languages;
+	}
+
+	public void setLanguages(List<String> languages) {
+		this.languages = languages;
 	}
 	
 }
