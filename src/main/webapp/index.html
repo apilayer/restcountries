@@ -11,65 +11,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-responsive-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="https://github.com/vaeke/countrydata" target="blank_">
-					Project at Github<img alt="github-octocat" src="img/octocat.png">
-				</a>
-			</div>
-		</div>
-	</div>
-	<div class="jumbotron" style="text-align: center;">
-		<h1 style="margin-top: 40px;">REST Countries</h1>
-		<div>Get information about countries via a RESTful API</div>
-		<div>v0.8</div>
-	</div>
+	<div class="container well" style="text-align: center;">
+		<div class="" id="banner">
+        	<div class="row">
+          		<div class="col-lg-12">
+           			<div style="font-size: 67.5px;">REST Countries</div>
+            		<p class="lead">Get information about countries via a RESTful API</p>
+            		<div>vPROJECT_VERSION</div>
+            		<br />
+            		<a href="https://github.com/fayder/restcountries">
+            			<img alt="github-octocat" src="img/octocat60px.png">
+        			</a>
+            		<a href="https://www.mashape.com/fayder/rest-countries-1">
+            			<img alt="github-octocat" src="img/mashape.png">
+        			</a>
+				</div>
+        	</div>
+      	</div>
+    </div>
 	<div id="rc-searchers" class="container">
 		<div class="row">
 			<div class="col-lg-4">
-				<h2>Get all the countries!</h2>
+				<h3>Get all the countries!</h3>
 				<div class="input-group">
 					<a id="rc-a-all" class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/</a>
 				</div>
 			</div>
 			<div class="col-lg-4">
-				<h2> Currency</h2>
+				<h3> Currency</h3>
 				<div class="input-group">
 					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/currency/eur</a>
 				</div>
 			</div>
 			<div class="col-lg-4">
-				<h2> Capital City</h2>
+				<h3> Capital City</h3>
 				<div class="input-group">
 					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/capital/reykjavik</a>
 				</div>
 			</div>
 			<div class="col-lg-4">
-				<h2> Calling Code</h2>
+				<h3> Calling Code</h3>
 				<div class="input-group">
 					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/callingcode/7</a>
 				</div>
 			</div>
 			<div class="col-lg-4">
-				<h2> Region</h2>
+				<h3> Region</h3>
 				<div class="input-group">
 					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/region/africa</a>
 				</div>
 			</div>
 			<div class="col-lg-4">
-				<h2> Sub Region</h2>
+				<h3> Sub Region</h3>
 				<div class="input-group">
 					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/subregion/western asia</a>
 				</div>
 			</div>
 			<div class="col-lg-4">
-				<h2> Name</h2>
+				<h3> Name</h3>
 				<div class="input-group">
 					<a class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/name/norge</a>
 				</div>
@@ -79,7 +78,7 @@
 				</div>
 			</div>
 			<div class="col-lg-4">
-				<h2> Country Code</h2>
+				<h3> Country Code</h3>
 				<div class="input-group">
 					<a id="rc-a-alpha2" class="btn btn-default rc-a-tryit">http://restcountries.eu/rest/alpha/co</a>
 				</div>
@@ -89,7 +88,7 @@
 				</div>
 			</div>
 			<div id="rc-div-diy" class="col-lg-11" style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
-				<h2>Try it yourself</h2>
+				<h3>Try it yourself</h3>
 				<div class="input-group">
                     <input type="text" class="form-control rc-input-tryit" value="http://restcountries.eu/rest/name/united"></input>
                     <span class="input-group-btn"><a class="btn btn-default rc-a-diy">Try it!</a></span>
@@ -98,7 +97,7 @@
 		</div>
 	</div>
 
-	<div id="" class="container">
+	<div class="container">
 		<div class="row">
 			<!-- json preview -->
 			<div class="col-lg-11" style="margin-top: 10px;">
@@ -115,11 +114,12 @@
 	        	<div class="alert alert-block alert-danger fade in">
 			        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 			        <h4>Oh snap!</h4>
-			        <p>Something bad happened... We will greatly appreciate if you report a bug here: <a href="https://github.com/vaeke/restcountries/issues">https://github.com/fayder/restcountries/issues</a></p>
+			        <p>Something bad happened... We will greatly appreciate if you report a bug here: <a href="https://github.com/fayder/restcountries/issues">https://github.com/fayder/restcountries/issues</a></p>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
