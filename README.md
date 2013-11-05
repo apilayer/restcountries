@@ -32,6 +32,8 @@ Available Data
     relevance
     nationality
     geolocation (latlng)
+    languages
+    translation
     top-level domain (tld)
     code ISO 3166-1 alpha-2 (cca2)
     code ISO 3166-1 numeric (ccn3)
