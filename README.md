@@ -33,7 +33,7 @@ Available Data
     nationality
     geolocation (latlng)
     languages
-    translation
+    translations
     top-level domain (tld)
     code ISO 3166-1 alpha-2 (cca2)
     code ISO 3166-1 numeric (ccn3)
