@@ -8,7 +8,7 @@ Get information about any country via a RESTful API http://restcountries.eu
 Branches
 ---------
 ##### dev
-* play around and make all changes here and, when ready, commit to other branches for new release
+* well... dev environment. all changes are made here before new releases.
 * using java7 and servlet api 3
 
 ##### master
@@ -23,17 +23,21 @@ Available Data
 ---------
 
     name
-    top-level domain (tld)
-    code ISO 3166-1 alpha-2 (cca2)
-    code ISO 3166-1 numeric (ccn3)
-    code ISO 3166-1 alpha-3 (cca3)
-    alternative spellings
     currency code(s)
     calling code(s)
     capital city
     region
     subregion
+    alternative spellings
     relevance
+    nationality
+    geolocation (latlng)
+    languages
+    translations
+    top-level domain (tld)
+    code ISO 3166-1 alpha-2 (cca2)
+    code ISO 3166-1 numeric (ccn3)
+    code ISO 3166-1 alpha-3 (cca3)
 ----------
 
 REST Services
@@ -49,9 +53,12 @@ REST Services
 
 Credits
 ---------
-JSON Data https://github.com/mledoze/countries <br />
+JSON Data is merged from [@mledoze] and [@jonathantneal] <br />
 CSS http://bootswatch.com/flatly/
 
 License
 ---------
 Mozilla Public License http://www.mozilla.org/MPL/
+
+[@mledoze]: https://github.com/mledoze/countries
+[@jonathantneal]: https://github.com/jonathantneal/countries
