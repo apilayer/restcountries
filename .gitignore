@@ -4,3 +4,5 @@
 target/
 *.DS_Store
 *.sh
+*.css
+json/
