@@ -64,7 +64,7 @@ public class CountryRestTest {
 		List<Country> countries = deserializeList(response.getBody());
 		org.junit.Assert.assertFalse(countries.isEmpty());
 		for(Country country : countries) {
-			org.junit.Assert.assertEquals("1", country.getCallingcode());
+			org.junit.Assert.assertEquals("1", country.getCallingCode());
 		}
 	}
 	

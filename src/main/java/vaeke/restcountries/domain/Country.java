@@ -25,8 +25,8 @@ public class Country {
 	@JsonProperty("isoNumericCode")
 	private String ccn3;
 	
-	// calling-code
-	private String callingcode;
+	@JsonProperty("callingcode")
+	private String callingCode;
 	
 	private String capital;
 	
@@ -94,12 +94,12 @@ public class Country {
 		this.ccn3 = ccn3;
 	}
 
-	public String getCallingcode() {
-		return callingcode;
+	public String getCallingCode() {
+		return callingCode;
 	}
 
-	public void setCallingcode(String callingcode) {
-		this.callingcode = callingcode;
+	public void setCallingCode(String callingCode) {
+		this.callingCode = callingCode;
 	}
 
 	public String getCapital() {
