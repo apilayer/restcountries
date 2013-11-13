@@ -84,7 +84,7 @@ public class CountryService {
 	public List<Country> getByCallingcode(String callingcode) {
 		List<Country> result = new ArrayList<Country>();
 		for(Country country : countries) {
-			if(country.getCallingcode().equals(callingcode))
+			if(country.getCallingCode().equals(callingcode))
 				result.add(country);
 		}
 		return result;
