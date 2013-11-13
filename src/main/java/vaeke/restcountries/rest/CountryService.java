@@ -120,6 +120,18 @@ public class CountryService {
 		return result;
 	}
 	
+	public List<Country> getByLanguage(String language) {
+		List<Country> result = new ArrayList<Country>();
+		for(Country country : countries) {
+			for(String lang : country.getLanguages()) {
+				if (lang.toLowerCase().equals(language.toLowerCase())) {
+					result.add(country);
+				}
+			}
+		}
+		return result;
+	}
+	
 	private void initialize() throws IOException {
 		LOG.debug("Loading JSON Database");
 		InputStream is = this.getClass().getClassLoader().getResourceAsStream("countries.json");
