@@ -41,7 +41,7 @@ Available Data
     population
 ----------
 
-REST Services
+REST Search Services
 ---------
 - By code ISO 3166-1 alpha-2 http://restcountries.eu/rest/alpha/NO
 - By code ISO 3166-1 alpha-3 http://restcountries.eu/rest/alpha/NOR
@@ -55,7 +55,7 @@ REST Services
 
 Credits
 ---------
-JSON Data is merged mostly from [@mledoze] and [@jonathantneal] <br />
+JSON Data is merged mostly from [@mledoze] and [@hexorx] <br />
 Population data is from https://en.wikipedia.org/wiki/List_of_countries_by_population <br />
 CSS http://bootswatch.com/flatly/
 
@@ -64,4 +64,4 @@ License
 Mozilla Public License http://www.mozilla.org/MPL/
 
 [@mledoze]: https://github.com/mledoze/countries
-[@jonathantneal]: https://github.com/jonathantneal/countries
+[@hexorx]: https://github.com/hexorx/countries
