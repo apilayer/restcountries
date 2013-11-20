@@ -47,6 +47,8 @@ public class Country {
 	private List<String> languages;
 	
 	private CountryTranslations translations;
+	
+	private Integer population;
 
 	public String getName() {
 		return name;
@@ -174,6 +176,14 @@ public class Country {
 
 	public void setTranslations(CountryTranslations translations) {
 		this.translations = translations;
+	}
+
+	public Integer getPopulation() {
+		return population;
+	}
+
+	public void setPopulation(Integer population) {
+		this.population = population;
 	}
 	
 }
