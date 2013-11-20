@@ -63,9 +63,7 @@ public class CountryRestTest {
 		Assert.assertOk(response);
 		List<Country> countries = deserializeList(response.getBody());
 		org.junit.Assert.assertFalse(countries.isEmpty());
-		for(Country country : countries) {
-			org.junit.Assert.assertEquals("1", country.getCallingcode());
-		}
+		org.junit.Assert.assertTrue(response.getBody().contains("\"callingcode\":\"1\""));
 	}
 	
 	@HttpTest(method = Method.GET, path = "/capital/washington")
@@ -84,6 +82,15 @@ public class CountryRestTest {
 		List<Country> countries = deserializeList(response.getBody());
 		for(Country country : countries) {
 			org.junit.Assert.assertEquals("europe", country.getRegion().toLowerCase());
+		}
+	}
+	
+	@HttpTest(method = Method.GET, path = "/lang/et")
+	public void language() {
+		Assert.assertOk(response);
+		List<Country> countries = deserializeList(response.getBody());
+		for(Country country : countries) {
+			org.junit.Assert.assertTrue(country.getLanguages().contains("et"));
 		}
 	}
 	

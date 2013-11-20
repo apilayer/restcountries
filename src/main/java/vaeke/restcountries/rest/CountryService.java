@@ -84,7 +84,7 @@ public class CountryService {
 	public List<Country> getByCallingcode(String callingcode) {
 		List<Country> result = new ArrayList<Country>();
 		for(Country country : countries) {
-			if(country.getCallingcode().equals(callingcode))
+			if(country.getCallingCode().equals(callingcode))
 				result.add(country);
 		}
 		return result;
@@ -115,6 +115,18 @@ public class CountryService {
 		for(Country country : countries) {
 			if(country.getSubregion().toLowerCase().equals(subregion.toLowerCase())) {
 				result.add(country);
+			}
+		}
+		return result;
+	}
+	
+	public List<Country> getByLanguage(String language) {
+		List<Country> result = new ArrayList<Country>();
+		for(Country country : countries) {
+			for(String lang : country.getLanguages()) {
+				if (lang.toLowerCase().equals(language.toLowerCase())) {
+					result.add(country);
+				}
 			}
 		}
 		return result;

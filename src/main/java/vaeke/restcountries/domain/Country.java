@@ -6,7 +6,9 @@ package vaeke.restcountries.domain;
 import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonProperty;
+import org.codehaus.jackson.annotate.JsonPropertyOrder;
 
+@JsonPropertyOrder(alphabetic = true)
 public class Country {
 
 	private String name;
@@ -25,8 +27,8 @@ public class Country {
 	@JsonProperty("isoNumericCode")
 	private String ccn3;
 	
-	// calling-code
-	private String callingcode;
+	@JsonProperty("callingcode")
+	private String callingCode;
 	
 	private String capital;
 	
@@ -45,6 +47,8 @@ public class Country {
 	private List<String> languages;
 	
 	private CountryTranslations translations;
+	
+	private Integer population;
 
 	public String getName() {
 		return name;
@@ -94,12 +98,12 @@ public class Country {
 		this.ccn3 = ccn3;
 	}
 
-	public String getCallingcode() {
-		return callingcode;
+	public String getCallingCode() {
+		return callingCode;
 	}
 
-	public void setCallingcode(String callingcode) {
-		this.callingcode = callingcode;
+	public void setCallingCode(String callingCode) {
+		this.callingCode = callingCode;
 	}
 
 	public String getCapital() {
@@ -172,6 +176,14 @@ public class Country {
 
 	public void setTranslations(CountryTranslations translations) {
 		this.translations = translations;
+	}
+
+	public Integer getPopulation() {
+		return population;
+	}
+
+	public void setPopulation(Integer population) {
+		this.population = population;
 	}
 	
 }

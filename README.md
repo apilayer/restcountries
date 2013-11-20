@@ -1,4 +1,4 @@
-REST Countries v0.9
+REST Countries v0.9.2
 =====================
 
 Get information about any country via a RESTful API http://restcountries.eu
@@ -32,7 +32,7 @@ Available Data
     relevance
     nationality
     geolocation (latlng)
-    languages
+    ISO 639-1 languages
     translations
     top-level domain (tld)
     code ISO 3166-1 alpha-2 (cca2)

@@ -166,6 +166,22 @@ public class CountryRest {
 		}
 	}
 	
+	@GET
+	@Path("lang/{lang}")
+	public Object getByLanguage(@PathParam("lang") String language) {
+		LOG.info("Getting by language " + language);
+		try {
+			List<Country> countries = CountryService.getInstance().getByLanguage(language);
+			if(!countries.isEmpty()) {
+				return countries;
+			}
+			return getResponse(Status.NOT_FOUND);
+		} catch(IOException e) {
+			LOG.error(e.getMessage(), e);
+			return getResponse(Status.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
 	private Response getResponse(Status status) {
 		Gson gson = new Gson();
 		return Response
