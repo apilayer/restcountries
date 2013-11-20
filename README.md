@@ -30,7 +30,7 @@ Available Data
     subregion
     alternative spellings
     relevance
-    nationality
+    nationality (demonym)
     geolocation (latlng)
     ISO 639-1 languages
     translations
@@ -38,6 +38,7 @@ Available Data
     code ISO 3166-1 alpha-2 (cca2)
     code ISO 3166-1 numeric (ccn3)
     code ISO 3166-1 alpha-3 (cca3)
+    population
 ----------
 
 REST Services
