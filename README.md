@@ -30,7 +30,7 @@ Available Data
     subregion
     alternative spellings
     relevance
-    nationality
+    nationality (demonym)
     geolocation (latlng)
     ISO 639-1 languages
     translations
@@ -38,6 +38,7 @@ Available Data
     code ISO 3166-1 alpha-2 (cca2)
     code ISO 3166-1 numeric (ccn3)
     code ISO 3166-1 alpha-3 (cca3)
+    population
 ----------
 
 REST Services
@@ -53,7 +54,8 @@ REST Services
 
 Credits
 ---------
-JSON Data is merged from [@mledoze] and [@jonathantneal] <br />
+JSON Data is merged mostly from [@mledoze] and [@jonathantneal] <br />
+Population data is from https://en.wikipedia.org/wiki/List_of_countries_by_population <br />
 CSS http://bootswatch.com/flatly/
 
 License
