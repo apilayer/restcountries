@@ -31,7 +31,7 @@ Available Data
     alternative spellings
     relevance
     nationality (demonym)
-    geolocation (latlng)
+    latlng (geolocation)
     ISO 639-1 languages
     translations
     top-level domain (tld)
@@ -51,6 +51,7 @@ REST Services
 - By capital city http://restcountries.eu/rest/capital/oslo
 - By region http://restcountries.eu/rest/region/americas
 - By subregion http://restcountries.eu/rest/subregion/southern%20asia
+- By language http://restcountries.eu/rest/lang/et
 
 Credits
 ---------
