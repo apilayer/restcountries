@@ -53,7 +53,8 @@ REST Services
 
 Credits
 ---------
-JSON Data is merged from [@mledoze] and [@jonathantneal] <br />
+JSON Data is merged mostly from [@mledoze] and [@jonathantneal] <br />
+Population data is from https://en.wikipedia.org/wiki/List_of_countries_by_population <br />
 CSS http://bootswatch.com/flatly/
 
 License
