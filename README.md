@@ -39,7 +39,7 @@ Available Data
     code ISO 3166-1 numeric (ccn3)
     code ISO 3166-1 alpha-3 (cca3)
     population
-    area
+    area in Km2
 ----------
 
 REST Search Services
