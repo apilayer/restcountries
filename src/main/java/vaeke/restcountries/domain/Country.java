@@ -49,6 +49,8 @@ public class Country {
 	private CountryTranslations translations;
 	
 	private Integer population;
+	
+	private Double area;
 
 	public String getName() {
 		return name;
@@ -184,6 +186,14 @@ public class Country {
 
 	public void setPopulation(Integer population) {
 		this.population = population;
+	}
+
+	public Double getArea() {
+		return area;
+	}
+
+	public void setArea(Double area) {
+		this.area = area;
 	}
 	
 }
