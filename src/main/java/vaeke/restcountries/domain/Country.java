@@ -52,6 +52,8 @@ public class Country {
 	
 	private Double area;
 
+	private Double gini;
+
 	public String getName() {
 		return name;
 	}
@@ -194,6 +196,14 @@ public class Country {
 
 	public void setArea(Double area) {
 		this.area = area;
+	}
+
+	public Double getGini() {
+		return gini;
+	}
+
+	public void setGini(Double gini) {
+		this.gini = gini;
 	}
 	
 }
