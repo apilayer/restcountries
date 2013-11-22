@@ -40,7 +40,7 @@ Available Data
     code ISO 3166-1 alpha-3 (cca3)
     population
     area in Km2
-    Gini coefficient
+    gini coefficient
     timezones
 ----------
 
