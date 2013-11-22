@@ -41,6 +41,7 @@ Available Data
     population
     area in Km2
     Gini coefficient
+    timezones
 ----------
 
 REST Search Services
