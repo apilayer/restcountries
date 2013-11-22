@@ -49,6 +49,12 @@ public class Country {
 	private CountryTranslations translations;
 	
 	private Integer population;
+	
+	private Double area;
+
+	private Double gini;
+
+	private List<String> timezones;
 
 	public String getName() {
 		return name;
@@ -184,6 +190,30 @@ public class Country {
 
 	public void setPopulation(Integer population) {
 		this.population = population;
+	}
+
+	public Double getArea() {
+		return area;
+	}
+
+	public void setArea(Double area) {
+		this.area = area;
+	}
+
+	public Double getGini() {
+		return gini;
+	}
+
+	public void setGini(Double gini) {
+		this.gini = gini;
+	}
+
+	public List<String> getTimezones() {
+		return timezones;
+	}
+
+	public void setTimezones(List<String> timezones) {
+		this.timezones = timezones;
 	}
 	
 }
