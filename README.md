@@ -60,6 +60,7 @@ Credits
 ---------
 JSON Data is merged mostly from [@mledoze] and [@hexorx] <br />
 Population data is from https://en.wikipedia.org/wiki/List_of_countries_by_population <br />
+Gini coefficient from http://en.wikipedia.org/wiki/List_of_countries_by_income_equality <br />
 CSS http://bootswatch.com/flatly/
 
 License
