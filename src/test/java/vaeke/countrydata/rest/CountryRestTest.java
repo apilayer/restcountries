@@ -5,6 +5,7 @@ package vaeke.countrydata.rest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.junit.Rule;
@@ -91,6 +92,24 @@ public class CountryRestTest {
 		List<Country> countries = deserializeList(response.getBody());
 		for(Country country : countries) {
 			org.junit.Assert.assertTrue(country.getLanguages().contains("et"));
+			System.out.println(country.getName());
+		}
+	}
+	
+	@HttpTest(method = Method.GET, path = "/region/asia")
+	public void alpha2af() {
+		Assert.assertOk(response);
+		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"AF\""));
+		List<Country> countries = deserializeList(response.getBody());
+		for(Country country : countries) {
+			if (country.getAltSpellings().contains("AF")){
+			List<String> borders = country.getBorders();
+			Iterator iter = borders.iterator();
+			while (iter.hasNext()){
+				String border = (String) iter.next();
+				System.out.println(border);
+			}
+			}
 		}
 	}
 	
