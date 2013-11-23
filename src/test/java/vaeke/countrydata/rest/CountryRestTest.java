@@ -96,23 +96,6 @@ public class CountryRestTest {
 		}
 	}
 	
-	@HttpTest(method = Method.GET, path = "/region/asia")
-	public void alpha2af() {
-		Assert.assertOk(response);
-		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"AF\""));
-		List<Country> countries = deserializeList(response.getBody());
-		for(Country country : countries) {
-			if (country.getAltSpellings().contains("AF")){
-			List<String> borders = country.getBorders();
-			Iterator iter = borders.iterator();
-			while (iter.hasNext()){
-				String border = (String) iter.next();
-				System.out.println(border);
-			}
-			}
-		}
-	}
-	
 	private List<Country> deserializeList(String json) {
 		Gson gson = new Gson();
 		Type listType = new TypeToken<ArrayList<Country>>() {}.getType();
