@@ -9,6 +9,8 @@ import java.io.InputStreamReader;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -54,6 +56,22 @@ public class CountryService {
 			}
 		}
 		return null;
+	}
+	
+	public List<Country> getByCodeList(String alpha) {
+		List<Country> result = new ArrayList<Country>();
+		String[] codes = alpha.split(";"); 
+		List codeList = Arrays.asList(codes);
+		Iterator iter = codeList.iterator();
+		while (iter.hasNext()){
+			String search = (String) iter.next();
+		for(Country country : countries) {
+				if (country.getCca2().toLowerCase().equals(search.toLowerCase())) {
+					result.add(country);
+				}
+			}
+		}
+		return result;
 	}
 	
 	public List<Country> getByCurrency(String currency) {

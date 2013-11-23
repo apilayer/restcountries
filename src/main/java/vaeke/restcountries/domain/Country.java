@@ -55,8 +55,6 @@ public class Country {
 	private Double gini;
 
 	private List<String> timezones;
-	
-	private List<String> borders;
 
 	public String getName() {
 		return name;
@@ -216,14 +214,6 @@ public class Country {
 
 	public void setTimezones(List<String> timezones) {
 		this.timezones = timezones;
-	}
-
-	public List<String> getBorders() {
-		return borders;
-	}
-
-	public void setBorders(List<String> borders) {
-		this.borders = borders;
 	}
 }
 	
