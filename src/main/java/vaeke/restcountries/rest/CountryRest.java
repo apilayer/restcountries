@@ -57,12 +57,6 @@ public class CountryRest {
 		}
 	}
 	
-//	@GET
-//	@Path("alpha")
-//	public Object getByAlphaList(@QueryParam("codelist") String codelist) {
-//		return null;
-//	}
-	
 	/**
 	 * @deprecated As of release 0.7, replaced with {@link getByAlpha(String alpha)}
 	 * @param alpha2
