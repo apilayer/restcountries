@@ -57,6 +57,11 @@ public class CountryRest {
 		}
 	}
 	
+	/**
+	 * @deprecated As of release 0.7, replaced with {@link getByAlpha(String alpha)}
+	 * @param alpha2
+	 * @return
+	 */
 	@GET
 	@Path("alpha2/{alpha2code}")
 	@Deprecated
@@ -64,6 +69,11 @@ public class CountryRest {
 		return this.getByAlpha(alpha2);
 	}
 	
+	/**
+	 * @deprecated As of release 0.7, replaced with {@link getByAlpha(String alpha)}
+	 * @param alpha3
+	 * @return
+	 */
 	@GET
 	@Path("alpha3/{alpha3code}")
 	@Deprecated
