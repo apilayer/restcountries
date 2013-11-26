@@ -10,7 +10,6 @@ import java.text.Normalizer;
 import java.text.Normalizer.Form;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -60,17 +59,15 @@ public class CountryService {
 	
 	public List<Country> getByCodeList(String alpha) {
 		List<Country> result = new ArrayList<Country>();
-		String[] codes = alpha.split(";"); 
-		List codeList = Arrays.asList(codes);
-		Iterator iter = codeList.iterator();
-		while (iter.hasNext()){
-			String search = (String) iter.next();
-		for(Country country : countries) {
-				if (country.getCca2().toLowerCase().equals(search.toLowerCase())) {
+		List<String> codes = Arrays.asList(alpha.split(";"));
+		for(String code : codes) {
+			for(Country country : countries) {
+				if (country.getCca2().toLowerCase().equals(code.toLowerCase())) {
 					result.add(country);
 				}
 			}
 		}
+		
 		return result;
 	}
 	

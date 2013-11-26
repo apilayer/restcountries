@@ -57,6 +57,12 @@ public class CountryRest {
 		}
 	}
 	
+//	@GET
+//	@Path("alpha")
+//	public Object getByAlphaList(@QueryParam("codelist") String codelist) {
+//		return null;
+//	}
+	
 	/**
 	 * @deprecated As of release 0.7, replaced with {@link getByAlpha(String alpha)}
 	 * @param alpha2
@@ -82,11 +88,11 @@ public class CountryRest {
 	}
 	
 	@GET
-	@Path("multiplecountries/")
-	public Object getMultipleCountries(@QueryParam("countrylist") String alpha) {
-		LOG.info("Getting by list " + alpha);
+	@Path("alpha/")
+	public Object getByAlphaList(@QueryParam("codes") String codes) {
+		LOG.info("Getting by list " + codes);
 		try {
-			List<Country> countries = CountryService.getInstance().getByCodeList(alpha);
+			List<Country> countries = CountryService.getInstance().getByCodeList(codes);
 			if (!countries.isEmpty()) {
 				return countries;
 			}
