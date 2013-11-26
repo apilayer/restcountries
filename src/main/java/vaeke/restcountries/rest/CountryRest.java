@@ -10,6 +10,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -68,6 +69,22 @@ public class CountryRest {
 	@Deprecated
 	public Object getByAlpha3(@PathParam("alpha3code") String alpha3) {
 		return this.getByAlpha(alpha3);
+	}
+	
+	@GET
+	@Path("multiplecountries/")
+	public Object getMultipleCountries(@QueryParam("countrylist") String alpha) {
+		LOG.info("Getting by list " + alpha);
+		try {
+			List<Country> countries = CountryService.getInstance().getByCodeList(alpha);
+			if (!countries.isEmpty()) {
+				return countries;
+			}
+			return getResponse(Status.NOT_FOUND);
+		} catch (IOException e) {
+			LOG.error(e.getMessage(), e);
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
+		}
 	}
 	
 	@GET

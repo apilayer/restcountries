@@ -91,6 +91,7 @@ public class CountryRestTest {
 		List<Country> countries = deserializeList(response.getBody());
 		for(Country country : countries) {
 			org.junit.Assert.assertTrue(country.getLanguages().contains("et"));
+			System.out.println(country.getName());
 		}
 	}
 	
