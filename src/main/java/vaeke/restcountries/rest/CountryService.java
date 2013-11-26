@@ -59,6 +59,8 @@ public class CountryService {
 	
 	public List<Country> getByCodeList(String alpha) {
 		List<Country> result = new ArrayList<Country>();
+		if(alpha == null) return result;
+		
 		List<String> codes = Arrays.asList(alpha.split(";"));
 		for(String code : codes) {
 			for(Country country : countries) {
