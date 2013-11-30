@@ -5,5 +5,5 @@
 package vaeke.restcountries.rest;
 
 public interface ICountryRestSymbols {
-    public String SEMICOLON = ";";
+    public static final String SEMICOLON = ";";
 }
