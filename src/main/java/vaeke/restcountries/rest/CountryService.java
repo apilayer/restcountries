@@ -57,19 +57,14 @@ public class CountryService {
 		return null;
 	}
 	
-	public List<Country> getByCodeList(String alpha) {
+	public List<Country> getByCodeList(String codelist) {
 		List<Country> result = new ArrayList<Country>();
-		if(alpha == null) return result;
+		if(codelist == null) return result;
 		
-		List<String> codes = Arrays.asList(alpha.split(ICountryRestSymbols.SEMICOLON));
+		List<String> codes = Arrays.asList(codelist.split(ICountryRestSymbols.SEMICOLON));
 		for(String code : codes) {
-			for(Country country : countries) {
-				if (country.getCca2().toLowerCase().equals(code.toLowerCase())) {
-					result.add(country);
-				}
-			}
+			result.add(this.getByAlpha(code));
 		}
-		
 		return result;
 	}
 	
