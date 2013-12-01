@@ -55,6 +55,7 @@ REST Search Services
 - By region http://restcountries.eu/rest/region/americas
 - By subregion http://restcountries.eu/rest/subregion/southern%20asia
 - By language http://restcountries.eu/rest/lang/et
+- By different country codes http://restcountries.eu/rest/alpha?codes=ee,co,no
 
 Credits
 ---------
