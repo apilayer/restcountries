@@ -61,7 +61,7 @@ public class CountryService {
 		List<Country> result = new ArrayList<Country>();
 		if(alpha == null) return result;
 		
-		List<String> codes = Arrays.asList(alpha.split(";"));
+		List<String> codes = Arrays.asList(alpha.split(ICountryRestSymbols.SEMICOLON));
 		for(String code : codes) {
 			for(Country country : countries) {
 				if (country.getCca2().toLowerCase().equals(code.toLowerCase())) {
