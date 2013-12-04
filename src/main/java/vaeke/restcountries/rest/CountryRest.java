@@ -10,6 +10,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -56,6 +57,11 @@ public class CountryRest {
 		}
 	}
 	
+	/**
+	 * @deprecated As of release 0.7, replaced with {@link getByAlpha(String alpha)}
+	 * @param alpha2
+	 * @return
+	 */
 	@GET
 	@Path("alpha2/{alpha2code}")
 	@Deprecated
@@ -63,11 +69,32 @@ public class CountryRest {
 		return this.getByAlpha(alpha2);
 	}
 	
+	/**
+	 * @deprecated As of release 0.7, replaced with {@link getByAlpha(String alpha)}
+	 * @param alpha3
+	 * @return
+	 */
 	@GET
 	@Path("alpha3/{alpha3code}")
 	@Deprecated
 	public Object getByAlpha3(@PathParam("alpha3code") String alpha3) {
 		return this.getByAlpha(alpha3);
+	}
+	
+	@GET
+	@Path("alpha/")
+	public Object getByAlphaList(@QueryParam("codes") String codes) {
+		LOG.info("Getting by list " + codes);
+		try {
+			List<Country> countries = CountryService.getInstance().getByCodeList(codes);
+			if (!countries.isEmpty()) {
+				return countries;
+			}
+			return getResponse(Status.NOT_FOUND);
+		} catch (IOException e) {
+			LOG.error(e.getMessage(), e);
+			return getResponse(Status.INTERNAL_SERVER_ERROR); 
+		}
 	}
 	
 	@GET

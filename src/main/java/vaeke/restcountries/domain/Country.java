@@ -215,6 +215,5 @@ public class Country {
 	public void setTimezones(List<String> timezones) {
 		this.timezones = timezones;
 	}
-	
 }
 	

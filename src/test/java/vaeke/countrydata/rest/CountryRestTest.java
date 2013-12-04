@@ -91,7 +91,31 @@ public class CountryRestTest {
 		List<Country> countries = deserializeList(response.getBody());
 		for(Country country : countries) {
 			org.junit.Assert.assertTrue(country.getLanguages().contains("et"));
+			System.out.println(country.getName());
 		}
+	}
+	
+	@HttpTest(method = Method.GET, path = "/alpha?codes=ar;be;fr;it")
+	public void alphaList() {
+		Assert.assertOk(response);
+		List<Country> countries = deserializeList(response.getBody());
+		org.junit.Assert.assertFalse(countries.isEmpty());
+		org.junit.Assert.assertEquals(4, countries.size());
+		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"AR\""));
+		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"BE\""));
+		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"FR\""));
+		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"IT\""));
+	}
+	
+	@HttpTest(method = Method.GET, path = "/name/russia")
+	public void name() {
+		Assert.assertOk(response);
+		List<Country> countries = deserializeList(response.getBody());
+		org.junit.Assert.assertFalse(countries.isEmpty());
+		for(Country c : countries) {
+			org.junit.Assert.assertEquals("Russia", c.getName());
+		}
+		
 	}
 	
 	private List<Country> deserializeList(String json) {
