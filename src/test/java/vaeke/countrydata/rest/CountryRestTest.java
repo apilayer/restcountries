@@ -107,6 +107,17 @@ public class CountryRestTest {
 		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"IT\""));
 	}
 	
+	@HttpTest(method = Method.GET, path = "/name/russia")
+	public void name() {
+		Assert.assertOk(response);
+		List<Country> countries = deserializeList(response.getBody());
+		org.junit.Assert.assertFalse(countries.isEmpty());
+		for(Country c : countries) {
+			org.junit.Assert.assertEquals("Russia", c.getName());
+		}
+		
+	}
+	
 	private List<Country> deserializeList(String json) {
 		Gson gson = new Gson();
 		Type listType = new TypeToken<ArrayList<Country>>() {}.getType();
