@@ -63,7 +63,9 @@ public class CountryService {
 		
 		List<String> codes = Arrays.asList(codelist.split(ICountryRestSymbols.SEMICOLON));
 		for(String code : codes) {
-			result.add(this.getByAlpha(code));
+			Country country = this.getByAlpha(code);
+			if(!result.contains(country))
+				result.add(country);
 		}
 		return result;
 	}
