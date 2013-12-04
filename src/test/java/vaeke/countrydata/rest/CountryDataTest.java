@@ -3,6 +3,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package vaeke.countrydata.rest;
 
+import static org.junit.Assert.*;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -50,6 +52,19 @@ public class CountryDataTest {
 		
 		for(Country c : result) {
 			System.out.println(c.getName());
+		}
+	}
+	
+	@Test
+	public void emptyLanguages() throws Exception {
+		List<Country> result = new ArrayList<Country>();
+		for(Country c : countries) {
+			result.add(c);
+		}
+		
+		for(Country c : result) {
+			if(c.getLanguages() == null || c.getLanguages().isEmpty())
+				System.out.println(c.getName());
 		}
 	}
 }
