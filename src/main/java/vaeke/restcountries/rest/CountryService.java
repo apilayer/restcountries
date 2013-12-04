@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -54,6 +55,19 @@ public class CountryService {
 			}
 		}
 		return null;
+	}
+	
+	public List<Country> getByCodeList(String codelist) {
+		List<Country> result = new ArrayList<Country>();
+		if(codelist == null) return result;
+		
+		List<String> codes = Arrays.asList(codelist.split(ICountryRestSymbols.SEMICOLON));
+		for(String code : codes) {
+			Country country = this.getByAlpha(code);
+			if(!result.contains(country))
+				result.add(country);
+		}
+		return result;
 	}
 	
 	public List<Country> getByCurrency(String currency) {
