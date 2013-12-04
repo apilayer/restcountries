@@ -1,4 +1,4 @@
-REST Countries v0.9.3
+REST Countries v0.10
 =====================
 
 Get information about any country via a RESTful API http://restcountries.eu
@@ -48,6 +48,7 @@ REST Search Services
 ---------
 - By code ISO 3166-1 alpha-2 http://restcountries.eu/rest/alpha/NO
 - By code ISO 3166-1 alpha-3 http://restcountries.eu/rest/alpha/NOR
+- By different country codes http://restcountries.eu/rest/alpha?codes=EE;COL;NO
 - By currency http://restcountries.eu/rest/currency/NOK
 - By callingcode http://restcountries.eu/rest/callingcode/47
 - By name http://restcountries.eu/rest/name/norway
@@ -55,7 +56,6 @@ REST Search Services
 - By region http://restcountries.eu/rest/region/americas
 - By subregion http://restcountries.eu/rest/subregion/southern%20asia
 - By language http://restcountries.eu/rest/lang/et
-- By different country codes http://restcountries.eu/rest/alpha?codes=ee;co;no
 
 Credits
 ---------
