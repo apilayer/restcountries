@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package vaeke.restcountries.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -55,6 +56,8 @@ public class Country {
 	private Double gini;
 
 	private List<String> timezones;
+	
+	private List<String> borders = new ArrayList();
 
 	public String getName() {
 		return name;
@@ -214,6 +217,14 @@ public class Country {
 
 	public void setTimezones(List<String> timezones) {
 		this.timezones = timezones;
+	}
+
+	public List<String> getBorders() {
+		return borders;
+	}
+
+	public void setBorders(List<String> borders) {
+		this.borders = borders;
 	}
 }
 	
