@@ -26,7 +26,8 @@ import com.google.gson.reflect.TypeToken;
 public class CountryRestTest {
 
 	@Rule
-	public Destination destination = new Destination(this, "http://localhost:8081/rest");
+	public Destination destination = new Destination(this,
+			"http://localhost:8081/rest");
 
 	@Context
 	private Response response;
@@ -35,94 +36,135 @@ public class CountryRestTest {
 	public void checkOnlineStatus() {
 		Assert.assertOk(response);
 	}
-	
+
 	@HttpTest(method = Method.GET, path = "/alpha/co")
 	public void alpha2() {
 		Assert.assertOk(response);
-		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"CO\""));
+		org.junit.Assert.assertTrue(response.getBody().contains(
+				"\"alpha2Code\":\"CO\""));
 	}
-	
+
 	@HttpTest(method = Method.GET, path = "/alpha/col")
 	public void alpha3() {
 		Assert.assertOk(response);
-		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha3Code\":\"COL\""));
+		org.junit.Assert.assertTrue(response.getBody().contains(
+				"\"alpha3Code\":\"COL\""));
 	}
-	
+
 	@HttpTest(method = Method.GET, path = "/currency/eur")
 	public void currency() {
 		Assert.assertOk(response);
 		List<Country> countries = deserializeList(response.getBody());
 		org.junit.Assert.assertFalse(countries.isEmpty());
-		for(Country country : countries) {
-			org.junit.Assert.assertTrue(country.getCurrency().toLowerCase().contains("eur"));
+		for (Country country : countries) {
+			org.junit.Assert.assertTrue(country.getCurrency().toLowerCase()
+					.contains("eur"));
 		}
 	}
-	
+
 	@HttpTest(method = Method.GET, path = "/callingcode/1")
 	public void callingcode() {
 		Assert.assertOk(response);
 		List<Country> countries = deserializeList(response.getBody());
 		org.junit.Assert.assertFalse(countries.isEmpty());
-		org.junit.Assert.assertTrue(response.getBody().contains("\"callingcode\":\"1\""));
+		org.junit.Assert.assertTrue(response.getBody().contains(
+				"\"callingcode\":\"1\""));
 	}
-	
+
 	@HttpTest(method = Method.GET, path = "/capital/washington")
 	public void capital() {
 		Assert.assertOk(response);
 		List<Country> countries = deserializeList(response.getBody());
 		org.junit.Assert.assertFalse(countries.isEmpty());
-		for(Country country : countries) {
-			org.junit.Assert.assertEquals("washington d.c.", country.getCapital().toLowerCase());
+		for (Country country : countries) {
+			org.junit.Assert.assertEquals("washington d.c.", country
+					.getCapital().toLowerCase());
 		}
 	}
-	
+
 	@HttpTest(method = Method.GET, path = "/region/europe")
 	public void region() {
 		Assert.assertOk(response);
 		List<Country> countries = deserializeList(response.getBody());
-		for(Country country : countries) {
-			org.junit.Assert.assertEquals("europe", country.getRegion().toLowerCase());
+		for (Country country : countries) {
+			org.junit.Assert.assertEquals("europe", country.getRegion()
+					.toLowerCase());
 		}
 	}
-	
+
 	@HttpTest(method = Method.GET, path = "/lang/et")
 	public void language() {
 		Assert.assertOk(response);
 		List<Country> countries = deserializeList(response.getBody());
-		for(Country country : countries) {
+		for (Country country : countries) {
 			org.junit.Assert.assertTrue(country.getLanguages().contains("et"));
 			System.out.println(country.getName());
 		}
 	}
-	
+
 	@HttpTest(method = Method.GET, path = "/alpha?codes=ar;be;fr;it")
 	public void alphaList() {
 		Assert.assertOk(response);
 		List<Country> countries = deserializeList(response.getBody());
 		org.junit.Assert.assertFalse(countries.isEmpty());
 		org.junit.Assert.assertEquals(4, countries.size());
-		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"AR\""));
-		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"BE\""));
-		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"FR\""));
-		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"IT\""));
+		org.junit.Assert.assertTrue(response.getBody().contains(
+				"\"alpha2Code\":\"AR\""));
+		org.junit.Assert.assertTrue(response.getBody().contains(
+				"\"alpha2Code\":\"BE\""));
+		org.junit.Assert.assertTrue(response.getBody().contains(
+				"\"alpha2Code\":\"FR\""));
+		org.junit.Assert.assertTrue(response.getBody().contains(
+				"\"alpha2Code\":\"IT\""));
 	}
-	
+
 	@HttpTest(method = Method.GET, path = "/name/russia")
 	public void name() {
 		Assert.assertOk(response);
 		List<Country> countries = deserializeList(response.getBody());
 		org.junit.Assert.assertFalse(countries.isEmpty());
-		for(Country c : countries) {
+		for (Country c : countries) {
 			org.junit.Assert.assertEquals("Russia", c.getName());
 		}
-		
+
+	}
+
+	@HttpTest(method = Method.GET, path = "/alpha/af")
+	public void getBorders() {
+		Assert.assertOk(response);
+		Country country = deserializeObject(response.getBody());
+		List borders = country.getBorders();
+		org.junit.Assert.assertTrue(country.getBorders().contains("IRN"));
+		org.junit.Assert.assertTrue(country.getBorders().contains("PAK"));
+		org.junit.Assert.assertTrue(country.getBorders().contains("TKM"));
+		org.junit.Assert.assertTrue(country.getBorders().contains("UZB"));
+		org.junit.Assert.assertTrue(country.getBorders().contains("TJK"));
+		org.junit.Assert.assertTrue(country.getBorders().contains("CHN"));
 	}
 	
+	@HttpTest(method = Method.GET, path = "/alpha/ao")
+	public void getBorders1() {
+		Assert.assertOk(response);
+		Country country = deserializeObject(response.getBody());
+		List borders = country.getBorders();
+		org.junit.Assert.assertTrue(country.getBorders().contains("NAM"));
+		org.junit.Assert.assertTrue(country.getBorders().contains("ZMB"));
+	}
+
 	private List<Country> deserializeList(String json) {
 		Gson gson = new Gson();
-		Type listType = new TypeToken<ArrayList<Country>>() {}.getType();
+		Type listType = new TypeToken<ArrayList<Country>>() {
+		}.getType();
 		List<Country> countries = gson.fromJson(json, listType);
 		return countries;
 	}
-	
+
+	private Country deserializeObject(String json) {
+		Gson gson = new Gson();
+		Type type = new TypeToken<Country>() {
+		}.getType();
+		Country country = gson.fromJson(json, type);
+		return country;
+	}
+
 }
