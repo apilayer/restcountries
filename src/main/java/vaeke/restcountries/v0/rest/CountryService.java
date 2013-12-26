@@ -14,7 +14,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import vaeke.restcountries.rest.ICountryRestSymbols;
+import vaeke.restcountries.domain.ICountryRestSymbols;
 import vaeke.restcountries.v0.domain.Country;
 
 import com.google.gson.Gson;
