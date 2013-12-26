@@ -3,8 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package vaeke.restcountries.rest;
 
-import static org.junit.Assert.*;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -22,7 +20,7 @@ import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
 @RunWith(HttpJUnitRunner.class)
-public class CountryDataTest {
+public class EmptyDataTest {
 	
 	List<Country> countries;
 	
