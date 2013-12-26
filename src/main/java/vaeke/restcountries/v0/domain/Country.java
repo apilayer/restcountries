@@ -1,12 +1,14 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-package vaeke.restcountries.domain;
+package vaeke.restcountries.v0.domain;
 
 import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonPropertyOrder;
+
+import vaeke.restcountries.domain.CountryTranslations;
 
 @JsonPropertyOrder(alphabetic = true)
 public class Country {

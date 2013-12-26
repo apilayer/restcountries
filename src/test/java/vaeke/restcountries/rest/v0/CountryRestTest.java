@@ -10,7 +10,7 @@ import java.util.List;
 import org.junit.Rule;
 import org.junit.runner.RunWith;
 
-import vaeke.restcountries.domain.Country;
+import vaeke.restcountries.v0.domain.Country;
 
 import com.eclipsesource.restfuse.Assert;
 import com.eclipsesource.restfuse.Destination;

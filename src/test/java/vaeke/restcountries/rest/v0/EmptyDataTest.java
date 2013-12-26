@@ -13,7 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import vaeke.restcountries.domain.Country;
+import vaeke.restcountries.v0.domain.Country;
 
 import com.eclipsesource.restfuse.HttpJUnitRunner;
 import com.google.gson.Gson;
