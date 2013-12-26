@@ -1,7 +1,7 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-package vaeke.restcountries.rest;
+package vaeke.restcountries.rest.v0;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -47,7 +47,7 @@ public class EmptyDataTest {
 				result.add(c);
 			}
 		}
-		
+		System.out.println("\nEmpty Population");
 		for(Country c : result) {
 			System.out.println(c.getName());
 		}
@@ -59,7 +59,7 @@ public class EmptyDataTest {
 		for(Country c : countries) {
 			result.add(c);
 		}
-		
+		System.out.println("\nEmpty Languages");
 		for(Country c : result) {
 			if(c.getLanguages() == null || c.getLanguages().isEmpty())
 				System.out.println(c.getName());
