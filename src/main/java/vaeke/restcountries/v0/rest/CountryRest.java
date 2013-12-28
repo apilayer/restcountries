@@ -66,6 +66,7 @@ public class CountryRest {
 	@Path("alpha2/{alpha2code}")
 	@Deprecated
 	public Object getByAlpha2(@PathParam("alpha2code") String alpha2) {
+		LOG.info("Getting by deprecated alpha2 " + alpha2);
 		return this.getByAlpha(alpha2);
 	}
 	
@@ -78,6 +79,7 @@ public class CountryRest {
 	@Path("alpha3/{alpha3code}")
 	@Deprecated
 	public Object getByAlpha3(@PathParam("alpha3code") String alpha3) {
+		LOG.info("Getting by deprecated alpha3 " + alpha3);
 		return this.getByAlpha(alpha3);
 	}
 	

@@ -148,7 +148,7 @@ public class CountryService {
 	}
 	
 	private void initialize() throws IOException {
-		LOG.debug("Loading JSON Database");
+		LOG.debug("Loading JSON Database v0");
 		InputStream is = this.getClass().getClassLoader().getResourceAsStream("countries.json");
 		Gson gson = new Gson();
 		JsonReader reader = new JsonReader(new InputStreamReader(is, "UTF-8"));

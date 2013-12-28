@@ -1,4 +1,4 @@
-package vaeke.restcountries.rest.v0;
+package vaeke.restcountries.v0;
 
 import java.util.List;
 
