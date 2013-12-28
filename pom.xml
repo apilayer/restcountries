@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>vaeke</groupId>
 	<artifactId>restcountries</artifactId>
-	<version>0.10</version>
+	<version>1.0</version>
 	<packaging>war</packaging>
 	<name>restcountries</name>
 	<description>REST interface to get data about countries</description>
@@ -114,6 +114,7 @@
 	           </executions>
 	           <configuration>
 	           		<file>src/main/webapp/index.html</file>
+	           		<file>src/main/webapp/v0.10.html</file>
                		<replacements>
                    		<replacement>
                        		<token>PROJECT_VERSION</token>
