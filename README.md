@@ -41,5 +41,5 @@ License
 Mozilla Public License http://www.mozilla.org/MPL/
 
 [@mledoze]: https://github.com/mledoze/countries
-[1.0.0]: https://github.com/fayder/restcountries/wiki/API-1.x
+[1.x]: https://github.com/fayder/restcountries/wiki/API-1.x
 [0.10.x]: https://github.com/fayder/restcountries/wiki/API-0.10
