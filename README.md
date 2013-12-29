@@ -21,7 +21,7 @@ Branches
 
 REST API
 ---------
-* API Version [1.x]
+* API Version [1.x.x]
 * API Version [0.10.x]
 
 Compiling and running
@@ -41,5 +41,5 @@ License
 Mozilla Public License http://www.mozilla.org/MPL/
 
 [@mledoze]: https://github.com/mledoze/countries
-[1.x]: https://github.com/fayder/restcountries/wiki/API-1.x
+[1.x.x]: https://github.com/fayder/restcountries/wiki/API-1.x
 [0.10.x]: https://github.com/fayder/restcountries/wiki/API-0.10
