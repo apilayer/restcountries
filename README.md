@@ -23,7 +23,10 @@ REST API
 ---------
 * API Version [1.x]
 * API Version [0.10.x]
-   
+
+Compiling and running
+---------
+* https://github.com/fayder/restcountries/wiki
 
 Credits
 ---------
