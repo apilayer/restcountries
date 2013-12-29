@@ -41,19 +41,19 @@ List<Country> countries;
 				result.add(c);
 			}
 		}
-		System.out.println("\nEmpty Population");
+		System.out.println("Empty Population\n");
 		for(Country c : result) {
 			System.out.println(c.getName());
 		}
 	}
 	
 	@Test
-	public void emptyLanguages() throws Exception {
+	public void emptyLanguageCodes() throws Exception {
 		List<Country> result = new ArrayList<Country>();
 		for(Country c : countries) {
 			result.add(c);
 		}
-		System.out.println("\nEmpty Languages");
+		System.out.println("Empty Language Codes\n");
 		for(Country c : result) {
 			if(c.getLanguagesCodes() == null || c.getLanguagesCodes().isEmpty())
 				System.out.println(c.getName());
