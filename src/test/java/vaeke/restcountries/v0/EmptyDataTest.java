@@ -41,26 +41,17 @@ public class EmptyDataTest {
 	
 	@Test
 	public void emptyPopulation() {
-		List<Country> result = new ArrayList<Country>();
-		for(Country c : countries) {
-			if(c.getPopulation() == null) {
-				result.add(c);
-			}
-		}
 		System.out.println("\nEmpty Population");
-		for(Country c : result) {
-			System.out.println(c.getName());
+		for(Country c : countries) {
+			if(c.getPopulation() == null)
+				System.out.println(c.getName());
 		}
 	}
 	
 	@Test
 	public void emptyLanguages() throws Exception {
-		List<Country> result = new ArrayList<Country>();
-		for(Country c : countries) {
-			result.add(c);
-		}
 		System.out.println("\nEmpty Languages");
-		for(Country c : result) {
+		for(Country c : countries) {
 			if(c.getLanguages() == null || c.getLanguages().isEmpty())
 				System.out.println(c.getName());
 		}
