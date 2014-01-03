@@ -17,6 +17,7 @@ public class DesCountry {
 	private String alpha3Code;
 	private List<String> currencies;
 	private List<String> languages;
+	private List<String> borders;
 	public String getName() {
 		return name;
 	}
@@ -77,5 +78,10 @@ public class DesCountry {
 	public void setLanguages(List<String> languages) {
 		this.languages = languages;
 	}
-	
+	public List<String> getBorders() {
+		return borders;
+	}
+	public void setBorders(List<String> borders) {
+		this.borders = borders;
+	}
 }
