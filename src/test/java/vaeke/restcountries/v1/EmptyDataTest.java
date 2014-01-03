@@ -38,7 +38,7 @@ List<Country> countries;
 	
 	@Test
 	public void emptyPopulation() {
-		System.out.println("Empty Population\n");
+		System.out.println("- Empty Population");
 		for(Country c : countries) {
 			if(c.getPopulation() == null)
 				System.out.println(c.getName());
@@ -47,7 +47,7 @@ List<Country> countries;
 	
 	@Test
 	public void emptyLanguageCodes() throws Exception {
-		System.out.println("Empty Language Codes\n");
+		System.out.println("- Empty Language Codes");
 		for(Country c : countries) {
 			if(c.getLanguagesCodes() == null || c.getLanguagesCodes().isEmpty())
 				System.out.println(c.getName());
@@ -56,6 +56,12 @@ List<Country> countries;
 	
 	@Test
 	public void emptyBorders() throws Exception {
+		System.out.println("- Empty Borders");
+		for(Country c: countries) {
+			if(c.getBorders() == null || c.getBorders().isEmpty()) {
+				System.out.println(c.getName());
+			}
+		}
 	}
 
 }
