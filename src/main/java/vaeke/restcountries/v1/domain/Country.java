@@ -5,6 +5,7 @@ package vaeke.restcountries.v1.domain;
 
 import java.util.List;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import vaeke.restcountries.domain.CountryTranslations;
@@ -55,6 +56,7 @@ public class Country {
 
 	private List<String> timezones;
 	
+	@JsonIgnore
 	private List<String> borders;
 
 	public String getName() {
