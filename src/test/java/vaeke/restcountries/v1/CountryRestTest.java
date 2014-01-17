@@ -107,10 +107,11 @@ public class CountryRestTest {
 		List<DesCountry> countries = deserializeList(response.getBody());
 		org.junit.Assert.assertFalse(countries.isEmpty());
 		org.junit.Assert.assertEquals(4, countries.size());
-		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"AR\""));
-		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"BE\""));
-		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"FR\""));
-		org.junit.Assert.assertTrue(response.getBody().contains("\"alpha2Code\":\"IT\""));
+		
+		org.junit.Assert.assertEquals("AR", countries.get(0).getAlpha2Code());
+		org.junit.Assert.assertEquals("BE", countries.get(1).getAlpha2Code());
+		org.junit.Assert.assertEquals("FR", countries.get(2).getAlpha2Code());
+		org.junit.Assert.assertEquals("IT", countries.get(3).getAlpha2Code());
 	}
 	
 	@HttpTest(method = Method.GET, path = "/name/russia")
@@ -124,21 +125,21 @@ public class CountryRestTest {
 		
 	}
 	
-	@HttpTest(method = Method.GET, path = "/alpha/co")
-	public void getBorders() {
-		Assert.assertOk(response);
-		DesCountry country = deserialize(response.getBody());
-		org.junit.Assert.assertFalse(country == null);
-		List<String> bordercountry = country.getBorders();
-		org.junit.Assert.assertTrue(bordercountry.size() == 5);
-		Collection<String> c = new HashSet<String>();
-		c.add("BRA");
-		c.add("ECU");
-		c.add("PAN");
-		c.add("PER");
-		c.add("VEN");
-		org.junit.Assert.assertTrue(bordercountry.containsAll(c));
-	}
+//	@HttpTest(method = Method.GET, path = "/alpha/co")
+//	public void getBorders() {
+//		Assert.assertOk(response);
+//		DesCountry country = deserialize(response.getBody());
+//		org.junit.Assert.assertFalse(country == null);
+//		List<String> bordercountry = country.getBorders();
+//		org.junit.Assert.assertTrue(bordercountry.size() == 5);
+//		Collection<String> c = new HashSet<String>();
+//		c.add("BRA");
+//		c.add("ECU");
+//		c.add("PAN");
+//		c.add("PER");
+//		c.add("VEN");
+//		org.junit.Assert.assertTrue(bordercountry.containsAll(c));
+//	}
 	
 	private DesCountry deserialize(String json) {
 		Gson gson = new Gson();
