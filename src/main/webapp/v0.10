@@ -25,7 +25,7 @@
             		<span id="mashape-button" data-api="rest-countries-1" data-name="fayder" data-icon="1"></span>
 					<script src="//mashape.com/embed/button.js"></script>
 					<br /><br />
-					<div><strong>NB! NEW Version API <a href="/">vPROJECT_VERSION</a></strong></div>
+					<div><strong>NB! NEW API <a href="/">vPROJECT_VERSION</a></strong></div>
 				</div>
         	</div>
       	</div>
