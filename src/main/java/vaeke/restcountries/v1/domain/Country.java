@@ -1,22 +1,21 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-package vaeke.restcountries.domain;
+package vaeke.restcountries.v1.domain;
 
 import java.util.List;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.annotate.JsonPropertyOrder;
 
-@JsonPropertyOrder(alphabetic = true)
+import vaeke.restcountries.domain.CountryTranslations;
+
 public class Country {
-
+	
 	private String name;
 	
-	private String currency;
-	
 	@JsonProperty("topLevelDomain")
-	private String tld;
+	private List<String> tld;
 	
 	@JsonProperty("alpha2Code")
 	private String cca2;
@@ -24,37 +23,41 @@ public class Country {
 	@JsonProperty("alpha3Code")
 	private String cca3;
 	
-	@JsonProperty("isoNumericCode")
-	private String ccn3;
+	@JsonProperty("currencies")
+	private List<String> currency;
 	
-	@JsonProperty("callingcode")
-	private String callingCode;
+	@JsonProperty("callingCodes")
+	private List<String> callingCode;
 	
 	private String capital;
+	
+	private List<String> altSpellings;
+	
+	private String relevance;
 	
 	private String region;
 	
 	private String subregion;
 	
-	private String altSpellings;
-	
-	private String relevance;
-	
-	private String nationality;
-	
-	private List<Double> latlng;
-	
-	private List<String> languages;
+	@JsonProperty("languages")
+	private List<String> languagesCodes;
 	
 	private CountryTranslations translations;
 	
 	private Integer population;
+	
+	private List<Double> latlng;
+	
+	private String demonym;
 	
 	private Double area;
 
 	private Double gini;
 
 	private List<String> timezones;
+	
+	@JsonIgnore
+	private List<String> borders;
 
 	public String getName() {
 		return name;
@@ -64,19 +67,11 @@ public class Country {
 		this.name = name;
 	}
 
-	public String getCurrency() {
-		return currency;
-	}
-
-	public void setCurrency(String currency) {
-		this.currency = currency;
-	}
-
-	public String getTld() {
+	public List<String> getTld() {
 		return tld;
 	}
 
-	public void setTld(String tld) {
+	public void setTld(List<String> tld) {
 		this.tld = tld;
 	}
 
@@ -96,20 +91,12 @@ public class Country {
 		this.cca3 = cca3;
 	}
 
-	public String getCcn3() {
-		return ccn3;
-	}
-
-	public void setCcn3(String ccn3) {
-		this.ccn3 = ccn3;
-	}
-
-	public String getCallingCode() {
+	public List<String> getCallingCodes() {
 		return callingCode;
 	}
 
-	public void setCallingCode(String callingCode) {
-		this.callingCode = callingCode;
+	public void setCallingCodes(List<String> countryCodes) {
+		this.callingCode = countryCodes;
 	}
 
 	public String getCapital() {
@@ -118,6 +105,22 @@ public class Country {
 
 	public void setCapital(String capital) {
 		this.capital = capital;
+	}
+
+	public List<String> getAltSpellings() {
+		return altSpellings;
+	}
+
+	public void setAltSpellings(List<String> altSpellings) {
+		this.altSpellings = altSpellings;
+	}
+
+	public String getRelevance() {
+		return relevance;
+	}
+
+	public void setRelevance(String relevance) {
+		this.relevance = relevance;
 	}
 
 	public String getRegion() {
@@ -136,44 +139,12 @@ public class Country {
 		this.subregion = subregion;
 	}
 
-	public String getAltSpellings() {
-		return altSpellings;
+	public List<String> getLanguagesCodes() {
+		return languagesCodes;
 	}
 
-	public void setAltSpellings(String altSpellings) {
-		this.altSpellings = altSpellings;
-	}
-
-	public String getRelevance() {
-		return relevance;
-	}
-
-	public void setRelevance(String relevance) {
-		this.relevance = relevance;
-	}
-
-	public String getNationality() {
-		return nationality;
-	}
-
-	public void setNationality(String nationality) {
-		this.nationality = nationality;
-	}
-
-	public List<Double> getLatlng() {
-		return latlng;
-	}
-
-	public void setLatlng(List<Double> latlng) {
-		this.latlng = latlng;
-	}
-
-	public List<String> getLanguages() {
-		return languages;
-	}
-
-	public void setLanguages(List<String> languages) {
-		this.languages = languages;
+	public void setLanguagesCodes(List<String> languagesCodes) {
+		this.languagesCodes = languagesCodes;
 	}
 
 	public CountryTranslations getTranslations() {
@@ -215,5 +186,37 @@ public class Country {
 	public void setTimezones(List<String> timezones) {
 		this.timezones = timezones;
 	}
+
+	public List<Double> getLatlng() {
+		return latlng;
+	}
+
+	public void setLatlng(List<Double> latlng) {
+		this.latlng = latlng;
+	}
+
+	public String getDemonym() {
+		return demonym;
+	}
+
+	public void setDemonym(String denonym) {
+		this.demonym = denonym;
+	}
+
+	public List<String> getBorders() {
+		return borders;
+	}
+
+	public void setBorders(List<String> borders) {
+		this.borders = borders;
+	}
+
+	public List<String> getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(List<String> currency) {
+		this.currency = currency;
+	}
+
 }
-	
