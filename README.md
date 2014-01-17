@@ -34,7 +34,7 @@ JSON Data is taken mostly from [@mledoze] <br />
 Area data is from http://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area <br />
 Population data is from https://en.wikipedia.org/wiki/List_of_countries_by_population <br />
 Gini coefficient from http://en.wikipedia.org/wiki/List_of_countries_by_income_equality <br />
-CSS http://bootswatch.com/flatly/
+CSS http://bootswatch.com/spacelab/
 
 License
 ---------
