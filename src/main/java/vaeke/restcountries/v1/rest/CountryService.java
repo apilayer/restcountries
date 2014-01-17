@@ -75,7 +75,7 @@ public class CountryService {
 		List<Country> result = new ArrayList<Country>();
 		for(Country country : countries) {
 			for(String curr : country.getCurrency()) {
-				if (curr.toLowerCase().equals(currency)) {
+				if (curr.toLowerCase().equals(currency.toLowerCase())) {
 					result.add(country);
 				}
 			}
