@@ -1,7 +1,7 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-package vaeke.restcountries.rest;
+package vaeke.restcountries.v1.rest;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,18 +18,18 @@ import javax.ws.rs.ext.Provider;
 
 import org.apache.log4j.Logger;
 
-import vaeke.restcountries.domain.Country;
 import vaeke.restcountries.domain.ResponseEntity;
+import vaeke.restcountries.v1.domain.Country;
 
 import com.google.gson.Gson;
 
 @Provider
-@Path("rest")
+@Path("rest/v1")
 @Produces(MediaType.APPLICATION_JSON)
 public class CountryRest {
 	
 	private static final Logger LOG = Logger.getLogger(CountryRest.class);
-
+	
 	@GET
 	public Object getCountries() {
 		LOG.info("Getting all");
@@ -55,30 +55,6 @@ public class CountryRest {
 			LOG.error(e.getMessage(), e);
 			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
-	}
-	
-	/**
-	 * @deprecated As of release 0.7, replaced with {@link getByAlpha(String alpha)}
-	 * @param alpha2
-	 * @return
-	 */
-	@GET
-	@Path("alpha2/{alpha2code}")
-	@Deprecated
-	public Object getByAlpha2(@PathParam("alpha2code") String alpha2) {
-		return this.getByAlpha(alpha2);
-	}
-	
-	/**
-	 * @deprecated As of release 0.7, replaced with {@link getByAlpha(String alpha)}
-	 * @param alpha3
-	 * @return
-	 */
-	@GET
-	@Path("alpha3/{alpha3code}")
-	@Deprecated
-	public Object getByAlpha3(@PathParam("alpha3code") String alpha3) {
-		return this.getByAlpha(alpha3);
 	}
 	
 	@GET
@@ -216,4 +192,5 @@ public class CountryRest {
 				.entity(gson.toJson(new ResponseEntity(status.getStatusCode(),
 						status.getReasonPhrase()))).build();
 	}
+
 }

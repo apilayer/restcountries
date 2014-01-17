@@ -80,12 +80,10 @@ $(function () {
 	
 	var getCodeHtml = function(data) {
 		var html = [];
-		html.push('<pre style="border: 0px !important;"><code class="json">');
+		html.push('<pre style="border: 0px !important; font-size: 9pt;"><code class="json">');
 		html.push(JSON.stringify(data, null, "\t"));
 		html.push('</code></pre>');
 		return html.join('');
 	};
-
-	// $('#rc-a-alpha2').click();
 	
 });
