@@ -124,21 +124,21 @@ public class CountryRestTest {
 		
 	}
 	
-	@HttpTest(method = Method.GET, path = "/alpha/co")
-	public void getBorders() {
-		Assert.assertOk(response);
-		DesCountry country = deserialize(response.getBody());
-		org.junit.Assert.assertFalse(country == null);
-		List<String> bordercountry = country.getBorders();
-		org.junit.Assert.assertTrue(bordercountry.size() == 5);
-		Collection<String> c = new HashSet<String>();
-		c.add("BRA");
-		c.add("ECU");
-		c.add("PAN");
-		c.add("PER");
-		c.add("VEN");
-		org.junit.Assert.assertTrue(bordercountry.containsAll(c));
-	}
+//	@HttpTest(method = Method.GET, path = "/alpha/co")
+//	public void getBorders() {
+//		Assert.assertOk(response);
+//		DesCountry country = deserialize(response.getBody());
+//		org.junit.Assert.assertFalse(country == null);
+//		List<String> bordercountry = country.getBorders();
+//		org.junit.Assert.assertTrue(bordercountry.size() == 5);
+//		Collection<String> c = new HashSet<String>();
+//		c.add("BRA");
+//		c.add("ECU");
+//		c.add("PAN");
+//		c.add("PER");
+//		c.add("VEN");
+//		org.junit.Assert.assertTrue(bordercountry.containsAll(c));
+//	}
 	
 	private DesCountry deserialize(String json) {
 		Gson gson = new Gson();
