@@ -29,6 +29,12 @@ import com.google.gson.Gson;
 public class CountryRest {
 	
 	private static final Logger LOG = Logger.getLogger(CountryRest.class);
+	
+	@GET
+	@Path("all")
+	public Object getAllCountries() {
+		return this.getCountries();
+	}
 
 	@GET
 	public Object getCountries() {
