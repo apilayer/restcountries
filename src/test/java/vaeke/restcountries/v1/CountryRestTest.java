@@ -5,8 +5,6 @@ package vaeke.restcountries.v1;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 
 import org.junit.Rule;
