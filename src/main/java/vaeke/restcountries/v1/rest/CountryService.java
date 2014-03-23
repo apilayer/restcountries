@@ -144,7 +144,7 @@ public class CountryService {
 	public List<Country> getByLanguage(String language) {
 		List<Country> result = new ArrayList<Country>();
 		for(Country country : countries) {
-			for(String lang : country.getLanguagesCodes()) {
+			for(String lang : country.getLanguageCodes()) {
 				if (lang.toLowerCase().equals(language.toLowerCase())) {
 					result.add(country);
 				}

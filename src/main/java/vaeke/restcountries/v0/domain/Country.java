@@ -8,8 +8,6 @@ import java.util.List;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonPropertyOrder;
 
-import vaeke.restcountries.domain.CountryTranslations;
-
 @JsonPropertyOrder(alphabetic = true)
 public class Country {
 
