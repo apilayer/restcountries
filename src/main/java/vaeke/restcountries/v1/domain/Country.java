@@ -54,7 +54,6 @@ public class Country {
 
 	private List<String> timezones;
 	
-	@JsonIgnore
 	private List<String> borders;
 
 	public String getName() {
