@@ -5,7 +5,6 @@ package vaeke.restcountries.v1.domain;
 
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 public class Country {
