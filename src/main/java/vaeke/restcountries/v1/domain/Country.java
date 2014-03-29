@@ -5,10 +5,7 @@ package vaeke.restcountries.v1.domain;
 
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
-
-import vaeke.restcountries.domain.CountryTranslations;
 
 public class Country {
 	
@@ -40,7 +37,7 @@ public class Country {
 	private String subregion;
 	
 	@JsonProperty("languages")
-	private List<String> languagesCodes;
+	private List<String> languageCodes;
 	
 	private CountryTranslations translations;
 	
@@ -56,7 +53,6 @@ public class Country {
 
 	private List<String> timezones;
 	
-	@JsonIgnore
 	private List<String> borders;
 
 	public String getName() {
@@ -139,12 +135,12 @@ public class Country {
 		this.subregion = subregion;
 	}
 
-	public List<String> getLanguagesCodes() {
-		return languagesCodes;
+	public List<String> getLanguageCodes() {
+		return languageCodes;
 	}
 
-	public void setLanguagesCodes(List<String> languagesCodes) {
-		this.languagesCodes = languagesCodes;
+	public void setLanguageCodes(List<String> languageCodes) {
+		this.languageCodes = languageCodes;
 	}
 
 	public CountryTranslations getTranslations() {

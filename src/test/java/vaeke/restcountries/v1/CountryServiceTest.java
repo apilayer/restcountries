@@ -121,7 +121,7 @@ public class CountryServiceTest {
 		Assert.assertNotNull(countries);
 		Assert.assertFalse(countries.isEmpty());
 		for(Country country : countries) {
-			Assert.assertTrue(country.getLanguagesCodes().contains("en"));
+			Assert.assertTrue(country.getLanguageCodes().contains("en"));
 		}
 	}
 
