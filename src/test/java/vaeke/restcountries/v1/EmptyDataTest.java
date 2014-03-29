@@ -49,7 +49,7 @@ List<Country> countries;
 	public void emptyLanguageCodes() throws Exception {
 		System.out.println("- Empty Language Codes");
 		for(Country c : countries) {
-			if(c.getLanguagesCodes() == null || c.getLanguagesCodes().isEmpty())
+			if(c.getLanguageCodes() == null || c.getLanguageCodes().isEmpty())
 				System.out.println(c.getName());
 		}
 	}
