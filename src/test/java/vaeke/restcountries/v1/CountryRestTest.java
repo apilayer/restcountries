@@ -91,12 +91,13 @@ public class CountryRestTest {
 		}
 	}
 	
-	@HttpTest(method = Method.GET, path = "/lang/et")
+	@HttpTest(method = Method.GET, path = "/lang/no")
 	public void language() {
 		Assert.assertOk(response);
 		List<DesCountry> countries = deserializeList(response.getBody());
+		org.junit.Assert.assertEquals(2, countries.size());
 		for(DesCountry country : countries) {
-			org.junit.Assert.assertTrue(country.getLanguages().contains("et"));
+			org.junit.Assert.assertTrue(country.getLanguages().contains("no"));
 			System.out.println(country.getName());
 		}
 	}
