@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -189,6 +190,12 @@ public class CountryRest {
 			LOG.error(e.getMessage(), e);
 			return getResponse(Status.INTERNAL_SERVER_ERROR);
 		}
+	}
+	
+	@POST
+	public Object doPOST() {
+		LOG.info("Handling POST Request");
+		return getResponse(Status.METHOD_NOT_ALLOWED);
 	}
 	
 	private Response getResponse(Status status) {
