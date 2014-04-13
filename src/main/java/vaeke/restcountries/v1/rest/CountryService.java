@@ -85,17 +85,20 @@ public class CountryService {
 	
 	public List<Country> getByName(String name) {
 		List<Country> result = new ArrayList<Country>();
+		
+		// Using 2 different 'for' loops to give priority to 'name' matches over alternative spellings
 		for(Country country : countries) {
 			if(normalize(country.getName().toLowerCase()).contains(normalize(name.toLowerCase()))) {
 				result.add(country);
 			}
+		}
+		for(Country country : countries) {
 			for (String alternative : country.getAltSpellings()) {
 				if( normalize(alternative.toLowerCase()).contains(normalize(name.toLowerCase())) 
 						&& !result.contains(country) ) {
 					result.add(country);
 				}
 			}
-			
 		}
 		return result;
 	}
