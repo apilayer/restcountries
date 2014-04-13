@@ -70,6 +70,19 @@ public class CountryServiceTest {
 	}
 	
 	@Test
+	public void getByNamePriority() throws Exception {
+		List<Country> countries = CountryService.getInstance().getByName("Iran");
+		Assert.assertNotNull(countries);
+		Assert.assertFalse(countries.isEmpty());
+		Assert.assertEquals("Iran", countries.get(0).getName());
+		
+		countries = CountryService.getInstance().getByName("United");
+		Assert.assertNotNull(countries);
+		Assert.assertFalse(countries.isEmpty());
+		Assert.assertEquals("United Arab Emirates", countries.get(0).getName());
+	}
+	
+	@Test
 	public void getByNameAlt() throws Exception {
 		List<Country> countries = CountryService.getInstance().getByName("Norge");
 		Assert.assertNotNull(countries);
