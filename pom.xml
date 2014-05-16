@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>vaeke</groupId>
 	<artifactId>restcountries</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.4</version>
 	<packaging>war</packaging>
 	<name>restcountries</name>
 	<description>REST interface to get data about countries</description>
@@ -125,4 +125,14 @@
 			</plugin>
 		</plugins>
 	</build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.6</version>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
