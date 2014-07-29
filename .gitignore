@@ -6,3 +6,4 @@ target/
 *.sh
 *.css
 python/
+.sh
