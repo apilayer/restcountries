@@ -79,53 +79,48 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
+				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>8.1.13.v20130916</version>
+				<version>9.2.2.v20140723</version>
 				<configuration>
 					<contextPath>/</contextPath>
 					<useTestClasspath>true</useTestClasspath>
-					<connectors>
-						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>8081</port>
-							<maxIdleTime>60000</maxIdleTime>
-						</connector>
-					</connectors>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>com.google.code.maven-replacer-plugin</groupId>
-           		<artifactId>replacer</artifactId>
-           		<version>1.5.2</version>
-           		<executions>
-	               <execution>
-	                   <phase>prepare-package</phase>
-	                   <goals>
-	                       <goal>replace</goal>
-	                   </goals>                   
-	               </execution>
-	           </executions>
-	           <configuration>
-	           		<includes>
-	           			<include>src/main/webapp/**.html</include>
-	           			<include>src/main/webapp/v0.10</include>
-	           		</includes>
-               		<replacements>
-                   		<replacement>
-                       		<token>PROJECT_VERSION</token>
-                       		<value>${project.version}</value>
-                   		</replacement> 
-                   		<replacement>
-                   			<token>localhost:8081</token>
-                   			<value>restcountries.eu</value>
-                   		</replacement>      
-               		</replacements>
-           		</configuration>
+				<artifactId>replacer</artifactId>
+				<version>1.5.2</version>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>replace</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<includes>
+						<include>src/main/webapp/**.html</include>
+						<include>src/main/webapp/v0.10</include>
+					</includes>
+					<replacements>
+						<replacement>
+							<token>PROJECT_VERSION</token>
+							<value>${project.version}</value>
+						</replacement>
+						<replacement>
+							<token>localhost:8081</token>
+							<value>restcountries.eu</value>
+						</replacement>
+					</replacements>
+				</configuration>
 
 			</plugin>
 		</plugins>
 	</build>
 
+<<<<<<< HEAD
     <reporting>
         <plugins>
             <plugin>
@@ -137,3 +132,15 @@
     </reporting>
 
 </project>
+=======
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.6</version>
+			</plugin>
+		</plugins>
+	</reporting>
+</project>
+>>>>>>> dev
