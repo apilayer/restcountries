@@ -28,7 +28,7 @@ import com.google.gson.reflect.TypeToken;
 public class CountryRestTest {
 	
 	@Rule
-	public Destination destination = new Destination(this, "http://localhost:8081/rest/v1");
+	public Destination destination = new Destination(this, "http://localhost:8080/rest/v1");
 	
 	@Context
 	private Response response;
@@ -98,7 +98,6 @@ public class CountryRestTest {
 		org.junit.Assert.assertEquals(2, countries.size());
 		for(DesCountry country : countries) {
 			org.junit.Assert.assertTrue(country.getLanguages().contains("no"));
-			System.out.println(country.getName());
 		}
 	}
 	
