@@ -6,5 +6,4 @@ target/
 *.sh
 *.css
 python/
-.sh
 backup/
