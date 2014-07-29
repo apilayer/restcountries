@@ -7,3 +7,4 @@ target/
 *.css
 python/
 .sh
+backup/
