@@ -54,6 +54,8 @@ public class Country {
 	private List<String> timezones;
 	
 	private List<String> borders;
+	
+	private String nativeName;
 
 	public String getName() {
 		return name;
@@ -213,6 +215,14 @@ public class Country {
 
 	public void setCurrency(List<String> currency) {
 		this.currency = currency;
+	}
+
+	public String getNativeName() {
+		return nativeName;
+	}
+
+	public void setNativeName(String nativeName) {
+		this.nativeName = nativeName;
 	}
 
 }
