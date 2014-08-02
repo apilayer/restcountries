@@ -110,7 +110,7 @@
 							<value>${project.version}</value>
 						</replacement>
 						<replacement>
-							<token>localhost:8081</token>
+							<token>localhost:8080</token>
 							<value>restcountries.eu</value>
 						</replacement>
 					</replacements>
