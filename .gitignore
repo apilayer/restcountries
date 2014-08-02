@@ -5,5 +5,5 @@ target/
 *.DS_Store
 *.sh
 *.css
-python/
+*.pyc
 backup/
