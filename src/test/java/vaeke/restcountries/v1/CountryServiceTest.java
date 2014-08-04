@@ -106,6 +106,7 @@ public class CountryServiceTest {
 		Assert.assertFalse(countries.isEmpty());
 		Assert.assertEquals(1, countries.size());
 		Assert.assertEquals("EE", countries.get(0).getCca2());
+		Assert.assertEquals("Eesti", countries.get(0).getNativeName());
 	}
 	
 	@Test

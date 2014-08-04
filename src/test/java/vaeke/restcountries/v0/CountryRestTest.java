@@ -26,7 +26,7 @@ import com.google.gson.reflect.TypeToken;
 public class CountryRestTest {
 
 	@Rule
-	public Destination destination = new Destination(this, "http://localhost:8081/rest");
+	public Destination destination = new Destination(this, "http://localhost:8080/rest");
 
 	@Context
 	private Response response;
