@@ -37,24 +37,6 @@ public class EmptyDataTest {
 	}
 
 	@Test
-	public void emptyPopulation() {
-		System.out.println("- Empty Population");
-		for (Country c : countries) {
-			if (c.getPopulation() == null)
-				System.out.println(c.getName());
-		}
-	}
-
-	@Test
-	public void emptyLanguageCodes() throws Exception {
-		System.out.println("- Empty Language Codes");
-		for (Country c : countries) {
-			if (c.getLanguageCodes() == null || c.getLanguageCodes().isEmpty())
-				System.out.println(c.getName());
-		}
-	}
-
-	@Test
 	public void emptyBorders() throws Exception {
 		System.out.println("- Empty Borders");
 		for (Country c : countries) {

@@ -106,7 +106,8 @@
             19.9
         ],
         "demonym": "Ålandish",
-        "borders": []
+        "borders": [],
+        "area": 1580
     },
     {
         "name": "Albania",
@@ -10225,7 +10226,8 @@
         "borders": [
             "SXM",
             "NLD"
-        ]
+        ],
+        "area": 53
     },
     {
         "name": "Saint Pierre and Miquelon",
