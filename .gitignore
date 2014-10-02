@@ -9,5 +9,4 @@ target/
 backup/
 .idea/
 *.iml
-
-/target/
+release-notes.md
