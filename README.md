@@ -1,4 +1,4 @@
-REST Countries v1.0.5
+REST Countries v1.0.6
 =====================
 
 Get information about countries via a RESTful API http://restcountries.eu
@@ -28,7 +28,7 @@ Compiling and running
 ---------
 * https://github.com/fayder/restcountries/wiki
 
-Credits
+Sources
 ---------
 JSON Data is taken mostly from [@mledoze] <br />
 Area data is from http://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area <br />
