@@ -9,6 +9,11 @@
 <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootswatch/3.0.3/spacelab/bootstrap.min.css">
 <link rel="shortcut icon" href="img/favicon.ico" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+	.rc-a-tryit {
+		cursor: pointer;
+	}
+</style>
 </head>
 <body>
 	<div class="container well" style="text-align: center;">
@@ -17,7 +22,7 @@
           		<div class="col-lg-12">
            			<div style="font-size: 67.5px;">REST Countries</div>
             		<p class="lead">Get information about countries via a RESTful API</p>
-            		<div>v1.0.5</div>
+            		<div>v1.1.0</div>
             		<br />
             		<a href="https://github.com/fayder/restcountries">
             			<img alt="github-octocat" src="img/octocat60px.png">
@@ -38,7 +43,7 @@
 			<div class="col-lg-4">
 				<h3>Get all the countries!</h3>
 				<div class="input-group">
-					<code id="rc-a-all" class="rc-a-tryit rc-a-code">http://localhost:8080/rest/v1</code>
+					<code id="rc-a-all" class="rc-a-tryit rc-a-code">http://localhost:8080/rest/v1/all</code>
 				</div>
 			</div>
 			<div class="col-lg-4">
@@ -82,16 +87,6 @@
 				</div>
 			</div>
 			<div class="col-lg-4">
-				<h3> Country Name</h3>
-				<div class="input-group">
-					<code class="rc-a-tryit rc-a-code">http://localhost:8080/rest/v1/name/norge</code>
-				</div>
-				<br />
-				<div class="input-group">
-					<code class="rc-a-tryit rc-a-code">http://localhost:8080/rest/v1/name/norway</code>
-				</div>
-			</div>
-			<div class="col-lg-4">
 				<h3> Country Code</h3>
 				<div class="input-group">
 					<code id="rc-a-alpha2" class="rc-a-tryit rc-a-code">http://localhost:8080/rest/v1/alpha/co</code>
@@ -102,10 +97,26 @@
 				</div>
 			</div>
 			<div class="col-lg-4">
+				<h3> Country Name Substring</h3>
+				<div class="input-group">
+					<code class="rc-a-tryit rc-a-code">http://localhost:8080/rest/v1/name/norge</code>
+				</div>
+				<br />
+				<div class="input-group">
+					<code class="rc-a-tryit rc-a-code">http://localhost:8080/rest/v1/name/norway</code>
+				</div>
+			</div>
+			<div class="col-lg-12">
 				<h3> Country Codes</h3>
 				<div class="input-group">
 					<code id="rc-a-alpha2" class="rc-a-tryit rc-a-code">http://localhost:8080/rest/v1/alpha?codes=co;rus;no</code>
 				</div>				
+			</div>
+			<div class="col-lg-12">
+				<h3> Country Name Full Text</h3>
+				<div class="input-group">
+					<code class="rc-a-tryit rc-a-code">http://localhost:8080/rest/v1/name/Kingdom of Norway?searchFullText=true</code>
+				</div>
 			</div>
 			<div id="rc-div-diy" class="col-lg-12" style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
 				<h3>Try it yourself</h3>
