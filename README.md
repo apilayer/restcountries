@@ -45,7 +45,7 @@ Similar cool projects
 [Tinatapi]
 
 [@mledoze]: https://github.com/mledoze/countries
-[1.1.x]: https://github.com/fayder/restcountries/wiki/API-1.0.x
+[1.1.x]: https://github.com/fayder/restcountries/wiki/API-1.1.x
 [0.10.x]: https://github.com/fayder/restcountries/wiki/API-0.10
 [Mozilla Public License]: http://www.mozilla.org/MPL/
 [Tinatapi]: http://api.tinata.co.uk/
