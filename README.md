@@ -1,4 +1,4 @@
-REST Countries v1.0.6
+REST Countries v1.1.0
 =====================
 
 Get information about countries via a RESTful API http://restcountries.eu
