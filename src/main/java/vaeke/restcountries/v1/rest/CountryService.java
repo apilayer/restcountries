@@ -83,10 +83,18 @@ public class CountryService {
 		return result;
 	}
 	
-	public List<Country> getByName(String name) {
-		List<Country> result = new ArrayList<Country>();
+	public List<Country> getByName(String name, boolean searchFullText) {
+		if(searchFullText) {
+			return fulltextSearch(name);
+		} else {
+			return substringSearch(name);	
+		}
 		
+	}
+	
+	private List<Country> substringSearch(String name) {
 		// Using 2 different 'for' loops to give priority to 'name' matches over alternative spellings
+		List<Country> result = new ArrayList<Country>();
 		for(Country country : countries) {
 			if(normalize(country.getName().toLowerCase()).contains(normalize(name.toLowerCase()))) {
 				result.add(country);
@@ -95,6 +103,25 @@ public class CountryService {
 		for(Country country : countries) {
 			for (String alternative : country.getAltSpellings()) {
 				if( normalize(alternative.toLowerCase()).contains(normalize(name.toLowerCase())) 
+						&& !result.contains(country) ) {
+					result.add(country);
+				}
+			}
+		}
+		return result;
+	}
+	
+	private List<Country> fulltextSearch(String name) {
+		// Using 2 different 'for' loops to give priority to 'name' matches over alternative spellings
+		List<Country> result = new ArrayList<Country>();
+		for(Country country : countries) {
+			if(normalize(country.getName().toLowerCase()).equals(normalize(name.toLowerCase()))) {
+				result.add(country);
+			}
+		}
+		for(Country country : countries) {
+			for (String alternative : country.getAltSpellings()) {
+				if( normalize(alternative.toLowerCase()).equals(normalize(name.toLowerCase())) 
 						&& !result.contains(country) ) {
 					result.add(country);
 				}

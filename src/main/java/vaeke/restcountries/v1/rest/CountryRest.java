@@ -98,10 +98,10 @@ public class CountryRest {
 	
 	@GET
 	@Path("name/{name}")
-	public Object getByName(@PathParam("name") String name) {
+	public Object getByName(@PathParam("name") String name, @QueryParam("searchFullText") boolean searchFullText) {
 		LOG.info("Getting by name " + name);
 		try {
-			List<Country> countries = CountryService.getInstance().getByName(name);
+			List<Country> countries = CountryService.getInstance().getByName(name, searchFullText);
 			if (!countries.isEmpty()) {
 				return countries;
 			} 

@@ -18,7 +18,7 @@ public class CountryServiceTest {
 		List<Country> countries = CountryService.getInstance().getAll();
 		Assert.assertNotNull(countries);
 		Assert.assertFalse(countries.isEmpty());
-		Assert.assertTrue(countries.size() >= 250);
+		System.out.println("TOTAL Countries " + countries.size());
 	}
 	
 	@Test
@@ -59,7 +59,7 @@ public class CountryServiceTest {
 	
 	@Test
 	public void getByName() throws Exception {
-		List<Country> countries = CountryService.getInstance().getByName("Norway");
+		List<Country> countries = CountryService.getInstance().getByName("Norway", false);
 		Assert.assertNotNull(countries);
 		Assert.assertFalse(countries.isEmpty());
 		Assert.assertEquals("Norway", countries.get(0).getName());
@@ -67,12 +67,12 @@ public class CountryServiceTest {
 	
 	@Test
 	public void getByNamePriority() throws Exception {
-		List<Country> countries = CountryService.getInstance().getByName("Iran");
+		List<Country> countries = CountryService.getInstance().getByName("Iran", false);
 		Assert.assertNotNull(countries);
 		Assert.assertFalse(countries.isEmpty());
 		Assert.assertEquals("Iran", countries.get(0).getName());
 		
-		countries = CountryService.getInstance().getByName("United");
+		countries = CountryService.getInstance().getByName("United", false);
 		Assert.assertNotNull(countries);
 		Assert.assertFalse(countries.isEmpty());
 		Assert.assertEquals("United Arab Emirates", countries.get(0).getName());
@@ -80,10 +80,25 @@ public class CountryServiceTest {
 	
 	@Test
 	public void getByNameAlt() throws Exception {
-		List<Country> countries = CountryService.getInstance().getByName("Norge");
+		List<Country> countries = CountryService.getInstance().getByName("Norge", false);
 		Assert.assertNotNull(countries);
 		Assert.assertFalse(countries.isEmpty());
 		Assert.assertEquals("Norway", countries.get(0).getName());
+	}
+	
+	@Test
+	public void getByNameFullText() throws Exception {
+		List<Country> countries = CountryService.getInstance().getByName("Russian Federation", true);
+		Assert.assertNotNull(countries);
+		Assert.assertFalse(countries.isEmpty());
+		Assert.assertEquals("Russia", countries.get(0).getName());
+	}
+	
+	@Test
+	public void getByNameFullTextNotFound() throws Exception {
+		List<Country> countries = CountryService.getInstance().getByName("Russian Fed", true);
+		Assert.assertNotNull(countries);
+		Assert.assertTrue(countries.isEmpty());
 	}
 	
 	@Test
