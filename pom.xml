@@ -122,7 +122,17 @@
 						</replacement>
 					</replacements>
 				</configuration>
-
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-surefire-plugin</artifactId>
+		        <version>2.17</version>
+		        <configuration>
+		          <excludes>
+		            <exclude>**/*RestTest.java</exclude>
+		            <exclude>**/*DataTest.java</exclude>
+		          </excludes>
+		        </configuration>
 			</plugin>
 		</plugins>
 	</build>
