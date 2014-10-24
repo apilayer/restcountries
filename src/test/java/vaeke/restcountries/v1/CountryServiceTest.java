@@ -14,6 +14,18 @@ import vaeke.restcountries.v1.rest.CountryService;
 public class CountryServiceTest {
 	
 	@Test
+	public void singletonTest() throws Exception {
+		for(int i = 0; i < 100; i++) {
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+					CountryService.getInstance();
+				}
+			}).run();
+		}
+	}
+	
+	@Test
 	public void getAll() throws Exception {
 		List<Country> countries = CountryService.getInstance().getAll();
 		Assert.assertNotNull(countries);
