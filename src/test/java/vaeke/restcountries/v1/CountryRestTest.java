@@ -91,13 +91,12 @@ public class CountryRestTest {
 		}
 	}
 	
-	@HttpTest(method = Method.GET, path = "/lang/no")
+	@HttpTest(method = Method.GET, path = "/lang/en")
 	public void language() {
 		Assert.assertOk(response);
 		List<DesCountry> countries = deserializeList(response.getBody());
-		org.junit.Assert.assertEquals(2, countries.size());
 		for(DesCountry country : countries) {
-			org.junit.Assert.assertTrue(country.getLanguages().contains("no"));
+			org.junit.Assert.assertTrue(country.getLanguages().contains("en"));
 		}
 	}
 	
@@ -122,7 +121,21 @@ public class CountryRestTest {
 		for(DesCountry c : countries) {
 			org.junit.Assert.assertEquals("Russia", c.getName());
 		}
-		
+	}
+	
+	@HttpTest(method = Method.GET, path = "/name/russian%20federation?searchFullText=true")
+	public void nameFulltext() {
+		Assert.assertOk(response);
+		List<DesCountry> countries = deserializeList(response.getBody());
+		org.junit.Assert.assertFalse(countries.isEmpty());
+		for(DesCountry c : countries) {
+			org.junit.Assert.assertEquals("Russia", c.getName());
+		}
+	}
+	
+	@HttpTest(method = Method.GET, path = "/name/russian%20fed?searchFullText=true")
+	public void nameFulltextNotFound() {
+		Assert.assertNotFound(response);
 	}
 	
 	@HttpTest(method = Method.GET, path = "/alpha/co")

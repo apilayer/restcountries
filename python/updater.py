@@ -14,8 +14,8 @@ import gini
 
 def getCountriesJSON():
     inputJsonFile = open('countries-input.json')
-    inputJsonString = json.load(inputJsonFile,
-                                object_pairs_hook=collections.OrderedDict)
+    inputJsonString = json.load(
+        inputJsonFile, object_pairs_hook=collections.OrderedDict)
     inputJsonFile.close()
     return inputJsonString
 
