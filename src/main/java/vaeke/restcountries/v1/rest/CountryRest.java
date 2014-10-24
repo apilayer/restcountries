@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package vaeke.restcountries.v1.rest;
 
-import java.io.IOException;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -88,10 +87,10 @@ public class CountryRest {
 	
 	@GET
 	@Path("name/{name}")
-	public Object getByName(@PathParam("name") String name, @QueryParam("searchFullText") boolean searchFullText) {
+	public Object getByName(@PathParam("name") String name, @QueryParam("fullText") boolean fullText) {
 		LOG.info("Getting by name " + name);
 		try {
-			List<Country> countries = CountryService.getInstance().getByName(name, searchFullText);
+			List<Country> countries = CountryService.getInstance().getByName(name, fullText);
 			if (!countries.isEmpty()) {
 				return countries;
 			} 

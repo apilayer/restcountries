@@ -82,8 +82,8 @@ public class CountryService {
 		return result;
 	}
 	
-	public List<Country> getByName(String name, boolean searchFullText) {
-		if(searchFullText) {
+	public List<Country> getByName(String name, boolean fullText) {
+		if(fullText) {
 			return fulltextSearch(name);
 		} else {
 			return substringSearch(name);	
