@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package vaeke.restcountries.v1.rest;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.Normalizer;
@@ -198,8 +197,8 @@ public class CountryService {
 			}
 			reader.endArray();
 	        reader.close();
-		} catch (IOException e) {
-			LOG.error("Could not load JSON Database v1 " + e.getMessage());
+		} catch (Exception e) {
+			LOG.error("Could not load JSON Database v1 ");
 		}
 		
         
