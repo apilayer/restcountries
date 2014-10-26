@@ -1,4 +1,4 @@
-REST Countries v1.0.4
+REST Countries v1.1.0
 =====================
 
 Get information about countries via a RESTful API http://restcountries.eu
@@ -21,14 +21,14 @@ Branches
 
 REST API
 ---------
-* API Version [1.0.x]
+* API Version [1.1.x]
 * API Version [0.10.x]
 
 Compiling and running
 ---------
 * https://github.com/fayder/restcountries/wiki
 
-Credits
+Sources
 ---------
 JSON Data is taken mostly from [@mledoze] <br />
 Area data is from http://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area <br />
@@ -45,7 +45,7 @@ Similar cool projects
 [Tinatapi]
 
 [@mledoze]: https://github.com/mledoze/countries
-[1.0.x]: https://github.com/fayder/restcountries/wiki/API-1.0.x
+[1.1.x]: https://github.com/fayder/restcountries/wiki/API-1.1.x
 [0.10.x]: https://github.com/fayder/restcountries/wiki/API-0.10
 [Mozilla Public License]: http://www.mozilla.org/MPL/
 [Tinatapi]: http://api.tinata.co.uk/

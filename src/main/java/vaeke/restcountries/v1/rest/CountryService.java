@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package vaeke.restcountries.v1.rest;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.Normalizer;
@@ -24,18 +23,18 @@ public class CountryService {
 	
 	private static final Logger LOG = Logger.getLogger(CountryService.class);
 
-	private static CountryService countryService;
 	private static List<Country> countries;
 	
-	private CountryService() throws IOException{
+	private CountryService() {
 		initialize();
 	}
 	
-	public static CountryService getInstance() throws IOException {
-		if (countryService == null) {
-			countryService = new CountryService();
-		}
-		return countryService;
+	private static class InstanceHolder {
+		public static final CountryService INSTANCE = new CountryService();
+	}
+	
+	public static CountryService getInstance() {
+		return InstanceHolder.INSTANCE;
 	}
 	
 	public List<Country> getAll() {
@@ -83,10 +82,18 @@ public class CountryService {
 		return result;
 	}
 	
-	public List<Country> getByName(String name) {
-		List<Country> result = new ArrayList<Country>();
+	public List<Country> getByName(String name, boolean fullText) {
+		if(fullText) {
+			return fulltextSearch(name);
+		} else {
+			return substringSearch(name);	
+		}
 		
+	}
+	
+	private List<Country> substringSearch(String name) {
 		// Using 2 different 'for' loops to give priority to 'name' matches over alternative spellings
+		List<Country> result = new ArrayList<Country>();
 		for(Country country : countries) {
 			if(normalize(country.getName().toLowerCase()).contains(normalize(name.toLowerCase()))) {
 				result.add(country);
@@ -95,6 +102,25 @@ public class CountryService {
 		for(Country country : countries) {
 			for (String alternative : country.getAltSpellings()) {
 				if( normalize(alternative.toLowerCase()).contains(normalize(name.toLowerCase())) 
+						&& !result.contains(country) ) {
+					result.add(country);
+				}
+			}
+		}
+		return result;
+	}
+	
+	private List<Country> fulltextSearch(String name) {
+		// Using 2 different 'for' loops to give priority to 'name' matches over alternative spellings
+		List<Country> result = new ArrayList<Country>();
+		for(Country country : countries) {
+			if(normalize(country.getName().toLowerCase()).equals(normalize(name.toLowerCase()))) {
+				result.add(country);
+			}
+		}
+		for(Country country : countries) {
+			for (String alternative : country.getAltSpellings()) {
+				if( normalize(alternative.toLowerCase()).equals(normalize(name.toLowerCase())) 
 						&& !result.contains(country) ) {
 					result.add(country);
 				}
@@ -156,19 +182,25 @@ public class CountryService {
 		return result;
 	}
 	
-	private void initialize() throws IOException {
+	private void initialize() {
 		LOG.debug("Loading JSON Database v1");
 		InputStream is = this.getClass().getClassLoader().getResourceAsStream("countriesV1.json");
 		Gson gson = new Gson();
-		JsonReader reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
-		countries = new ArrayList<Country>();
-		reader.beginArray();
-		while(reader.hasNext()) {
-			Country country = gson.fromJson(reader, Country.class);
-			countries.add(country);
+		JsonReader reader;
+		try {
+			reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
+			countries = new ArrayList<Country>();
+			reader.beginArray();
+			while(reader.hasNext()) {
+				Country country = gson.fromJson(reader, Country.class);
+				countries.add(country);
+			}
+			reader.endArray();
+	        reader.close();
+		} catch (Exception e) {
+			LOG.error("Could not load JSON Database v1 ");
 		}
-		reader.endArray();
-        reader.close();
+		
         
 	}
 	private String normalize(String string) {

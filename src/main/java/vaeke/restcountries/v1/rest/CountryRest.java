@@ -3,7 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package vaeke.restcountries.v1.rest;
 
-import java.io.IOException;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -40,28 +39,18 @@ public class CountryRest {
 	@GET
 	public Object getCountries() {
 		LOG.info("Getting all");
-		try {
 			return CountryService.getInstance().getAll();
-		} catch (IOException e) {
-			LOG.error(e.getMessage(), e);
-			return getResponse(Status.INTERNAL_SERVER_ERROR); 
-		}
 	}
 	
 	@GET
 	@Path("alpha/{alphacode}")
 	public Object getByAlpha(@PathParam("alphacode") String alpha) {
 		LOG.info("Getting by alpha " + alpha);
-		try {
 			Country country = CountryService.getInstance().getByAlpha(alpha);
 			if(country != null) {
 				return country;
 			}
 			return getResponse(Status.NOT_FOUND);
-		} catch (IOException e) {
-			LOG.error(e.getMessage(), e);
-			return getResponse(Status.INTERNAL_SERVER_ERROR); 
-		}
 	}
 	
 	@GET
@@ -74,7 +63,7 @@ public class CountryRest {
 				return countries;
 			}
 			return getResponse(Status.NOT_FOUND);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
 			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
@@ -90,7 +79,7 @@ public class CountryRest {
 				return countries;
 			}
 			return getResponse(Status.NOT_FOUND);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
 			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
@@ -98,15 +87,15 @@ public class CountryRest {
 	
 	@GET
 	@Path("name/{name}")
-	public Object getByName(@PathParam("name") String name) {
+	public Object getByName(@PathParam("name") String name, @QueryParam("fullText") boolean fullText) {
 		LOG.info("Getting by name " + name);
 		try {
-			List<Country> countries = CountryService.getInstance().getByName(name);
+			List<Country> countries = CountryService.getInstance().getByName(name, fullText);
 			if (!countries.isEmpty()) {
 				return countries;
 			} 
 			return getResponse(Status.NOT_FOUND);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
 			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
@@ -122,7 +111,7 @@ public class CountryRest {
 				return countries;
 			} 
 			return getResponse(Status.NOT_FOUND);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
 			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
@@ -138,7 +127,7 @@ public class CountryRest {
 				return countries;
 			}
 			return getResponse(Status.NOT_FOUND);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
 			return getResponse(Status.INTERNAL_SERVER_ERROR); 
 		}
@@ -154,7 +143,7 @@ public class CountryRest {
 				return countries;
 			}
 			return getResponse(Status.NOT_FOUND);
-		} catch(IOException e) {
+		} catch(Exception e) {
 			LOG.error(e.getMessage(), e);
 			return getResponse(Status.INTERNAL_SERVER_ERROR);
 		}
@@ -170,7 +159,7 @@ public class CountryRest {
 				return countries;
 			}
 			return getResponse(Status.NOT_FOUND);
-		} catch(IOException e) {
+		} catch(Exception e) {
 			LOG.error(e.getMessage(), e);
 			return getResponse(Status.INTERNAL_SERVER_ERROR);
 		}
@@ -186,7 +175,7 @@ public class CountryRest {
 				return countries;
 			}
 			return getResponse(Status.NOT_FOUND);
-		} catch(IOException e) {
+		} catch(Exception e) {
 			LOG.error(e.getMessage(), e);
 			return getResponse(Status.INTERNAL_SERVER_ERROR);
 		}
