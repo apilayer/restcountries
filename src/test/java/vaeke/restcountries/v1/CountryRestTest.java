@@ -133,7 +133,7 @@ public class CountryRestTest {
 		}
 	}
 	
-	@HttpTest(method = Method.GET, path = "/name/russian%20fed?searchFullText=true")
+	@HttpTest(method = Method.GET, path = "/name/russian%20fed?fullText=true")
 	public void nameFulltextNotFound() {
 		Assert.assertNotFound(response);
 	}
