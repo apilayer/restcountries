@@ -1,12 +1,12 @@
 from bs4 import BeautifulSoup
 import urllib2
 
-URL_POPULATION = 'https://en.wikipedia.org/wiki/'\
+URL_GINI = 'https://en.wikipedia.org/wiki/'\
                  'List_of_countries_by_income_equality'
 
 
 def update(countriesJSON):
-    html = __getHTML(URL_POPULATION)
+    html = __getHTML(URL_GINI)
     soup = BeautifulSoup(html)
     giniData = __extractGiniData(soup)
 
