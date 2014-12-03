@@ -154,6 +154,11 @@ public class CountryRestTest {
 		org.junit.Assert.assertTrue(bordercountry.containsAll(c));
 	}
 	
+	@HttpTest(method = Method.GET, path = "/callingcode/")
+	public void badPath() {
+		Assert.assertNotFound(response);
+	}
+	
 	private DesCountry deserialize(String json) {
 		Gson gson = new Gson();
 		DesCountry country = gson.fromJson(json, DesCountry.class);
