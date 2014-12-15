@@ -87,7 +87,7 @@ public class CountryServiceTest {
 		countries = CountryService.getInstance().getByName("United", false);
 		Assert.assertNotNull(countries);
 		Assert.assertFalse(countries.isEmpty());
-		Assert.assertEquals("United Arab Emirates", countries.get(0).getName());
+		Assert.assertEquals("United States Minor Outlying Islands", countries.get(0).getName());
 	}
 	
 	@Test
