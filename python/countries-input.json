@@ -4356,7 +4356,7 @@
     ]
   },
   {
-    "name": "Gambia",
+    "name": "The Gambia",
     "nativeName": "Gambia",
     "tld": [
       ".gm"
@@ -5204,61 +5204,6 @@
     "demonym": "Heard and McDonald Islander",
     "borders": [],
     "area": 412
-  },
-  {
-    "name": "Vatican City",
-    "nativeName": "Vaticano",
-    "tld": [
-      ".va"
-    ],
-    "cca2": "VA",
-    "ccn3": "336",
-    "cca3": "VAT",
-    "currency": [
-      "EUR"
-    ],
-    "callingCode": [
-      "39066",
-      "379"
-    ],
-    "capital": "Vatican City",
-    "altSpellings": [
-      "VA",
-      "Vatican City State",
-      "Stato della Città del Vaticano"
-    ],
-    "relevance": "0.5",
-    "region": "Europe",
-    "subregion": "Southern Europe",
-    "language": [
-      "Italian"
-    ],
-    "languageCodes": [
-      "it",
-      "la"
-    ],
-    "translations": {
-      "de": "Vatikanstadt",
-      "es": "Ciudad del Vaticano",
-      "fr": "Cité du Vatican",
-      "it": "Città del Vaticano",
-      "ja": "バチカン市国",
-      "nl": "Vaticaanstad",
-      "hr": "Vatikan"
-    },
-    "population": 839,
-    "latlng": [
-      41.9,
-      12.45
-    ],
-    "demonym": "Italian",
-    "borders": [
-      "ITA"
-    ],
-    "area": 0.44,
-    "timezones": [
-      "UTC+01:00"
-    ]
   },
   {
     "name": "Honduras",
