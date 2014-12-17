@@ -1,13 +1,15 @@
-* Restored these countries
-French Guiana
-Guadeloupe
-Martinique
-Mayotte
-Réunion
-Saint Helena
-South Georgia
-Svalbard and Jan Mayen
-Saint Helena
-South Georgia
-Svalbard and Jan Mayen
-United States Minor Outlying Islands
+Restored these countries
+- French Guiana
+- Guadeloupe
+- Martinique
+- Mayotte
+- Réunion
+- Saint Helena
+- South Georgia
+- Svalbard and Jan Mayen
+- Saint Helena
+- South Georgia
+- Svalbard and Jan Mayen
+- United States Minor Outlying Islands
+
+Less verbose logs
