@@ -22,7 +22,6 @@ Branches
 REST API
 ---------
 * API Version [1.1.x]
-* API Version [0.10.x]
 
 Compiling and running
 ---------
