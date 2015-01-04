@@ -3,6 +3,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package vaeke.restcountries.v1;
 
+import static org.junit.Assert.*;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -23,7 +25,8 @@ public class EmptyDataTest {
 
 	@Before
 	public void before() throws IOException {
-		InputStream is = this.getClass().getClassLoader().getResourceAsStream("countriesV1.json");
+		InputStream is = this.getClass().getClassLoader()
+				.getResourceAsStream("countriesV1.json");
 		Gson gson = new Gson();
 		JsonReader reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
 		countries = new ArrayList<Country>();
@@ -54,7 +57,16 @@ public class EmptyDataTest {
 				System.out.println(c.getName());
 			}
 		}
+	}
 
+	@Test
+	public void emptyGini() throws Exception {
+		System.out.println("- Empty Gini");
+		for (Country c : countries) {
+			if (c.getGini() == null) {
+				System.out.println(c.getName());
+			}
+		}
 	}
 
 }
