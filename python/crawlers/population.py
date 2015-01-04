@@ -23,7 +23,7 @@ def __extractPopulationData(html):
                     country = href.get_text().encode('utf-8')
                 if j == 5:
                     population = column.get_text().replace(',', '')
-                    populationData[country] = int(population)
+                    populationData[country] = population
 
     return populationData
 
@@ -32,7 +32,7 @@ def __updateJSON(countriesJSON, populationData):
     for country in populationData:
         for countryJSON in countriesJSON:
             if country == countryJSON['name'].encode('utf-8'):
-                countryJSON['population'] = populationData[country]
+                countryJSON['population'] = int(populationData[country])
 
     return countriesJSON
 

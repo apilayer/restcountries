@@ -1768,6 +1768,48 @@
     "area": 60
   },
   {
+    "name": "United States Minor Outlying Islands",
+    "nativeName": "United States Minor Outlying Islands",
+    "tld": [
+      ".us"
+    ],
+    "cca2": "UM",
+    "ccn3": "581",
+    "cca3": "UMI",
+    "currency": [
+      "USD"
+    ],
+    "callingCode": [
+      ""
+    ],
+    "capital": "",
+    "altSpellings": [
+      "UM"
+    ],
+    "relevance": "0",
+    "region": "Americas",
+    "subregion": "Northern America",
+    "language": [
+      "English"
+    ],
+    "languageCodes": [
+      "en"
+    ],
+    "translations": {
+      "de": "Kleinere Inselbesitzungen der Vereinigten Staaten",
+      "es": "Islas Ultramarinas Menores de Estados Unidos",
+      "fr": "Îles mineures éloignées des États-Unis",
+      "it": "Isole minori esterne degli Stati Uniti d'America",
+      "ja": "合衆国領有小離島",
+      "nl": "Kleine afgelegen eilanden van de Verenigde Staten",
+      "hr": "Mali udaljeni otoci SAD-a"
+    },
+    "population": 300,
+    "latlng": [],
+    "demonym": "American",
+    "borders": []
+  },
+  {
     "name": "British Virgin Islands",
     "nativeName": "British Virgin Islands",
     "tld": [
@@ -4205,6 +4247,56 @@
     ]
   },
   {
+    "name": "French Guiana",
+    "nativeName": "Guyane française",
+    "tld": [
+      ".gf"
+    ],
+    "cca2": "GF",
+    "ccn3": "254",
+    "cca3": "GUF",
+    "currency": [
+      "EUR"
+    ],
+    "callingCode": [
+      "594"
+    ],
+    "capital": "Cayenne",
+    "altSpellings": [
+      "GF",
+      "Guiana",
+      "Guyane"
+    ],
+    "relevance": "0",
+    "region": "Americas",
+    "subregion": "South America",
+    "language": [
+      "French"
+    ],
+    "languageCodes": [
+      "fr"
+    ],
+    "translations": {
+      "de": "Französisch Guyana",
+      "es": "Guayana Francesa",
+      "fr": "Guayane",
+      "it": "Guyana francese",
+      "ja": "フランス領ギアナ",
+      "nl": "Frans-Guyana",
+      "hr": "Francuska Gvajana"
+    },
+    "population": 237549,
+    "latlng": [
+      4,
+      -53
+    ],
+    "demonym": "",
+    "borders": [
+      "BRA",
+      "SUR"
+    ]
+  },
+  {
     "name": "French Polynesia",
     "nativeName": "Polynésie française",
     "tld": [
@@ -4356,7 +4448,7 @@
     ]
   },
   {
-    "name": "Gambia",
+    "name": "The Gambia",
     "nativeName": "Gambia",
     "tld": [
       ".gm"
@@ -4774,6 +4866,52 @@
     "timezones": [
       "UTC−04:00"
     ]
+  },
+  {
+    "name": "Guadeloupe",
+    "nativeName": "Guadeloupe",
+    "tld": [
+      ".gp"
+    ],
+    "cca2": "GP",
+    "ccn3": "312",
+    "cca3": "GLP",
+    "currency": [
+      "EUR"
+    ],
+    "callingCode": [
+      "590"
+    ],
+    "capital": "Basse-Terre",
+    "altSpellings": [
+      "GP",
+      "Gwadloup"
+    ],
+    "relevance": "0",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "language": [
+      "French"
+    ],
+    "languageCodes": [
+      "fr"
+    ],
+    "translations": {
+      "de": "Guadeloupe",
+      "es": "Guadalupe",
+      "fr": "Guadeloupe",
+      "it": "Guadeloupa",
+      "ja": "グアドループ",
+      "nl": "Guadeloupe",
+      "hr": "Gvadalupa"
+    },
+    "population": 405739,
+    "latlng": [
+      16.25,
+      -61.583333
+    ],
+    "demonym": "Guadeloupian",
+    "borders": []
   },
   {
     "name": "Guam",
@@ -5204,61 +5342,6 @@
     "demonym": "Heard and McDonald Islander",
     "borders": [],
     "area": 412
-  },
-  {
-    "name": "Vatican City",
-    "nativeName": "Vaticano",
-    "tld": [
-      ".va"
-    ],
-    "cca2": "VA",
-    "ccn3": "336",
-    "cca3": "VAT",
-    "currency": [
-      "EUR"
-    ],
-    "callingCode": [
-      "39066",
-      "379"
-    ],
-    "capital": "Vatican City",
-    "altSpellings": [
-      "VA",
-      "Vatican City State",
-      "Stato della Città del Vaticano"
-    ],
-    "relevance": "0.5",
-    "region": "Europe",
-    "subregion": "Southern Europe",
-    "language": [
-      "Italian"
-    ],
-    "languageCodes": [
-      "it",
-      "la"
-    ],
-    "translations": {
-      "de": "Vatikanstadt",
-      "es": "Ciudad del Vaticano",
-      "fr": "Cité du Vatican",
-      "it": "Città del Vaticano",
-      "ja": "バチカン市国",
-      "nl": "Vaticaanstad",
-      "hr": "Vatikan"
-    },
-    "population": 839,
-    "latlng": [
-      41.9,
-      12.45
-    ],
-    "demonym": "Italian",
-    "borders": [
-      "ITA"
-    ],
-    "area": 0.44,
-    "timezones": [
-      "UTC+01:00"
-    ]
   },
   {
     "name": "Honduras",
@@ -7535,6 +7618,51 @@
     ]
   },
   {
+    "name": "Martinique",
+    "nativeName": "Martinique",
+    "tld": [
+      ".mq"
+    ],
+    "cca2": "MQ",
+    "ccn3": "474",
+    "cca3": "MTQ",
+    "currency": [
+      "EUR"
+    ],
+    "callingCode": [
+      "596"
+    ],
+    "capital": "Fort-de-France",
+    "altSpellings": [
+      "MQ"
+    ],
+    "relevance": "0",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "language": [
+      "French"
+    ],
+    "languageCodes": [
+      "fr"
+    ],
+    "translations": {
+      "de": "Martinique",
+      "es": "Martinica",
+      "fr": "Martinique",
+      "it": "Martinica",
+      "ja": "マルティニーク",
+      "nl": "Martinique",
+      "hr": "Martinique"
+    },
+    "population": 392291,
+    "latlng": [
+      14.666667,
+      -61
+    ],
+    "demonym": "French",
+    "borders": []
+  },
+  {
     "name": "Mauritania",
     "nativeName": "موريتانيا",
     "tld": [
@@ -7642,6 +7770,53 @@
     "timezones": [
       "UTC+04:00"
     ]
+  },
+  {
+    "name": "Mayotte",
+    "nativeName": "Mayotte",
+    "tld": [
+      ".yt"
+    ],
+    "cca2": "YT",
+    "ccn3": "175",
+    "cca3": "MYT",
+    "currency": [
+      "EUR"
+    ],
+    "callingCode": [
+      "262"
+    ],
+    "capital": "Mamoudzou",
+    "altSpellings": [
+      "YT",
+      "Department of Mayotte",
+      "Département de Mayotte"
+    ],
+    "relevance": "0",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "language": [
+      "French"
+    ],
+    "languageCodes": [
+      "fr"
+    ],
+    "translations": {
+      "de": "Mayotte",
+      "es": "Mayotte",
+      "fr": "Mayotte",
+      "it": "Mayotte",
+      "ja": "マヨット",
+      "nl": "Mayotte",
+      "hr": "Mayotte"
+    },
+    "population": 212645,
+    "latlng": [
+      -12.83333333,
+      45.16666666
+    ],
+    "demonym": "French",
+    "borders": []
   },
   {
     "name": "Mexico",
@@ -9784,6 +9959,52 @@
     "area": 10908
   },
   {
+    "name": "Réunion",
+    "nativeName": "La Réunion",
+    "tld": [
+      ".re"
+    ],
+    "cca2": "RE",
+    "ccn3": "638",
+    "cca3": "REU",
+    "currency": [
+      "EUR"
+    ],
+    "callingCode": [
+      "262"
+    ],
+    "capital": "Saint-Denis",
+    "altSpellings": [
+      "RE",
+      "Reunion"
+    ],
+    "relevance": "0",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "language": [
+      "French"
+    ],
+    "languageCodes": [
+      "fr"
+    ],
+    "translations": {
+      "de": "Réunion",
+      "es": "Reunión",
+      "fr": "Réunion",
+      "it": "Riunione",
+      "ja": "レユニオン",
+      "nl": "Réunion",
+      "hr": "Réunion"
+    },
+    "population": 840974,
+    "latlng": [
+      -21.15,
+      55.5
+    ],
+    "demonym": "French",
+    "borders": []
+  },
+  {
     "name": "Romania",
     "nativeName": "România",
     "tld": [
@@ -10029,6 +10250,51 @@
     "demonym": "Saint Barthélemy Islander",
     "borders": [],
     "area": 21
+  },
+  {
+    "name": "Saint Helena",
+    "nativeName": "Saint Helena",
+    "tld": [
+      ".sh"
+    ],
+    "cca2": "SH",
+    "ccn3": "654",
+    "cca3": "SHN",
+    "currency": [
+      "SHP"
+    ],
+    "callingCode": [
+      "290"
+    ],
+    "capital": "Jamestown",
+    "altSpellings": [
+      "SH"
+    ],
+    "relevance": "0",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "language": [
+      "English"
+    ],
+    "languageCodes": [
+      "en"
+    ],
+    "translations": {
+      "de": "Sankt Helena",
+      "es": "Santa Helena",
+      "fr": "Sainte-Hélène",
+      "it": "Sant'Elena",
+      "ja": "セントヘレナ・アセンションおよびトリスタンダクーニャ",
+      "nl": "Sint-Helena",
+      "hr": "Sveta Helena"
+    },
+    "population": 4255,
+    "latlng": [
+      -15.95,
+      -5.7
+    ],
+    "demonym": "Saint Helenian",
+    "borders": []
   },
   {
     "name": "Saint Kitts and Nevis",
@@ -11137,6 +11403,52 @@
     ]
   },
   {
+    "name": "South Georgia",
+    "nativeName": "South Georgia",
+    "tld": [
+      ".gs"
+    ],
+    "cca2": "GS",
+    "ccn3": "239",
+    "cca3": "SGS",
+    "currency": [
+      "GBP"
+    ],
+    "callingCode": [
+      "500"
+    ],
+    "capital": "King Edward Point",
+    "altSpellings": [
+      "GS",
+      "South Georgia and the South Sandwich Islands"
+    ],
+    "relevance": "0",
+    "region": "Americas",
+    "subregion": "South America",
+    "language": [
+      "English"
+    ],
+    "languageCodes": [
+      "en"
+    ],
+    "translations": {
+      "de": "Südgeorgien und die Südlichen Sandwichinseln",
+      "es": "Islas Georgias del Sur y Sandwich del Sur",
+      "fr": "Géorgie du Sud-et-les Îles Sandwich du Sud",
+      "it": "Georgia del Sud e Isole Sandwich Meridionali",
+      "ja": "サウスジョージア・サウスサンドウィッチ諸島",
+      "nl": "Zuid-Georgia en Zuidelijke Sandwicheilanden",
+      "hr": "Južna Georgija i otočje Južni Sandwich"
+    },
+    "population": 30,
+    "latlng": [
+      -54.5,
+      -37
+    ],
+    "demonym": "South Georgia and the South Sandwich Islander",
+    "borders": []
+  },
+  {
     "name": "South Korea",
     "nativeName": "대한민국",
     "tld": [
@@ -11481,6 +11793,52 @@
     "timezones": [
       "UTC−03:00"
     ]
+  },
+  {
+    "name": "Svalbard and Jan Mayen",
+    "nativeName": "Svalbard og Jan Mayen",
+    "tld": [
+      ".sj"
+    ],
+    "cca2": "SJ",
+    "ccn3": "744",
+    "cca3": "SJM",
+    "currency": [
+      "NOK"
+    ],
+    "callingCode": [
+      "4779"
+    ],
+    "capital": "Longyearbyen",
+    "altSpellings": [
+      "SJ",
+      "Svalbard and Jan Mayen Islands"
+    ],
+    "relevance": "0.5",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "language": [
+      "Norwegian"
+    ],
+    "languageCodes": [
+      "no"
+    ],
+    "translations": {
+      "de": "Svalbard und Jan Mayen",
+      "es": "Islas Svalbard y Jan Mayen",
+      "fr": "Svalbard et Jan Mayen",
+      "it": "Svalbard e Jan Mayen",
+      "ja": "スヴァールバル諸島およびヤンマイエン島",
+      "nl": "Svalbard en Jan Mayen",
+      "hr": "Svalbard i Jan Mayen"
+    },
+    "population": 2655,
+    "latlng": [
+      78,
+      20
+    ],
+    "demonym": "Norwegian",
+    "borders": []
   },
   {
     "name": "Swaziland",

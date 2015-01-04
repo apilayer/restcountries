@@ -1,4 +1,4 @@
-REST Countries v1.1.0
+REST Countries v1.1.1
 =====================
 
 Get information about countries via a RESTful API http://restcountries.eu
@@ -42,10 +42,11 @@ License
 
 Similar cool projects
 ---------------
-[Tinatapi]
+[world-currencies]
 
 [@mledoze]: https://github.com/mledoze/countries
 [1.1.x]: https://github.com/fayder/restcountries/wiki/API-1.1.x
 [0.10.x]: https://github.com/fayder/restcountries/wiki/API-0.10
 [Mozilla Public License]: http://www.mozilla.org/MPL/
 [Tinatapi]: http://api.tinata.co.uk/
+[world-currencies]: https://github.com/wiredmax/world-currencies
