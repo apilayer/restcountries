@@ -12,4 +12,8 @@ Restored these countries
 - Svalbard and Jan Mayen
 - United States Minor Outlying Islands
 
-Less verbose logs
+Corrected link to "wiki"
+Changed github logo
+Removed mashape logo
+Removed link to "previous API"
+Less verbose server logs
