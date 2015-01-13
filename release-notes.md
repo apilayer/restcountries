@@ -13,7 +13,6 @@ Restored these countries
 - United States Minor Outlying Islands
 
 Corrected link to "wiki"
-Changed github logo
 Removed mashape logo
 Removed link to "previous API"
 Less verbose server logs
