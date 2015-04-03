@@ -49,8 +49,9 @@ $(function () {
 	restc.ui.donations.click(function(e) {
 		if (window.location.protocol != "https:") {
     		window.location.href = "https://restcountries.eu"
+		} else {
+			$('#rc-modal-donations').modal('show');
 		}
-		$('#rc-modal-donations').modal('show')
 	});
 	
 	var navbarLinkActive = function(target) {
