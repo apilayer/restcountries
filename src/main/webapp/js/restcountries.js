@@ -14,7 +14,9 @@ $(function () {
 		warning 	: $('#rc-warning'),
 		errorMsg	: $('#rc-error'),
 		searchers 	: $('#rc-searchers'),
-		tryityou	: $('.rc-a-diy')
+		tryityou	: $('.rc-a-diy'),
+		donations 	: $('#rc-btn-donations'),
+		donationsM	: $('#rc-modal-donations')
 	};
 	
 	restc.ui.navbarlink.click(function(e) {
@@ -44,6 +46,12 @@ $(function () {
 		}
 	});
 
+	restc.ui.donations.click(function(e) {
+		if (window.location.protocol != "https:") {
+    		window.location.href = "https://restcountries.eu"
+		}
+		$('#rc-modal-donations').modal('show')
+	});
 	
 	var navbarLinkActive = function(target) {
 		restc.ui.navbarlink.parent().removeClass('active');
@@ -51,7 +59,12 @@ $(function () {
 	};
 	
 	var ajax = function(url, callback) {
-		if(url.indexOf('restcountries.eu') != 7 && url.indexOf('restcountries.eu') != 11 && url.indexOf('localhost') != 7)
+		if(
+			url.indexOf('restcountries.eu') != 7 &&
+			url.indexOf('restcountries.eu') != 8 &&
+			url.indexOf('restcountries.eu') != 11 &&
+			url.indexOf('restcountries.eu') != 12 &&
+			url.indexOf('localhost') != 7)
 			return;
 		
 		$.ajax({
