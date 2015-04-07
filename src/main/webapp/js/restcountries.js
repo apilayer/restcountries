@@ -19,8 +19,7 @@ $(function () {
 		errorMsg	: $('#rc-error'),
 		searchers 	: $('#rc-searchers'),
 		tryityou	: $('.rc-a-diy'),
-		donations 	: $('#rc-btn-donations'),
-		donationsM	: $('#rc-modal-donations')
+		donations 	: $('#rc-btn-donations-card')
 	};
 	
 	restc.ui.navbarlink.click(function(e) {
@@ -54,7 +53,7 @@ $(function () {
 		if (window.location.protocol != "https:") {
     		window.location.href = "https://restcountries.eu"
 		} else {
-			$('#rc-modal-donations').modal('show');
+			$('#rc-modal-donations-card').modal('show');
 		}
 	});
 	
