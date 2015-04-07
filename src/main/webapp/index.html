@@ -13,22 +13,15 @@
 	.rc-a-tryit {
 		cursor: pointer;
 	}
-
 	a {
 		text-decoration: none !important;
+	}
+	.paypal-button {
+		display: inline !important;
 	}
 </style>
 </head>
 <body>
-	<div id="rc-modal-donations" class="modal fade">
-		<div class="modal-dialog">
-    		<div class="modal-content">
-    			<div class="modal-body">
-					<script src='https://www.dntly.com/assets/js/v1/form.js' data-donately-id="2809" data-donately-ssl="true" ></script>
-				</div>
-			</div>
-		</div>
-	</div>
 	<div class="container well" style="text-align: center;">
 		<div class="" id="banner">
         	<div class="row">
@@ -42,8 +35,15 @@
         			</a>
         			<a href="https://www.mashape.com/fayder/rest-countries-v1?&amp;utm_campaign=mashape5-embed&amp;utm_medium=button&amp;utm_source=rest-countries-v1&amp;utm_content=anchorlink&amp;utm_term=icon-light"><img src="https://d1g84eaw0qjo7s.cloudfront.net/images/badges/badge-icon-light-9e8eba63.png" width="143" height="38" alt="Mashape"></a>
 					<br /><br />
-					<button id="rc-btn-donations" type="button" class="btn btn-info">Help Us!</button>
-					<br/><br />
+					<div>
+						Please help me to keep providing this service the best way possible
+						<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=fayderflorez@gmail.com" 
+							data-button="donate" 
+							data-name="REST Countries" 
+							data-currency="EUR"
+							></script>
+					</div>
+					<br/>
 					<div>Have questions? Found a problem? <a href="https://twitter.com/restcountries">Tweet it</a> or email me to
 					fayder.florez( )gmail.com</div>
 				</div>
@@ -122,7 +122,7 @@
 				<h3> Country Codes</h3>
 				<div class="input-group">
 					<code id="rc-a-alpha2" class="rc-a-tryit rc-a-code">http://localhost:8080/rest/v1/alpha?codes=co;rus;no</code>
-				</div>				
+				</div>
 			</div>
 			<div class="col-lg-12">
 				<h3> Country Name Full Text</h3>
@@ -166,9 +166,9 @@
 	</div>
 	<br /><br />
 
-
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="//www.paypalobjects.com/js/external/paypal-button.min.js"></script>
 	<script src="js/restcountries.min.js"></script>
 
 </body>

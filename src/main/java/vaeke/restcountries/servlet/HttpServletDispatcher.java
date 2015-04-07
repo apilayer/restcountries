@@ -6,7 +6,6 @@ package vaeke.restcountries.servlet;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 
-@SuppressWarnings("serial")
 @WebServlet(
 		name ="RestEasy", 
 		urlPatterns = {"/rest/*"}, 

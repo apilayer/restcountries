@@ -25,7 +25,7 @@ import com.google.gson.Gson;
 
 @Provider
 @Path("rest/v1")
-@Produces(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 public class CountryRest {
 	
 	private static final Logger LOG = Logger.getLogger(CountryRest.class);
