@@ -59,7 +59,6 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
-            <scope>provided</scope>
         </dependency>
 
         <!-- test -->
@@ -114,8 +113,8 @@
                             <value>${project.version}</value>
                         </replacement>
                         <replacement>
-                            <token>localhost:8080</token>
-                            <value>restcountries.eu</value>
+                            <token>http://localhost:8080</token>
+                            <value>https://restcountries.eu</value>
                         </replacement>
                     </replacements>
                 </configuration>
@@ -129,6 +128,14 @@
                         <exclude>**/*RestTest.java</exclude>
                         <exclude>**/*DataTest.java</exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
         </plugins>
