@@ -3,9 +3,9 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 var restc = restc || {};
 
-//if (window.location.protocol != "https:") { 
-//	window.location.href = "https://restcountries.eu"
-//}
+if (window.location.protocol != "https:") { 
+	window.location.href = "https://restcountries.eu"
+}
 
 $(function () {
 	'use strict';
@@ -18,8 +18,7 @@ $(function () {
 		warning 	: $('#rc-warning'),
 		errorMsg	: $('#rc-error'),
 		searchers 	: $('#rc-searchers'),
-		tryityou	: $('.rc-a-diy'),
-		donations 	: $('#rc-btn-donations-card')
+		tryityou	: $('.rc-a-diy')	
 	};
 	
 	restc.ui.navbarlink.click(function(e) {
@@ -46,14 +45,6 @@ $(function () {
 	restc.ui.inputTryit.keypress(function(e) {
 		if(e.keyCode == 13) {
 			$(e.target).next().get(0).firstChild.click();
-		}
-	});
-
-	restc.ui.donations.click(function(e) {
-		if (window.location.protocol != "https:") {
-    		window.location.href = "https://restcountries.eu"
-		} else {
-			$('#rc-modal-donations-card').modal('show');
 		}
 	});
 	
