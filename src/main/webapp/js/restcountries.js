@@ -3,10 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 var restc = restc || {};
 
-if (window.location.protocol != "https:") { 
-	window.location.href = "https://restcountries.eu"
-}
-
 $(function () {
 	'use strict';
 	
