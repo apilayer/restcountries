@@ -9,15 +9,11 @@ Branches
 ---------
 ##### dev
 * well... dev environment. all changes are made here before new releases.
-* using java7 and servlet api 3
+* using java6
 
 ##### master
 * latest stable release
-* using java7 and servlet api 3
-
-##### servlet2
-* latest stable release
-* using java6 and servlet api 2
+* using java7
 
 REST API
 ---------
