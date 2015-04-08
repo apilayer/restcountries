@@ -56,7 +56,9 @@ License
 Similar cool projects
 ---------------
 [world-currencies]
+
 [REST Countries Node.js]
+
 [REST Countries Ruby]
 
 [@mledoze]: https://github.com/mledoze/countries
