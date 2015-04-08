@@ -28,7 +28,7 @@ $ git push origin [branch name]
 Branches
 ---------
 ##### dev
-* Well... dev environment. It has new features I'm working on. 
+* It has new features I'm working on. It might be broken. 
 
 ##### master
 * Latest stable release (For Pull Requests, please fork this branch)
