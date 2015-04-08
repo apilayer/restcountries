@@ -21,7 +21,8 @@ $ git checkout -b [branch name]
 ```sh 
 $ git push origin [branch name]
 ```
-5- Go to the shared repo on GitHub and click on the green compare & pull request button
+5- Go to the shared repo on GitHub and click on the green "compare & pull" request button
+
 6- Click on 'create pull request'
 
 Branches
