@@ -56,6 +56,8 @@ License
 Similar cool projects
 ---------------
 [world-currencies]
+[REST Countries Node.js]
+[REST Countries Ruby]
 
 [@mledoze]: https://github.com/mledoze/countries
 [1.1.x]: https://github.com/fayder/restcountries/wiki/API-1.1.x
@@ -63,3 +65,5 @@ Similar cool projects
 [Mozilla Public License]: http://www.mozilla.org/MPL/
 [Tinatapi]: http://api.tinata.co.uk/
 [world-currencies]: https://github.com/wiredmax/world-currencies
+[REST Countries Node.js]: https://github.com/aredo/restcountries
+[REST Countries Ruby]: https://github.com/davidesantangelo/restcountry
