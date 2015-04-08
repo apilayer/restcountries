@@ -8,9 +8,10 @@ Get information about countries via a RESTful API http://restcountries.eu
 Pull Requests
 ---------
 1. Fork the master branch
-2. Clone your forked repo locally (git clone git@github.com:[your github username]/restcountries.git
-3. Create a new branch (git checkout -b [branch name]). You could use your username for the branch name
-4. Make your changes on this branch. Push these changes to the repo (git push origin [branch name])
+2. Clone your forked repo locally
+ ```$ git clone git@github.com:[your github username]/restcountries.git```
+3. Create a new branch ```$ git checkout -b [branch name]```. You could use your username for the branch name
+4. Make your changes on this branch. Push these changes to the repo ```$ git push origin [branch name]```
 5. Go to the shared repo on GitHub and click on the green compare & pull request button
 6. Click on 'create pull request'
 
