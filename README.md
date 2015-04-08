@@ -8,6 +8,7 @@ Get information about countries via a RESTful API http://restcountries.eu
 Pull Requests
 ---------
 1- Fork the master branch
+
 2- Clone your forked repo locally
 ```sh
 $ git clone git@github.com:[your github username]/restcountries.git
