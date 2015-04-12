@@ -44,11 +44,10 @@ License
 
 Similar cool projects
 ---------------
-[world-currencies]
-
-[REST Countries Node.js]
-
-[REST Countries Ruby]
+* [REST Countries Node.js]
+* [REST Countries Ruby]
+* [REST Countries Go]
+* [world-currencies]
 
 [@mledoze]: https://github.com/mledoze/countries
 [1.1.x]: https://github.com/fayder/restcountries/wiki/API-1.1.x
@@ -58,3 +57,4 @@ Similar cool projects
 [world-currencies]: https://github.com/wiredmax/world-currencies
 [REST Countries Node.js]: https://github.com/aredo/restcountries
 [REST Countries Ruby]: https://github.com/davidesantangelo/restcountry
+[REST Countries Go]: https://github.com/alediaferia/gocountries
