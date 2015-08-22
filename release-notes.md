@@ -1,1 +1,2 @@
-Added SSL/TLS. Requests over HTTPS allowed.
+- Updated population data
+- Using support@restcountries.eu in website
