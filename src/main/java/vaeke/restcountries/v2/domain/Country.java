@@ -15,16 +15,13 @@ public class Country {
     @JsonProperty("topLevelDomain")
     private List<String> tld;
 
-    @JsonProperty("alpha2Code")
-    private String cca2;
+    private String alpha2Code;
 
-    @JsonProperty("alpha3Code")
-    private String cca3;
+    private String alpha3Code;
 
     private List<Currency> currencies;
 
-    @JsonProperty("callingCodes")
-    private List<String> callingCode;
+    private List<String> callingCodes;
 
     private String capital;
 
@@ -72,28 +69,20 @@ public class Country {
         this.tld = tld;
     }
 
-    public String getCca2() {
-        return cca2;
+    public String getAlpha2Code() {
+        return alpha2Code;
     }
 
-    public void setCca2(String cca2) {
-        this.cca2 = cca2;
+    public void setAlpha2Code(String alpha2Code) {
+        this.alpha2Code = alpha2Code;
     }
 
-    public String getCca3() {
-        return cca3;
+    public String getAlpha3Code() {
+        return alpha3Code;
     }
 
-    public void setCca3(String cca3) {
-        this.cca3 = cca3;
-    }
-
-    public List<String> getCallingCodes() {
-        return callingCode;
-    }
-
-    public void setCallingCodes(List<String> countryCodes) {
-        this.callingCode = countryCodes;
+    public void setAlpha3Code(String alpha3Code) {
+        this.alpha3Code = alpha3Code;
     }
 
     public String getCapital() {
@@ -216,12 +205,12 @@ public class Country {
         this.currencies = currencies;
     }
 
-    public List<String> getCallingCode() {
-        return callingCode;
+    public List<String> getCallingCodes() {
+        return callingCodes;
     }
 
-    public void setCallingCode(List<String> callingCode) {
-        this.callingCode = callingCode;
+    public void setCallingCodes(List<String> callingCodes) {
+        this.callingCodes = callingCodes;
     }
 
     public List<Language> getLanguages() {

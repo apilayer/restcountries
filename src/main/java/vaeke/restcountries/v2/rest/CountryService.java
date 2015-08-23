@@ -38,11 +38,11 @@ public class CountryService {
         int alphaLength = alpha.length();
         for(Country country : countries) {
             if (alphaLength == 2) {
-                if (country.getCca2().toLowerCase().equals(alpha.toLowerCase())) {
+                if (country.getAlpha2Code().toLowerCase().equals(alpha.toLowerCase())) {
                     return country;
                 }
             } else if (alphaLength == 3) {
-                if (country.getCca3().toLowerCase().equals(alpha.toLowerCase())) {
+                if (country.getAlpha3Code().toLowerCase().equals(alpha.toLowerCase())) {
                     return country;
                 }
             }
@@ -114,7 +114,7 @@ public class CountryService {
         return result;
     }
 
-    public List<Country> getByCallingcode(String callingcode) {
+    public List<Country> getByCallingCode(String callingcode) {
         List<Country> result = new ArrayList<Country>();
         for(Country country : countries) {
             for(String callingCode : country.getCallingCodes()) {
@@ -144,7 +144,7 @@ public class CountryService {
         }
         return result;
     }
-    
+
     public List<Country> getByLanguage(String language) {
         return null;
     }
@@ -165,7 +165,7 @@ public class CountryService {
             reader.endArray();
             reader.close();
         } catch (Exception e) {
-            LOG.error("Could not load JSON Database v1 ");
+            LOG.error("Could not load JSON Database v2 ", e);
         }
     }
 

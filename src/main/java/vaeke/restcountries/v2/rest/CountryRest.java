@@ -97,7 +97,7 @@ public class CountryRest {
     public Object getByCallingCode(@PathParam("callingcode") String callingcode) {
         LOG.info("Getting by calling code " + callingcode);
         try {
-            List<Country> countries = CountryService.getInstance().getByCallingcode(callingcode);
+            List<Country> countries = CountryService.getInstance().getByCallingCode(callingcode);
             if (!countries.isEmpty()) {
                 return countries;
             }
@@ -130,22 +130,6 @@ public class CountryRest {
         LOG.info("Getting by region " + region);
         try {
             List<Country> countries = CountryService.getInstance().getByRegion(region);
-            if(!countries.isEmpty()) {
-                return countries;
-            }
-            return getResponse(Response.Status.NOT_FOUND);
-        } catch(Exception e) {
-            LOG.error(e.getMessage(), e);
-            return getResponse(Response.Status.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @GET
-    @Path("subregion/{subregion}")
-    public Object getBySubregion(@PathParam("subregion") String subregion) {
-        LOG.info("Getting by region " + subregion);
-        try {
-            List<Country> countries = CountryService.getInstance().getBySubregion(subregion);
             if(!countries.isEmpty()) {
                 return countries;
             }
