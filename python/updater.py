@@ -5,11 +5,9 @@
 
 import json
 import collections
-
-import sys
-sys.path.append('crawlers')
-import population
-import gini
+from crawlers import population
+from crawlers import gini
+from crawlers import currencies
 
 
 def getCountriesJSON():
@@ -26,6 +24,7 @@ def saveCountriesJSON(countriesJSON):
         json.dump(countriesJSON, outputJsonFile)
 
 countriesJSON = getCountriesJSON()
-countriesJSON = population.update(countriesJSON)
-countriesJSON = gini.update(countriesJSON)
+# countriesJSON = population.update(countriesJSON)
+# countriesJSON = gini.update(countriesJSON)
+countriesJSON = currencies.update(countriesJSON)
 saveCountriesJSON(countriesJSON)

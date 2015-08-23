@@ -9,7 +9,6 @@ def update(countriesJSON):
     html = __getHTML(URL_POPULATION)
     soup = BeautifulSoup(html)
     populationData = __extractPopulationData(soup)
-
     return __updateJSON(countriesJSON, populationData)
 
 

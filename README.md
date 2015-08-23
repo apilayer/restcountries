@@ -34,7 +34,8 @@ Get information about countries via a RESTful API http://restcountries.eu
 * [world-currencies]
 
 #### Sources
-* JSON Data is taken mostly from [@mledoze]
+* JSON Data is taken partly from [@mledoze]
+* Currencies data is from https://en.wikipedia.org/wiki/List_of_circulating_currencies
 * Area data is from http://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area
 * Population data is from https://en.wikipedia.org/wiki/List_of_countries_by_population
 * Gini coefficient from http://en.wikipedia.org/wiki/List_of_countries_by_income_equality
