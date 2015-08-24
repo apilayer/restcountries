@@ -18,8 +18,7 @@ def saveCountriesJSON(countriesJSON):
 
 def convert(countriesJSON):
     for countryJSON in countriesJSON:
-        if 'language' in countryJSON:
-            countryJSON.pop('language')
+        pass
     return countriesJSON
 
 

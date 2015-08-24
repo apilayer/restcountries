@@ -5,25 +5,25 @@ package vaeke.restcountries.v2_alpha.domain;
 
 public class Language {
 
-    private String twoLetterCode;
-    private String threeLetterCode;
+    private String iso639_1;
+    private String iso639_2;
     private String name;
     private String nativeName;
 
-    public String getTwoLetterCode() {
-        return twoLetterCode;
+    public String getIso639_1() {
+        return iso639_1;
     }
 
-    public void setTwoLetterCode(String code) {
-        this.twoLetterCode = code;
+    public void setIso639_1(String code) {
+        this.iso639_1 = code;
     }
 
-    public String getThreeLetterCode() {
-        return threeLetterCode;
+    public String getIso639_2() {
+        return iso639_2;
     }
 
-    public void setThreeLetterCode(String threeLetterCode) {
-        this.threeLetterCode = threeLetterCode;
+    public void setIso639_2(String iso639_2) {
+        this.iso639_2 = iso639_2;
     }
 
     public String getName() {
