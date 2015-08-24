@@ -8,6 +8,7 @@ public class Language {
     private String twoLetterCode;
     private String threeLetterCode;
     private String name;
+    private String nativeName;
 
     public String getTwoLetterCode() {
         return twoLetterCode;
@@ -31,5 +32,13 @@ public class Language {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getNativeName() {
+        return nativeName;
+    }
+
+    public void setNativeName(String nativeName) {
+        this.nativeName = nativeName;
     }
 }

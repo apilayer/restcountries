@@ -18,21 +18,8 @@ def saveCountriesJSON(countriesJSON):
 
 def convert(countriesJSON):
     for countryJSON in countriesJSON:
-        countryJSON['currencies'] = []
-        countryJSON['languages'] = []
-        countryJSON['alpha2Code'] = countryJSON['cca2']
-        countryJSON['alpha3Code'] = countryJSON['cca3']
-        countryJSON['callingCodes'] = countryJSON['callingCode']
-#        for currency in countryJSON['currency']:
-#            countryJSON['currencies'].append({"code": currency})
-        for language in countryJSON['languageCodes']:
-            countryJSON['languages'].append({"code": language})
-    countryJSON.pop('currency')
-    countryJSON.pop('language')
-    countryJSON.pop('languageCodes')
-    countryJSON.pop('cca2')
-    countryJSON.pop('cca3')
-    countryJSON.pop('callingCode')
+        if 'language' in countryJSON:
+            countryJSON.pop('language')
     return countriesJSON
 
 
