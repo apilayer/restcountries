@@ -1,12 +1,12 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-package vaeke.restcountries.v2.rest;
+package vaeke.restcountries.v2_alpha.rest;
 
 import com.google.gson.Gson;
 import org.apache.log4j.Logger;
 import vaeke.restcountries.domain.ResponseEntity;
-import vaeke.restcountries.v2.domain.Country;
+import vaeke.restcountries.v2_alpha.domain.Country;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -15,7 +15,7 @@ import javax.ws.rs.ext.Provider;
 import java.util.List;
 
 @Provider
-@Path("rest/v2-alpha")
+@Path("rest/v2_alpha-alpha")
 @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 public class CountryRest {
 
