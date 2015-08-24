@@ -8,6 +8,7 @@ import com.google.gson.stream.JsonReader;
 import org.apache.log4j.Logger;
 import vaeke.restcountries.domain.ICountryRestSymbols;
 import vaeke.restcountries.v2_alpha.domain.Country;
+import vaeke.restcountries.v2_alpha.domain.Language;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -146,7 +147,25 @@ public class CountryService {
     }
 
     public List<Country> getByLanguage(String language) {
-        return null;
+        List<Country> result = new ArrayList<Country>();
+        if(language.length() == 2) {
+            for(Country country : countries) {
+                for(Language lang : country.getLanguages()) {
+                    if(language.toLowerCase().equals(lang.getIso639_1())) {
+                        result.add(country);
+                    }
+                }
+            }
+        } else if(language.length() == 3) {
+            for(Country country : countries) {
+                for(Language lang : country.getLanguages()) {
+                    if(language.toLowerCase().equals(lang.getIso639_2())) {
+                        result.add(country);
+                    }
+                }
+            }
+        }
+        return result;
     }
 
     private void initialize() {
