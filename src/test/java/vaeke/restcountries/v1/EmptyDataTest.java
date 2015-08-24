@@ -3,21 +3,17 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package vaeke.restcountries.v1;
 
-import static org.junit.Assert.*;
+import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
+import org.junit.Before;
+import org.junit.Test;
+import vaeke.restcountries.v1.domain.Country;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import vaeke.restcountries.v1.domain.Country;
-
-import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
 
 public class EmptyDataTest {
 
