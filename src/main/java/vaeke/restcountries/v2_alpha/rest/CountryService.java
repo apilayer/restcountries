@@ -8,6 +8,7 @@ import com.google.gson.stream.JsonReader;
 import org.apache.log4j.Logger;
 import vaeke.restcountries.domain.ICountryRestSymbols;
 import vaeke.restcountries.v2_alpha.domain.Country;
+import vaeke.restcountries.v2_alpha.domain.Currency;
 import vaeke.restcountries.v2_alpha.domain.Language;
 
 import java.io.InputStream;
@@ -37,7 +38,7 @@ public class CountryService {
 
     public Country getByAlpha(String alpha) {
         int alphaLength = alpha.length();
-        for(Country country : countries) {
+        for (Country country : countries) {
             if (alphaLength == 2) {
                 if (country.getAlpha2Code().toLowerCase().equals(alpha.toLowerCase())) {
                     return country;
@@ -53,23 +54,31 @@ public class CountryService {
 
     public List<Country> getByCodeList(String codelist) {
         List<Country> result = new ArrayList<Country>();
-        if(codelist == null) return result;
+        if (codelist == null) return result;
 
         List<String> codes = Arrays.asList(codelist.split(ICountryRestSymbols.SEMICOLON));
-        for(String code : codes) {
+        for (String code : codes) {
             Country country = this.getByAlpha(code);
-            if(!result.contains(country))
+            if (!result.contains(country))
                 result.add(country);
         }
         return result;
     }
 
     public List<Country> getByCurrency(String currency) {
-        return null;
+        List<Country> result = new ArrayList<Country>();
+        for (Country country : countries) {
+            for (Currency curr : country.getCurrencies()) {
+                if (curr.getCode() != null && currency.toLowerCase().equals(curr.getCode().toLowerCase())) {
+                    result.add(country);
+                }
+            }
+        }
+        return result;
     }
 
     public List<Country> getByName(String name, boolean fullText) {
-        if(fullText) {
+        if (fullText) {
             return fulltextSearch(name);
         } else {
             return substringSearch(name);
@@ -80,15 +89,15 @@ public class CountryService {
     private List<Country> substringSearch(String name) {
         // Using 2 different 'for' loops to give priority to 'name' matches over alternative spellings
         List<Country> result = new ArrayList<Country>();
-        for(Country country : countries) {
-            if(normalize(country.getName().toLowerCase()).contains(normalize(name.toLowerCase()))) {
+        for (Country country : countries) {
+            if (normalize(country.getName().toLowerCase()).contains(normalize(name.toLowerCase()))) {
                 result.add(country);
             }
         }
-        for(Country country : countries) {
+        for (Country country : countries) {
             for (String alternative : country.getAltSpellings()) {
-                if( normalize(alternative.toLowerCase()).contains(normalize(name.toLowerCase()))
-                        && !result.contains(country) ) {
+                if (normalize(alternative.toLowerCase()).contains(normalize(name.toLowerCase()))
+                        && !result.contains(country)) {
                     result.add(country);
                 }
             }
@@ -99,15 +108,15 @@ public class CountryService {
     private List<Country> fulltextSearch(String name) {
         // Using 2 different 'for' loops to give priority to 'name' matches over alternative spellings
         List<Country> result = new ArrayList<Country>();
-        for(Country country : countries) {
-            if(normalize(country.getName().toLowerCase()).equals(normalize(name.toLowerCase()))) {
+        for (Country country : countries) {
+            if (normalize(country.getName().toLowerCase()).equals(normalize(name.toLowerCase()))) {
                 result.add(country);
             }
         }
-        for(Country country : countries) {
+        for (Country country : countries) {
             for (String alternative : country.getAltSpellings()) {
-                if( normalize(alternative.toLowerCase()).equals(normalize(name.toLowerCase()))
-                        && !result.contains(country) ) {
+                if (normalize(alternative.toLowerCase()).equals(normalize(name.toLowerCase()))
+                        && !result.contains(country)) {
                     result.add(country);
                 }
             }
@@ -117,9 +126,9 @@ public class CountryService {
 
     public List<Country> getByCallingCode(String callingcode) {
         List<Country> result = new ArrayList<Country>();
-        for(Country country : countries) {
-            for(String callingCode : country.getCallingCodes()) {
-                if(callingCode.equals(callingcode))
+        for (Country country : countries) {
+            for (String callingCode : country.getCallingCodes()) {
+                if (callingCode.equals(callingcode))
                     result.add(country);
             }
         }
@@ -128,8 +137,8 @@ public class CountryService {
 
     public List<Country> getByCapital(String capital) {
         List<Country> result = new ArrayList<Country>();
-        for(Country country : countries) {
-            if(normalize(country.getCapital().toLowerCase()).contains(normalize(capital.toLowerCase()))) {
+        for (Country country : countries) {
+            if (normalize(country.getCapital().toLowerCase()).contains(normalize(capital.toLowerCase()))) {
                 result.add(country);
             }
         }
@@ -138,8 +147,8 @@ public class CountryService {
 
     public List<Country> getByRegion(String region) {
         List<Country> result = new ArrayList<Country>();
-        for(Country country : countries) {
-            if(country.getRegion().toLowerCase().equals(region.toLowerCase())) {
+        for (Country country : countries) {
+            if (country.getRegion().toLowerCase().equals(region.toLowerCase())) {
                 result.add(country);
             }
         }
@@ -148,18 +157,18 @@ public class CountryService {
 
     public List<Country> getByLanguage(String language) {
         List<Country> result = new ArrayList<Country>();
-        if(language.length() == 2) {
-            for(Country country : countries) {
-                for(Language lang : country.getLanguages()) {
-                    if(language.toLowerCase().equals(lang.getIso639_1())) {
+        if (language.length() == 2) {
+            for (Country country : countries) {
+                for (Language lang : country.getLanguages()) {
+                    if (language.toLowerCase().equals(lang.getIso639_1())) {
                         result.add(country);
                     }
                 }
             }
-        } else if(language.length() == 3) {
-            for(Country country : countries) {
-                for(Language lang : country.getLanguages()) {
-                    if(language.toLowerCase().equals(lang.getIso639_2())) {
+        } else if (language.length() == 3) {
+            for (Country country : countries) {
+                for (Language lang : country.getLanguages()) {
+                    if (language.toLowerCase().equals(lang.getIso639_2())) {
                         result.add(country);
                     }
                 }
@@ -177,7 +186,7 @@ public class CountryService {
             reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
             countries = new ArrayList<Country>();
             reader.beginArray();
-            while(reader.hasNext()) {
+            while (reader.hasNext()) {
                 Country country = gson.fromJson(reader, Country.class);
                 countries.add(country);
             }
