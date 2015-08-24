@@ -15,7 +15,7 @@ import javax.ws.rs.ext.Provider;
 import java.util.List;
 
 @Provider
-@Path("rest/v2_alpha-alpha")
+@Path("rest/v2-alpha")
 @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 public class CountryRest {
 
