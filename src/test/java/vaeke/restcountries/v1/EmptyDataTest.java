@@ -68,15 +68,4 @@ public class EmptyDataTest {
 			}
 		}
 	}
-
-	@Test
-	public void multipleCurrencies() throws Exception {
-		System.out.println("- Multiple Currencies");
-		for (Country c : countries) {
-			if (c.getCurrency().size() > 1) {
-				System.out.println(c.getName());
-			}
-		}
-
-	}
 }

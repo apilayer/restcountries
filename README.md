@@ -35,6 +35,7 @@ Get information about countries via a RESTful API http://restcountries.eu
 
 #### Sources
 * JSON Data is taken partly from [@mledoze]
+* Language codes are from https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 * Currencies data is from https://en.wikipedia.org/wiki/List_of_circulating_currencies
 * Area data is from http://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area
 * Population data is from https://en.wikipedia.org/wiki/List_of_countries_by_population
