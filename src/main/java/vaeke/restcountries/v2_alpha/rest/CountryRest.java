@@ -30,7 +30,7 @@ public class CountryRest {
     @GET
     public Object getCountries() {
         LOG.info("Getting all");
-        return vaeke.restcountries.v1.rest.CountryService.getInstance().getAll();
+        return CountryService.getInstance().getAll();
     }
 
     @GET
@@ -38,7 +38,7 @@ public class CountryRest {
     public Object getByAlpha(@PathParam("alphacode") String alpha) {
         LOG.info("Getting by alpha " + alpha);
         Country country = CountryService.getInstance().getByAlpha(alpha);
-        if(country != null) {
+        if (country != null) {
             return country;
         }
         return getResponse(Response.Status.NOT_FOUND);
@@ -114,7 +114,7 @@ public class CountryRest {
         LOG.info("Getting by capital " + capital);
         try {
             List<Country> countries = CountryService.getInstance().getByCapital(capital);
-            if(!countries.isEmpty()) {
+            if (!countries.isEmpty()) {
                 return countries;
             }
             return getResponse(Response.Status.NOT_FOUND);
@@ -130,11 +130,11 @@ public class CountryRest {
         LOG.info("Getting by region " + region);
         try {
             List<Country> countries = CountryService.getInstance().getByRegion(region);
-            if(!countries.isEmpty()) {
+            if (!countries.isEmpty()) {
                 return countries;
             }
             return getResponse(Response.Status.NOT_FOUND);
-        } catch(Exception e) {
+        } catch (Exception e) {
             LOG.error(e.getMessage(), e);
             return getResponse(Response.Status.INTERNAL_SERVER_ERROR);
         }
@@ -146,11 +146,11 @@ public class CountryRest {
         LOG.info("Getting by language " + language);
         try {
             List<Country> countries = CountryService.getInstance().getByLanguage(language);
-            if(!countries.isEmpty()) {
+            if (!countries.isEmpty()) {
                 return countries;
             }
             return getResponse(Response.Status.NOT_FOUND);
-        } catch(Exception e) {
+        } catch (Exception e) {
             LOG.error(e.getMessage(), e);
             return getResponse(Response.Status.INTERNAL_SERVER_ERROR);
         }

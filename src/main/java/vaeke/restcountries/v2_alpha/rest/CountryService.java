@@ -36,6 +36,10 @@ public class CountryService {
         return InstanceHolder.INSTANCE;
     }
 
+    public List<Country> getAll() {
+        return countries;
+    }
+
     public Country getByAlpha(String alpha) {
         int alphaLength = alpha.length();
         for (Country country : countries) {
