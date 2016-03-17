@@ -19,6 +19,7 @@ public class CORSFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         ((HttpServletResponse)response).addHeader("Access-Control-Allow-Origin", "*");
         ((HttpServletResponse)response).addHeader("Access-Control-Allow-Methods", "GET");
+        ((HttpServletResponse)response).addHeader("Access-Control-Allow-Headers", "Accept, X-Requested-With");
         chain.doFilter(request, response);
     }
 
