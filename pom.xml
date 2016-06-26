@@ -105,7 +105,6 @@
                 <configuration>
                     <includes>
                         <include>src/main/webapp/**.html</include>
-                        <include>src/main/webapp/v0.10</include>
                     </includes>
                     <replacements>
                         <replacement>
