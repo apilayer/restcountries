@@ -1,15 +1,15 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-package vaeke.restcountries.v2_alpha.rest;
+package vaeke.restcountries.v2.rest;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import org.apache.log4j.Logger;
 import vaeke.restcountries.domain.ICountryRestSymbols;
-import vaeke.restcountries.v2_alpha.domain.Country;
-import vaeke.restcountries.v2_alpha.domain.Currency;
-import vaeke.restcountries.v2_alpha.domain.Language;
+import vaeke.restcountries.v2.domain.Country;
+import vaeke.restcountries.v2.domain.Currency;
+import vaeke.restcountries.v2.domain.Language;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -197,7 +197,7 @@ public class CountryService {
             reader.endArray();
             reader.close();
         } catch (Exception e) {
-            LOG.error("Could not load JSON Database v2_alpha ", e);
+            LOG.error("Could not load JSON Database v2", e);
         }
     }
 

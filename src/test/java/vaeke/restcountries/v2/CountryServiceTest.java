@@ -2,10 +2,10 @@ package vaeke.restcountries.v2;
 
 import org.junit.Assert;
 import org.junit.Test;
-import vaeke.restcountries.v2_alpha.domain.Country;
-import vaeke.restcountries.v2_alpha.domain.Currency;
-import vaeke.restcountries.v2_alpha.domain.Language;
-import vaeke.restcountries.v2_alpha.rest.CountryService;
+import vaeke.restcountries.v2.domain.Country;
+import vaeke.restcountries.v2.domain.Currency;
+import vaeke.restcountries.v2.domain.Language;
+import vaeke.restcountries.v2.rest.CountryService;
 
 import java.util.List;
 
