@@ -17,11 +17,8 @@ Get information about countries via a RESTful API http://restcountries.eu
 6. Click on 'create pull request'
 
 #### Branches
-##### v2:
-* It has new features I'm working on. It might be broken. 
-
-##### dev:
-* Maintenance of and changes for current stable release
+##### v2
+* It has new features I'm working on. It might be broken.
 
 ##### master
 * Latest stable release (For Pull Requests, please fork this branch)
