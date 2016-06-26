@@ -1,4 +1,6 @@
-REST Countries v1.1.1
+[![Build Status](https://travis-ci.org/fayder/restcountries.svg?branch=master)](https://travis-ci.org/fayder/restcountries)
+
+REST Countries v1.1.2
 =====================
 
 Get information about countries via a RESTful API http://restcountries.eu
@@ -15,8 +17,11 @@ Get information about countries via a RESTful API http://restcountries.eu
 6. Click on 'create pull request'
 
 #### Branches
-##### dev:
+##### v2:
 * It has new features I'm working on. It might be broken. 
+
+##### dev:
+* Maintenance of and changes for current stable release
 
 ##### master
 * Latest stable release (For Pull Requests, please fork this branch)
