@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/fayder/restcountries.svg?branch=master)](https://travis-ci.org/fayder/restcountries)
+
 REST Countries v1.1.1
 =====================
 
