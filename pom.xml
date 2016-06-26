@@ -24,7 +24,7 @@
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
-            <version>3.0.4.Final</version>
+            <version>3.0.6.Final</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.slf4j</groupId>
@@ -35,7 +35,7 @@
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jackson-provider</artifactId>
-            <version>3.0.4.Final</version>
+            <version>3.0.6.Final</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
