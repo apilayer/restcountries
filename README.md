@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/fayder/restcountries.svg?branch=master)](https://travis-ci.org/fayder/restcountries)
 
-REST Countries v2.0
+REST Countries v1.1.2
 =====================
 
 Get information about countries via a RESTful API http://restcountries.eu

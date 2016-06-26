@@ -182,7 +182,7 @@ public class CountryService {
     }
 
     private void initialize() {
-        LOG.debug("Loading JSON Database v2_alpha");
+        LOG.debug("Loading JSON Database v2");
         InputStream is = this.getClass().getClassLoader().getResourceAsStream("countriesV2.json");
         Gson gson = new Gson();
         JsonReader reader;
