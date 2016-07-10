@@ -27,8 +27,6 @@ public class Country {
 
     private List<String> altSpellings;
 
-    private String relevance;
-
     private String region;
 
     private String subregion;
@@ -99,14 +97,6 @@ public class Country {
 
     public void setAltSpellings(List<String> altSpellings) {
         this.altSpellings = altSpellings;
-    }
-
-    public String getRelevance() {
-        return relevance;
-    }
-
-    public void setRelevance(String relevance) {
-        this.relevance = relevance;
     }
 
     public String getRegion() {
