@@ -7,7 +7,7 @@ ENDPOINT = 'https://en.wikipedia.org/wiki/List_of_circulating_currencies'
 def update(countriesJSON):
     page = requests.get(ENDPOINT)
     page.encoding = 'utf-8'
-    soup = BeautifulSoup(page.text)
+    soup = BeautifulSoup(page.text, "lxml")
     countries = __extractCurrencyData(soup)
     return __updateJSON(countriesJSON, countries)
 
