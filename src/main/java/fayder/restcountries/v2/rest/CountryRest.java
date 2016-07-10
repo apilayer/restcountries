@@ -4,14 +4,22 @@
 package fayder.restcountries.v2.rest;
 
 import com.google.gson.Gson;
+import fayder.restcountries.domain.ICountryRestSymbols;
 import fayder.restcountries.v2.domain.Country;
 import org.apache.log4j.Logger;
 import fayder.restcountries.domain.ResponseEntity;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.ObjectWriter;
+import org.codehaus.jackson.map.ser.FilterProvider;
+import org.codehaus.jackson.map.ser.impl.SimpleBeanPropertyFilter;
+import org.codehaus.jackson.map.ser.impl.SimpleFilterProvider;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 @Provider
@@ -168,5 +176,26 @@ public class CountryRest {
                 .status(status)
                 .entity(gson.toJson(new ResponseEntity(status.getStatusCode(),
                         status.getReasonPhrase()))).build();
+    }
+
+    private Object parsedCountry(Country country, String excludedFields) throws IOException {
+        if(excludedFields == null || excludedFields.isEmpty()) {
+            return country;
+        } else {
+            return excludeFields(Arrays.asList(excludedFields.split(ICountryRestSymbols.SEMICOLON)), country);
+        }
+    }
+
+    private String excludeFields(List<String> fields, Country country) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.getSerializationConfig().addMixInAnnotations(Object.class, PropertyFilterMixIn.class);
+        String[] ignorableFieldNames = (String[]) fields.toArray();
+        FilterProvider filters = new SimpleFilterProvider()
+                .addFilter(
+                        "filter properties by name",
+                        SimpleBeanPropertyFilter.serializeAllExcept(ignorableFieldNames)
+                );
+        ObjectWriter writer = mapper.writer(filters);
+        return writer.writeValueAsString(country);
     }
 }
