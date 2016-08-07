@@ -7,7 +7,7 @@ URL_GINI = 'https://en.wikipedia.org/wiki/'\
 
 def update(countriesJSON):
     html = __getHTML(URL_GINI)
-    soup = BeautifulSoup(html)
+    soup = BeautifulSoup(html, "lxml")
     giniData = __extractGiniData(soup)
 
     return __updateJSON(countriesJSON, giniData)

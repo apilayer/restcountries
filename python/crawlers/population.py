@@ -7,9 +7,8 @@ URL_POPULATION = 'https://en.wikipedia.org/wiki/'\
 
 def update(countriesJSON):
     html = __getHTML(URL_POPULATION)
-    soup = BeautifulSoup(html)
+    soup = BeautifulSoup(html, "html.parser")
     populationData = __extractPopulationData(soup)
-
     return __updateJSON(countriesJSON, populationData)
 
 
