@@ -37,14 +37,14 @@ public class CountryServiceTest {
 	public void getByAlpha2() throws Exception {
 		Country country = CountryService.getInstance().getByAlpha("CO");
 		Assert.assertNotNull(country);
-		Assert.assertEquals("CO", country.getCca2());
+		Assert.assertEquals("CO", country.getAlpha2Code());
 	}
 	
 	@Test
 	public void getByAlpha3() throws Exception {
 		Country country = CountryService.getInstance().getByAlpha("COL");
 		Assert.assertNotNull(country);
-		Assert.assertEquals("COL", country.getCca3());
+		Assert.assertEquals("COL", country.getAlpha3Code());
 	}
 	
 	@Test
@@ -55,7 +55,7 @@ public class CountryServiceTest {
 		Assert.assertEquals(3, countries.size());
 		
 		for(Country country : countries) {
-			Assert.assertTrue(country.getCca2().equals("CO") || country.getCca2().equals("NO") || country.getCca2().equals("EE"));
+			Assert.assertTrue(country.getAlpha2Code().equals("CO") || country.getAlpha2Code().equals("NO") || country.getAlpha2Code().equals("EE"));
 		}
 	}
 	
@@ -65,7 +65,7 @@ public class CountryServiceTest {
 		Assert.assertNotNull(countries);
 		Assert.assertFalse(countries.isEmpty());
 		for(Country country : countries) {
-			Assert.assertTrue(country.getCurrency().contains("EUR"));
+			Assert.assertTrue(country.getCurrencies().contains("EUR"));
 		}
 	}
 	
@@ -119,7 +119,7 @@ public class CountryServiceTest {
 		Assert.assertNotNull(countries);
 		Assert.assertFalse(countries.isEmpty());
 		Assert.assertEquals(1, countries.size());
-		Assert.assertEquals("CO", countries.get(0).getCca2());
+		Assert.assertEquals("CO", countries.get(0).getAlpha2Code());
 	}
 	
 	@Test
@@ -128,7 +128,7 @@ public class CountryServiceTest {
 		Assert.assertNotNull(countries);
 		Assert.assertFalse(countries.isEmpty());
 		Assert.assertEquals(1, countries.size());
-		Assert.assertEquals("EE", countries.get(0).getCca2());
+		Assert.assertEquals("EE", countries.get(0).getAlpha2Code());
 		Assert.assertEquals("Eesti", countries.get(0).getNativeName());
 	}
 	
@@ -158,7 +158,7 @@ public class CountryServiceTest {
 		Assert.assertNotNull(countries);
 		Assert.assertFalse(countries.isEmpty());
 		for(Country country : countries) {
-			Assert.assertTrue(country.getLanguageCodes().contains("en"));
+			Assert.assertTrue(country.getLanguages().contains("en"));
 		}
 	}
 

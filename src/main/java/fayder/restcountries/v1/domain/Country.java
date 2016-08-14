@@ -11,20 +11,15 @@ public class Country {
 	
 	private String name;
 	
-	@JsonProperty("topLevelDomain")
-	private List<String> tld;
+	private List<String> topLevelDomain;
 	
-	@JsonProperty("alpha2Code")
-	private String cca2;
+	private String alpha2Code;
 	
-	@JsonProperty("alpha3Code")
-	private String cca3;
+	private String alpha3Code;
 	
-	@JsonProperty("currencies")
-	private List<String> currency;
+	private List<String> currencies;
 	
-	@JsonProperty("callingCodes")
-	private List<String> callingCode;
+	private List<String> callingCodes;
 	
 	private String capital;
 	
@@ -36,8 +31,7 @@ public class Country {
 	
 	private String subregion;
 	
-	@JsonProperty("languages")
-	private List<String> languageCodes;
+	private List<String> languages;
 	
 	private CountryTranslations translations;
 	
@@ -65,36 +59,36 @@ public class Country {
 		this.name = name;
 	}
 
-	public List<String> getTld() {
-		return tld;
+	public List<String> getTopLevelDomain() {
+		return topLevelDomain;
 	}
 
-	public void setTld(List<String> tld) {
-		this.tld = tld;
+	public void setTopLevelDomain(List<String> topLevelDomain) {
+		this.topLevelDomain = topLevelDomain;
 	}
 
-	public String getCca2() {
-		return cca2;
+	public String getAlpha2Code() {
+		return alpha2Code;
 	}
 
-	public void setCca2(String cca2) {
-		this.cca2 = cca2;
+	public void setAlpha2Code(String alpha2Code) {
+		this.alpha2Code = alpha2Code;
 	}
 
-	public String getCca3() {
-		return cca3;
+	public String getAlpha3Code() {
+		return alpha3Code;
 	}
 
-	public void setCca3(String cca3) {
-		this.cca3 = cca3;
+	public void setAlpha3Code(String alpha3Code) {
+		this.alpha3Code = alpha3Code;
 	}
 
 	public List<String> getCallingCodes() {
-		return callingCode;
+		return callingCodes;
 	}
 
 	public void setCallingCodes(List<String> countryCodes) {
-		this.callingCode = countryCodes;
+		this.callingCodes = countryCodes;
 	}
 
 	public String getCapital() {
@@ -137,12 +131,12 @@ public class Country {
 		this.subregion = subregion;
 	}
 
-	public List<String> getLanguageCodes() {
-		return languageCodes;
+	public List<String> getLanguages() {
+		return languages;
 	}
 
-	public void setLanguageCodes(List<String> languageCodes) {
-		this.languageCodes = languageCodes;
+	public void setLanguages(List<String> languages) {
+		this.languages = languages;
 	}
 
 	public CountryTranslations getTranslations() {
@@ -209,12 +203,12 @@ public class Country {
 		this.borders = borders;
 	}
 
-	public List<String> getCurrency() {
-		return currency;
+	public List<String> getCurrencies() {
+		return currencies;
 	}
 
-	public void setCurrency(List<String> currency) {
-		this.currency = currency;
+	public void setCurrencies(List<String> currencies) {
+		this.currencies = currencies;
 	}
 
 	public String getNativeName() {
