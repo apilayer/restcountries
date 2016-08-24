@@ -45,11 +45,11 @@ public class CountryService {
 		int alphaLength = alpha.length();
 		for(Country country : countries) {
 			if (alphaLength == 2) {
-				if (country.getCca2().toLowerCase().equals(alpha.toLowerCase())) {
+				if (country.getAlpha2Code().toLowerCase().equals(alpha.toLowerCase())) {
 					return country;
 				}
 			} else if (alphaLength == 3) {
-				if (country.getCca3().toLowerCase().equals(alpha.toLowerCase())) {
+				if (country.getAlpha3Code().toLowerCase().equals(alpha.toLowerCase())) {
 					return country;
 				}
 			}
@@ -73,7 +73,7 @@ public class CountryService {
 	public List<Country> getByCurrency(String currency) {
 		List<Country> result = new ArrayList<Country>();
 		for(Country country : countries) {
-			for(String curr : country.getCurrency()) {
+			for(String curr : country.getCurrencies()) {
 				if (curr.toLowerCase().equals(currency.toLowerCase())) {
 					result.add(country);
 				}
@@ -173,7 +173,7 @@ public class CountryService {
 	public List<Country> getByLanguage(String language) {
 		List<Country> result = new ArrayList<Country>();
 		for(Country country : countries) {
-			for(String lang : country.getLanguageCodes()) {
+			for(String lang : country.getLanguages()) {
 				if (lang.toLowerCase().equals(language.toLowerCase())) {
 					result.add(country);
 				}
