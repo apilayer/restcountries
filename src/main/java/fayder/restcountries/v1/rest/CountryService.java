@@ -129,7 +129,7 @@ public class CountryService {
 		return result;
 	}
 	
-	public List<Country> getByCallingcode(String callingcode) {
+	public List<Country> getByCallingCode(String callingcode) {
 		List<Country> result = new ArrayList<Country>();
 		for(Country country : countries) {
 			for(String callingCode : country.getCallingCodes()) {
