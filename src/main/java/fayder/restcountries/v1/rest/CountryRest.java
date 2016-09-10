@@ -106,7 +106,7 @@ public class CountryRest {
 	public Object getByCallingCode(@PathParam("callingcode") String callingcode) {
 		LOG.info("Getting by calling code " + callingcode);
 		try {
-			List<Country> countries = CountryService.getInstance().getByCallingcode(callingcode);
+			List<Country> countries = CountryService.getInstance().getByCallingCode(callingcode);
 			if (!countries.isEmpty()) {
 				return countries;
 			} 

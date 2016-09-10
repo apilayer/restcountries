@@ -115,7 +115,7 @@ public class CountryServiceTest {
 	
 	@Test
 	public void getByCallingCode() throws Exception {
-		List<Country> countries = CountryService.getInstance().getByCallingcode("57");
+		List<Country> countries = CountryService.getInstance().getByCallingCode("57");
 		Assert.assertNotNull(countries);
 		Assert.assertFalse(countries.isEmpty());
 		Assert.assertEquals(1, countries.size());

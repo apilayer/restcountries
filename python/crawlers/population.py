@@ -1,8 +1,7 @@
 from bs4 import BeautifulSoup
 import urllib2
 
-URL_POPULATION = 'https://en.wikipedia.org/wiki/'\
-                 'List_of_countries_by_population'
+URL_POPULATION = 'https://en.wikipedia.org/wiki/List_of_countries_by_population'
 
 
 def update(countriesJSON):
