@@ -4,6 +4,7 @@
 package fayder.restcountries.v2.domain;
 
 import fayder.restcountries.domain.BaseCountry;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 import java.util.List;
 
@@ -11,7 +12,6 @@ public class Country extends BaseCountry {
 
     private List<Currency> currencies;
     private List<Language> languages;
-
 
     public List<Currency> getCurrencies() {
         return currencies;
@@ -27,5 +27,11 @@ public class Country extends BaseCountry {
 
     public void setLanguages(List<Language> languages) {
         this.languages = languages;
+    }
+
+    @Override
+    @JsonIgnore
+    public String getRelevance() {
+        return super.getRelevance();
     }
 }
