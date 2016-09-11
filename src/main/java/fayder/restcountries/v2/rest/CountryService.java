@@ -5,6 +5,7 @@ package fayder.restcountries.v2.rest;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
+import fayder.restcountries.rest.CountryServiceHelper;
 import fayder.restcountries.v2.domain.Country;
 import org.apache.log4j.Logger;
 import fayder.restcountries.domain.ICountryRestSymbols;
@@ -29,7 +30,7 @@ public class CountryService {
     }
 
     private static class InstanceHolder {
-        public static final CountryService INSTANCE = new CountryService();
+        private static final CountryService INSTANCE = new CountryService();
     }
 
     public static CountryService getInstance() {
@@ -41,32 +42,37 @@ public class CountryService {
     }
 
     public Country getByAlpha(String alpha) {
-        int alphaLength = alpha.length();
-        for (Country country : countries) {
-            if (alphaLength == 2) {
-                if (country.getAlpha2Code().toLowerCase().equals(alpha.toLowerCase())) {
-                    return country;
-                }
-            } else if (alphaLength == 3) {
-                if (country.getAlpha3Code().toLowerCase().equals(alpha.toLowerCase())) {
-                    return country;
-                }
-            }
-        }
-        return null;
+        return CountryServiceHelper.getByAlpha(alpha, countries);
     }
 
-    public List<Country> getByCodeList(String codelist) {
-        List<Country> result = new ArrayList<Country>();
-        if (codelist == null) return result;
+    @SuppressWarnings("unchecked")
+    public List<Country> getByCodeList(String codeList) {
+        return (List<Country>) CountryServiceHelper.getByCodeList(codeList, countries);
+    }
 
-        List<String> codes = Arrays.asList(codelist.split(ICountryRestSymbols.SEMICOLON));
-        for (String code : codes) {
-            Country country = this.getByAlpha(code);
-            if (!result.contains(country))
-                result.add(country);
-        }
-        return result;
+    @SuppressWarnings("unchecked")
+    public List<Country> getByName(String name, boolean isFullText) {
+        return (List<Country>) CountryServiceHelper.getByName(name, isFullText, countries);
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Country> getByCallingCode(String callingcode) {
+        return (List<Country>) CountryServiceHelper.getByCallingCode(callingcode, countries);
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Country> getByCapital(String capital) {
+        return (List<Country>) CountryServiceHelper.getByCapital(capital, countries);
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Country> getByRegion(String region) {
+        return (List<Country>) CountryServiceHelper.getByRegion(region, countries);
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Country> getBySubRegion(String subregion) {
+        return (List<Country>) CountryServiceHelper.getBySubregion(subregion, countries);
     }
 
     public List<Country> getByCurrency(String currency) {
@@ -76,84 +82,6 @@ public class CountryService {
                 if (curr.getCode() != null && currency.toLowerCase().equals(curr.getCode().toLowerCase())) {
                     result.add(country);
                 }
-            }
-        }
-        return result;
-    }
-
-    public List<Country> getByName(String name, boolean fullText) {
-        if (fullText) {
-            return fulltextSearch(name);
-        } else {
-            return substringSearch(name);
-        }
-
-    }
-
-    private List<Country> substringSearch(String name) {
-        // Using 2 different 'for' loops to give priority to 'name' matches over alternative spellings
-        List<Country> result = new ArrayList<Country>();
-        for (Country country : countries) {
-            if (normalize(country.getName().toLowerCase()).contains(normalize(name.toLowerCase()))) {
-                result.add(country);
-            }
-        }
-        for (Country country : countries) {
-            for (String alternative : country.getAltSpellings()) {
-                if (normalize(alternative.toLowerCase()).contains(normalize(name.toLowerCase()))
-                        && !result.contains(country)) {
-                    result.add(country);
-                }
-            }
-        }
-        return result;
-    }
-
-    private List<Country> fulltextSearch(String name) {
-        // Using 2 different 'for' loops to give priority to 'name' matches over alternative spellings
-        List<Country> result = new ArrayList<Country>();
-        for (Country country : countries) {
-            if (normalize(country.getName().toLowerCase()).equals(normalize(name.toLowerCase()))) {
-                result.add(country);
-            }
-        }
-        for (Country country : countries) {
-            for (String alternative : country.getAltSpellings()) {
-                if (normalize(alternative.toLowerCase()).equals(normalize(name.toLowerCase()))
-                        && !result.contains(country)) {
-                    result.add(country);
-                }
-            }
-        }
-        return result;
-    }
-
-    public List<Country> getByCallingCode(String callingcode) {
-        List<Country> result = new ArrayList<Country>();
-        for (Country country : countries) {
-            for (String callingCode : country.getCallingCodes()) {
-                if (callingCode.equals(callingcode))
-                    result.add(country);
-            }
-        }
-        return result;
-    }
-
-    public List<Country> getByCapital(String capital) {
-        List<Country> result = new ArrayList<Country>();
-        for (Country country : countries) {
-            if (normalize(country.getCapital().toLowerCase()).contains(normalize(capital.toLowerCase()))) {
-                result.add(country);
-            }
-        }
-        return result;
-    }
-
-    public List<Country> getByRegion(String region) {
-        List<Country> result = new ArrayList<Country>();
-        for (Country country : countries) {
-            if (country.getRegion().toLowerCase().equals(region.toLowerCase())) {
-                result.add(country);
             }
         }
         return result;
