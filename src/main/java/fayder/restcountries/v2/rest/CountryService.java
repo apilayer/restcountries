@@ -3,20 +3,13 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package fayder.restcountries.v2.rest;
 
-import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
 import fayder.restcountries.rest.CountryServiceHelper;
 import fayder.restcountries.v2.domain.Country;
-import org.apache.log4j.Logger;
-import fayder.restcountries.domain.ICountryRestSymbols;
 import fayder.restcountries.v2.domain.Currency;
 import fayder.restcountries.v2.domain.Language;
+import org.apache.log4j.Logger;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.text.Normalizer;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class CountryService {
@@ -109,28 +102,8 @@ public class CountryService {
         return result;
     }
 
+    @SuppressWarnings("unchecked")
     private void initialize() {
-        LOG.debug("Loading JSON Database v2");
-        InputStream is = this.getClass().getClassLoader().getResourceAsStream("countriesV2.json");
-        Gson gson = new Gson();
-        JsonReader reader;
-        try {
-            reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
-            countries = new ArrayList<Country>();
-            reader.beginArray();
-            while (reader.hasNext()) {
-                Country country = gson.fromJson(reader, Country.class);
-                countries.add(country);
-            }
-            reader.endArray();
-            reader.close();
-        } catch (Exception e) {
-            LOG.error("Could not load JSON Database v2", e);
-        }
-    }
-
-    private String normalize(String string) {
-        return Normalizer.normalize(string, Normalizer.Form.NFD)
-                .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
+        countries = (List<Country>) CountryServiceHelper.loadJson("countriesV2.json", Country.class);
     }
 }

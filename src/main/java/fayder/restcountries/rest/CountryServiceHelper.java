@@ -3,10 +3,15 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package fayder.restcountries.rest;
 
+import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
 import fayder.restcountries.domain.BaseCountry;
 import fayder.restcountries.domain.ICountryRestSymbols;
+import fayder.restcountries.v1.domain.Country;
 import org.apache.log4j.Logger;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -92,6 +97,25 @@ public class CountryServiceHelper {
             }
         }
         return result;
+    }
+
+    public static List<? extends BaseCountry> loadJson(String filename, Class<? extends BaseCountry> clazz) {
+        LOG.debug("Loading JSON " + filename);
+        List<BaseCountry> countries = new ArrayList<>();
+        InputStream is = CountryServiceHelper.class.getClassLoader().getResourceAsStream(filename);
+        Gson gson = new Gson();
+        JsonReader reader;
+        try {
+            reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
+            reader.beginArray();
+            while(reader.hasNext()) {
+                BaseCountry country = gson.fromJson(reader, clazz);
+                countries.add(country);
+            }
+        } catch (Exception e) {
+            LOG.error("Could not load JSON " + filename);
+        }
+        return countries;
     }
 
     private static List<? extends BaseCountry> fulltextSearch(String name, List<? extends BaseCountry> countries) {
