@@ -149,6 +149,22 @@ public class CountryRest {
     }
 
     @GET
+    @Path("subregion/{subregion}")
+    public Object getBySubRegion(@PathParam("subregion") String subregion) {
+        LOG.info("Getting by sub region " + subregion);
+        try {
+            List<Country> countries = CountryService.getInstance().getBySubRegion(subregion);
+            if (!countries.isEmpty()) {
+                return countries;
+            }
+            return getResponse(Response.Status.NOT_FOUND);
+        } catch (Exception e) {
+            LOG.error(e.getMessage(), e);
+            return getResponse(Response.Status.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GET
     @Path("lang/{lang}")
     public Object getByLanguage(@PathParam("lang") String language) {
         LOG.info("Getting by language " + language);
