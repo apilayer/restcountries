@@ -7,7 +7,6 @@ import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import fayder.restcountries.domain.BaseCountry;
 import fayder.restcountries.domain.ICountryRestSymbols;
-import fayder.restcountries.v1.domain.Country;
 import org.apache.log4j.Logger;
 
 import java.io.InputStream;
