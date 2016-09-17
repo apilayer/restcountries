@@ -12,7 +12,6 @@ public class Country extends BaseCountry {
 
     private List<String> currencies;
     private List<String> languages;
-    private String numericCode;
 
     public List<String> getCurrencies() {
         return currencies;
@@ -28,13 +27,5 @@ public class Country extends BaseCountry {
 
     public void setLanguages(List<String> languages) {
         this.languages = languages;
-    }
-
-    public String getNumericCode() {
-        return numericCode;
-    }
-
-    public void setNumericCode(String numericCode) {
-        this.numericCode = numericCode;
     }
 }

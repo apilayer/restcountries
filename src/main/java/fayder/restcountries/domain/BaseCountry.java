@@ -44,6 +44,8 @@ public class BaseCountry {
 
     private String nativeName;
 
+    private String numericCode;
+
     public String getName() {
         return name;
     }
@@ -194,5 +196,13 @@ public class BaseCountry {
 
     public void setNativeName(String nativeName) {
         this.nativeName = nativeName;
+    }
+
+    public String getNumericCode() {
+        return numericCode;
+    }
+
+    public void setNumericCode(String numericCode) {
+        this.numericCode = numericCode;
     }
 }
