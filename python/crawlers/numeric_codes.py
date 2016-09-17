@@ -36,7 +36,6 @@ def __updateJSON(countriesJSON, data):
     for country in data:
         for countryJSON in countriesJSON:
             if country == countryJSON['name'].encode('utf-8'):
-                print(country, data[country])
                 countryJSON['numericCode'] = data[country]
 
     return countriesJSON
