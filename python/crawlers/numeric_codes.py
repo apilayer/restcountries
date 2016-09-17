@@ -24,7 +24,7 @@ def __extractData(html):
     for row in table:
         nameLink = row.find('a')
         if nameLink != -1:
-            countryName = nameLink['title'].encode('utf-8')
+            countryName = nameLink.get_text().encode('utf-8')
         for idx,element in enumerate(row):
             if idx == 7:
                 numericCode = element.text
