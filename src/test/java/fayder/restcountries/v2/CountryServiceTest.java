@@ -69,7 +69,7 @@ public class CountryServiceTest {
         List<Country> countries = CountryService.getInstance().getByName("Iran", false);
         Assert.assertNotNull(countries);
         Assert.assertFalse(countries.isEmpty());
-        Assert.assertEquals("Iran", countries.get(0).getName());
+        Assert.assertEquals("Iran (Islamic Republic of)", countries.get(0).getName());
 
         countries = CountryService.getInstance().getByName("United", false);
         Assert.assertNotNull(countries);
@@ -90,7 +90,7 @@ public class CountryServiceTest {
         List<Country> countries = CountryService.getInstance().getByName("Russian Federation", true);
         Assert.assertNotNull(countries);
         Assert.assertFalse(countries.isEmpty());
-        Assert.assertEquals("Russia", countries.get(0).getName());
+        Assert.assertEquals("Russian Federation", countries.get(0).getName());
     }
 
     @Test
