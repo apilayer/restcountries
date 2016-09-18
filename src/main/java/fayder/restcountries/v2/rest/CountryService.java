@@ -69,7 +69,7 @@ public class CountryService {
     }
 
     public List<Country> getByCurrency(String currency) {
-        List<Country> result = new ArrayList<Country>();
+        List<Country> result = new ArrayList<>();
         for (Country country : countries) {
             for (Currency curr : country.getCurrencies()) {
                 if (curr.getCode() != null && currency.toLowerCase().equals(curr.getCode().toLowerCase())) {
@@ -81,7 +81,7 @@ public class CountryService {
     }
 
     public List<Country> getByLanguage(String language) {
-        List<Country> result = new ArrayList<Country>();
+        List<Country> result = new ArrayList<>();
         if (language.length() == 2) {
             for (Country country : countries) {
                 for (Language lang : country.getLanguages()) {
@@ -97,6 +97,16 @@ public class CountryService {
                         result.add(country);
                     }
                 }
+            }
+        }
+        return result;
+    }
+
+    public List<Country> getByDemonym(String demonym) {
+        List<Country> result = new ArrayList<>();
+        for (Country country : countries) {
+            if (country.getDemonym().toLowerCase().equals(CountryServiceHelper.normalize(demonym.toLowerCase()))) {
+                result.add(country);
             }
         }
         return result;

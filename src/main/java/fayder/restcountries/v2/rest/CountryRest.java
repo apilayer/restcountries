@@ -180,6 +180,22 @@ public class CountryRest {
         }
     }
 
+    @GET
+    @Path("demonym/{demonym}")
+    public Object getByDemonym(@PathParam("demonym") String demonym, @QueryParam("exclude") String exclude) {
+        LOG.info("Getting by demonym " + demonym);
+        try {
+            List<Country> countries = CountryService.getInstance().getByDemonym(demonym);
+            if (!countries.isEmpty()) {
+                return parsedCountries(countries, exclude);
+            }
+            return getResponse(Response.Status.NOT_FOUND);
+        } catch (Exception e) {
+            LOG.error(e.getMessage(), e);
+            return getResponse(Response.Status.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @POST
     public Object doPOST() {
         LOG.info("Handling POST Request");

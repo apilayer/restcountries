@@ -143,4 +143,14 @@ public class CountryServiceTest {
         }
         Assert.fail();
     }
+
+    @Test
+    public void getByDemonym() throws Exception {
+        List<Country> countries = CountryService.getInstance().getByDemonym("french");
+        Assert.assertNotNull(countries);
+        Assert.assertFalse(countries.isEmpty());
+        for (Country country : countries) {
+            Assert.assertEquals("french", country.getDemonym().toLowerCase());
+        }
+    }
 }
