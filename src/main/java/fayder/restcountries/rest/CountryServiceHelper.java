@@ -155,7 +155,7 @@ public class CountryServiceHelper {
         return result;
     }
 
-    private static String normalize(String string) {
+    public static String normalize(String string) {
         return Normalizer.normalize(string, Normalizer.Form.NFD)
                 .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
     }

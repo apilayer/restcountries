@@ -10,6 +10,7 @@ from crawlers import population
 from crawlers import gini
 from crawlers import currencies
 from crawlers import languages
+from crawlers import numeric_codes
 
 
 def getCountriesJSON():
@@ -30,4 +31,5 @@ countriesJSON = population.update(countriesJSON)
 countriesJSON = gini.update(countriesJSON)
 countriesJSON = currencies.update(countriesJSON)
 countriesJSON = languages.update(countriesJSON)
+countriesJSON = numeric_codes.update(countriesJSON)
 saveCountriesJSON(countriesJSON)
