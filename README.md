@@ -36,6 +36,7 @@ Get information about countries via a RESTful API http://restcountries.eu
 * [REST Countries Node.js]
 * [REST Countries Ruby]
 * [REST Countries Go]
+* [REST Countries Python]
 * [world-currencies]
 
 #### Sources
@@ -59,3 +60,4 @@ Get information about countries via a RESTful API http://restcountries.eu
 [REST Countries Node.js]: https://github.com/aredo/restcountries
 [REST Countries Ruby]: https://github.com/davidesantangelo/restcountry
 [REST Countries Go]: https://github.com/alediaferia/gocountries
+[REST Countries Python]: https://github.com/SteinRobert/python-restcountries
