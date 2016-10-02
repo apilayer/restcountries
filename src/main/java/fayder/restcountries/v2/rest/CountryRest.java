@@ -19,6 +19,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,35 +32,36 @@ public class CountryRest {
 
     @GET
     @Path("all")
-    public Object getAllCountries() {
-        return this.getCountries();
+    public Object getAllCountries(@QueryParam("fields") String fields) {
+        return this.getCountries(fields);
     }
 
     @GET
-    public Object getCountries() {
+    public Object getCountries(@QueryParam("fields") String fields) {
         LOG.info("Getting all");
-        return CountryService.getInstance().getAll();
+        List<Country> countries = CountryService.getInstance().getAll();
+        return parsedCountries(countries, fields);
     }
 
     @GET
     @Path("alpha/{alphacode}")
-    public Object getByAlpha(@PathParam("alphacode") String alpha, @QueryParam("exclude") String exclude) {
+    public Object getByAlpha(@PathParam("alphacode") String alpha, @QueryParam("fields") String fields) {
         LOG.info("Getting by alpha " + alpha);
         Country country = CountryService.getInstance().getByAlpha(alpha);
         if (country != null) {
-            return parsedCountry(country, exclude);
+            return parsedCountry(country, fields);
         }
         return getResponse(Response.Status.NOT_FOUND);
     }
 
     @GET
     @Path("alpha/")
-    public Object getByAlphaList(@QueryParam("codes") String codes, @QueryParam("exclude") String exclude) {
+    public Object getByAlphaList(@QueryParam("codes") String codes, @QueryParam("fields") String fields) {
         LOG.info("Getting by list " + codes);
         try {
             List<Country> countries = CountryService.getInstance().getByCodeList(codes);
             if (!countries.isEmpty()) {
-                return parsedCountries(countries, exclude);
+                return parsedCountries(countries, fields);
             }
             return getResponse(Response.Status.NOT_FOUND);
         } catch (Exception e) {
@@ -70,12 +72,12 @@ public class CountryRest {
 
     @GET
     @Path("currency/{currency}")
-    public Object getByCurrency(@PathParam("currency") String currency, @QueryParam("exclude") String exclude) {
+    public Object getByCurrency(@PathParam("currency") String currency, @QueryParam("fields") String fields) {
         LOG.info("Getting by currency " + currency);
         try {
             List<Country> countries = CountryService.getInstance().getByCurrency(currency);
             if (!countries.isEmpty()) {
-                return parsedCountries(countries, exclude);
+                return parsedCountries(countries, fields);
             }
             return getResponse(Response.Status.NOT_FOUND);
         } catch (Exception e) {
@@ -86,12 +88,12 @@ public class CountryRest {
 
     @GET
     @Path("name/{name}")
-    public Object getByName(@PathParam("name") String name, @QueryParam("fullText") boolean fullText, @QueryParam("exclude") String exclude) {
+    public Object getByName(@PathParam("name") String name, @QueryParam("fullText") boolean fullText, @QueryParam("fields") String fields) {
         LOG.info("Getting by name " + name);
         try {
             List<Country> countries = CountryService.getInstance().getByName(name, fullText);
             if (!countries.isEmpty()) {
-                return parsedCountries(countries, exclude);
+                return parsedCountries(countries, fields);
             }
             return getResponse(Response.Status.NOT_FOUND);
         } catch (Exception e) {
@@ -102,12 +104,12 @@ public class CountryRest {
 
     @GET
     @Path("callingcode/{callingcode}")
-    public Object getByCallingCode(@PathParam("callingcode") String callingcode, @QueryParam("exclude") String exclude) {
+    public Object getByCallingCode(@PathParam("callingcode") String callingcode, @QueryParam("fields") String fields) {
         LOG.info("Getting by calling code " + callingcode);
         try {
             List<Country> countries = CountryService.getInstance().getByCallingCode(callingcode);
             if (!countries.isEmpty()) {
-                return parsedCountries(countries, exclude);
+                return parsedCountries(countries, fields);
             }
             return getResponse(Response.Status.NOT_FOUND);
         } catch (Exception e) {
@@ -118,12 +120,12 @@ public class CountryRest {
 
     @GET
     @Path("capital/{capital}")
-    public Object getByCapital(@PathParam("capital") String capital, @QueryParam("exclude") String exclude) {
+    public Object getByCapital(@PathParam("capital") String capital, @QueryParam("fields") String fields) {
         LOG.info("Getting by capital " + capital);
         try {
             List<Country> countries = CountryService.getInstance().getByCapital(capital);
             if (!countries.isEmpty()) {
-                return parsedCountries(countries, exclude);
+                return parsedCountries(countries, fields);
             }
             return getResponse(Response.Status.NOT_FOUND);
         } catch (Exception e) {
@@ -134,12 +136,12 @@ public class CountryRest {
 
     @GET
     @Path("region/{region}")
-    public Object getByRegion(@PathParam("region") String region, @QueryParam("exclude") String exclude) {
+    public Object getByRegion(@PathParam("region") String region, @QueryParam("fields") String fields) {
         LOG.info("Getting by region " + region);
         try {
             List<Country> countries = CountryService.getInstance().getByRegion(region);
             if (!countries.isEmpty()) {
-                return parsedCountries(countries, exclude);
+                return parsedCountries(countries, fields);
             }
             return getResponse(Response.Status.NOT_FOUND);
         } catch (Exception e) {
@@ -150,12 +152,12 @@ public class CountryRest {
 
     @GET
     @Path("subregion/{subregion}")
-    public Object getBySubRegion(@PathParam("subregion") String subregion, @QueryParam("exclude") String exclude) {
+    public Object getBySubRegion(@PathParam("subregion") String subregion, @QueryParam("fields") String fields) {
         LOG.info("Getting by sub region " + subregion);
         try {
             List<Country> countries = CountryService.getInstance().getBySubRegion(subregion);
             if (!countries.isEmpty()) {
-                return parsedCountries(countries, exclude);
+                return parsedCountries(countries, fields);
             }
             return getResponse(Response.Status.NOT_FOUND);
         } catch (Exception e) {
@@ -166,12 +168,12 @@ public class CountryRest {
 
     @GET
     @Path("lang/{lang}")
-    public Object getByLanguage(@PathParam("lang") String language, @QueryParam("exclude") String exclude) {
+    public Object getByLanguage(@PathParam("lang") String language, @QueryParam("fields") String fields) {
         LOG.info("Getting by language " + language);
         try {
             List<Country> countries = CountryService.getInstance().getByLanguage(language);
             if (!countries.isEmpty()) {
-                return parsedCountries(countries, exclude);
+                return parsedCountries(countries, fields);
             }
             return getResponse(Response.Status.NOT_FOUND);
         } catch (Exception e) {
@@ -182,12 +184,12 @@ public class CountryRest {
 
     @GET
     @Path("demonym/{demonym}")
-    public Object getByDemonym(@PathParam("demonym") String demonym, @QueryParam("exclude") String exclude) {
+    public Object getByDemonym(@PathParam("demonym") String demonym, @QueryParam("fields") String fields) {
         LOG.info("Getting by demonym " + demonym);
         try {
             List<Country> countries = CountryService.getInstance().getByDemonym(demonym);
             if (!countries.isEmpty()) {
-                return parsedCountries(countries, exclude);
+                return parsedCountries(countries, fields);
             }
             return getResponse(Response.Status.NOT_FOUND);
         } catch (Exception e) {
@@ -210,11 +212,11 @@ public class CountryRest {
                         status.getReasonPhrase()))).build();
     }
 
-    private Object parsedCountry(Country country, String excludedFields) {
-        if (excludedFields == null || excludedFields.isEmpty()) {
+    private Object parsedCountry(Country country, String fields) {
+        if (fields == null || fields.isEmpty()) {
             return country;
         } else {
-            return getCountryJson(country, Arrays.asList(excludedFields.split(ICountryRestSymbols.SEMICOLON)));
+            return getCountryJson(country, Arrays.asList(fields.split(ICountryRestSymbols.SEMICOLON)));
         }
     }
 
@@ -226,23 +228,27 @@ public class CountryRest {
         }
     }
 
-    private String getCountryJson(Country country, List<String> excludedFields) {
+    private String getCountryJson(Country country, List<String> fields) {
         Gson gson = new Gson();
         JsonParser parser = new JsonParser();
         JsonObject jsonObject = parser.parse(gson.toJson(country)).getAsJsonObject();
-        for (String excludedField : excludedFields) {
-            jsonObject.remove(excludedField);
+
+        List<String> excludedFields = getExcludedFields(fields);
+        for (String field : excludedFields) {
+            jsonObject.remove(field);
         }
         return jsonObject.toString();
     }
 
-    private String getCountriesJson(List<Country> countries, List<String> excludedFields) {
+    private String getCountriesJson(List<Country> countries, List<String> fields) {
         Gson gson = new Gson();
         JsonParser parser = new JsonParser();
         JsonArray jsonArray = parser.parse(gson.toJson(countries)).getAsJsonArray();
         JsonArray resultArray = new JsonArray();
         for (int i = 0; i < jsonArray.size(); i++) {
             JsonObject jsonObject = (JsonObject) jsonArray.get(i);
+
+            List<String> excludedFields = getExcludedFields(fields);
             for (String excludedField : excludedFields) {
                 jsonObject.remove(excludedField);
             }
@@ -250,4 +256,34 @@ public class CountryRest {
         }
         return resultArray.toString();
     }
+
+    private List<String> getExcludedFields(List<String> fields) {
+        List<String> excludedFields = new ArrayList<>(Arrays.asList(COUNTRY_FIELDS));
+        excludedFields.removeAll(fields);
+        return excludedFields;
+    }
+
+    private static final String[] COUNTRY_FIELDS = new String[]{
+            "name",
+            "topLevelDomain",
+            "alpha2Code",
+            "alpha3Code",
+            "callingCodes",
+            "capital",
+            "altSpellings",
+            "region",
+            "subregion",
+            "translations",
+            "population",
+            "latlng",
+            "demonym",
+            "area",
+            "gini",
+            "timezones",
+            "borders",
+            "nativeName",
+            "numericCode",
+            "currencies",
+            "languages"
+    };
 }
