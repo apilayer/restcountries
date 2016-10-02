@@ -32,14 +32,15 @@ public class CountryRest {
 
     @GET
     @Path("all")
-    public Object getAllCountries() {
-        return this.getCountries();
+    public Object getAllCountries(@QueryParam("fields") String fields) {
+        return this.getCountries(fields);
     }
 
     @GET
-    public Object getCountries() {
+    public Object getCountries(@QueryParam("fields") String fields) {
         LOG.info("Getting all");
-        return CountryService.getInstance().getAll();
+        List<Country> countries = CountryService.getInstance().getAll();
+        return parsedCountries(countries, fields);
     }
 
     @GET
