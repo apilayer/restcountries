@@ -22,7 +22,7 @@ public class EmptyDataTest {
     @Before
     public void before() throws IOException {
         InputStream is = this.getClass().getClassLoader()
-                .getResourceAsStream("countriesV2.json");
+                .getResourceAsStream("countriesV1.json");
         Gson gson = new Gson();
         JsonReader reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
         countries = new ArrayList<>();
@@ -70,6 +70,36 @@ public class EmptyDataTest {
         System.out.println("- Empty Numeric Code");
         for (BaseCountry c : countries) {
             if (c.getNumericCode() == null) {
+                System.out.println(c.getName());
+            }
+        }
+    }
+
+    @Test
+    public void emptyPopulation() throws Exception {
+        System.out.println("- Empty Population");
+        for (BaseCountry c : countries) {
+            if (c.getPopulation() == 0) {
+                System.out.println(c.getName());
+            }
+        }
+    }
+
+    @Test
+    public void emptyRegion() throws Exception {
+        System.out.println("- Empty Region");
+        for (BaseCountry c : countries) {
+            if (c.getRegion() == null || c.getRegion().isEmpty()) {
+                System.out.println(c.getName());
+            }
+        }
+    }
+
+    @Test
+    public void emptyTimezones() throws Exception {
+        System.out.println("- Empty Timezones");
+        for (BaseCountry c : countries) {
+            if (c.getTimezones() == null || c.getTimezones().isEmpty()) {
                 System.out.println(c.getName());
             }
         }
