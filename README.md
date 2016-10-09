@@ -3,7 +3,7 @@
 REST Countries v1.1.2
 =====================
 
-Get information about countries via a RESTful API http://restcountries.eu
+Get information about countries via a RESTful API https://restcountries.eu
 
 ----------
 
