@@ -22,7 +22,7 @@ public class EmptyDataTest {
     @Before
     public void before() throws IOException {
         InputStream is = this.getClass().getClassLoader()
-                .getResourceAsStream("countriesV2.json");
+                .getResourceAsStream("countriesV1.json");
         Gson gson = new Gson();
         JsonReader reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
         countries = new ArrayList<>();
