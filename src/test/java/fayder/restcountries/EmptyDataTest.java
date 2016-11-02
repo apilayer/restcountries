@@ -101,6 +101,12 @@ public class EmptyDataTest {
         for (BaseCountry c : countries) {
             if (c.getTimezones() == null || c.getTimezones().isEmpty()) {
                 System.out.println(c.getName());
+            } else {
+                for(String timezone : c.getTimezones()) {
+                    if (!timezone.contains("UTC")) {
+                        System.out.println(c.getName());
+                    }
+                }
             }
         }
     }
