@@ -22,7 +22,7 @@ public class EmptyDataTest {
     @Before
     public void before() throws IOException {
         InputStream is = this.getClass().getClassLoader()
-                .getResourceAsStream("countriesV1.json");
+                .getResourceAsStream("countriesV2.json");
         Gson gson = new Gson();
         JsonReader reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
         countries = new ArrayList<>();
@@ -101,6 +101,12 @@ public class EmptyDataTest {
         for (BaseCountry c : countries) {
             if (c.getTimezones() == null || c.getTimezones().isEmpty()) {
                 System.out.println(c.getName());
+            } else {
+                for(String timezone : c.getTimezones()) {
+                    if (!timezone.contains("UTC")) {
+                        System.out.println(c.getName());
+                    }
+                }
             }
         }
     }
