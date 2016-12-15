@@ -47,6 +47,9 @@ public class CountryRest {
     @Path("alpha/{alphacode}")
     public Object getByAlpha(@PathParam("alphacode") String alpha, @QueryParam("fields") String fields) {
         LOG.info("Getting by alpha " + alpha);
+        if (isEmpty(alpha) || alpha.length() < 2 || alpha.length() > 3) {
+            return getResponse(Response.Status.BAD_REQUEST);
+        }
         Country country = CountryService.getInstance().getByAlpha(alpha);
         if (country != null) {
             return parsedCountry(country, fields);
@@ -58,6 +61,9 @@ public class CountryRest {
     @Path("alpha/")
     public Object getByAlphaList(@QueryParam("codes") String codes, @QueryParam("fields") String fields) {
         LOG.info("Getting by list " + codes);
+        if (isEmpty(codes) || codes.length() < 2 || (codes.length() > 3 && !codes.contains(";"))) {
+            return getResponse(Response.Status.BAD_REQUEST);
+        }
         try {
             List<Country> countries = CountryService.getInstance().getByCodeList(codes);
             if (!countries.isEmpty()) {
@@ -74,6 +80,9 @@ public class CountryRest {
     @Path("currency/{currency}")
     public Object getByCurrency(@PathParam("currency") String currency, @QueryParam("fields") String fields) {
         LOG.info("Getting by currency " + currency);
+        if (isEmpty(currency) || currency.length() != 3) {
+            return getResponse(Response.Status.BAD_REQUEST);
+        }
         try {
             List<Country> countries = CountryService.getInstance().getByCurrency(currency);
             if (!countries.isEmpty()) {
@@ -286,4 +295,8 @@ public class CountryRest {
             "currencies",
             "languages"
     };
+
+    private boolean isEmpty(String value) {
+        return value == null || value.isEmpty();
+    }
 }
