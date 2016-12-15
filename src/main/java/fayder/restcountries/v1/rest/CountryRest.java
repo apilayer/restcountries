@@ -57,6 +57,9 @@ public class CountryRest {
 	@Path("alpha/")
 	public Object getByAlphaList(@QueryParam("codes") String codes) {
 		LOG.info("Getting by list " + codes);
+		if (codes.length() < 2 || (codes.length() > 3 && !codes.contains(";"))) {
+			return getResponse(Status.BAD_REQUEST);
+		}
 		try {
 			List<Country> countries = CountryService.getInstance().getByCodeList(codes);
 			if (!countries.isEmpty()) {
