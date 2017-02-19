@@ -34,4 +34,10 @@ public class Country extends BaseCountry {
     public String getRelevance() {
         return super.getRelevance();
     }
+
+    @Override
+    @JsonIgnore
+    public String getSubregion() {
+        return super.getSubregion();
+    }
 }
