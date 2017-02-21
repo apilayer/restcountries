@@ -7,10 +7,18 @@ Get information about countries via a RESTful API
 
 Contribute!
 ---------------
-Show me the money!
+Maintining and updating REST Countries costs me around 360€ per year. Please consider [donating] so I can cover those expenses.
+
+Stay up-to-date
+---------------
+Follow us on [Twitter]
+
+Subscribe to the [mailing list]
 
 API Endpoints
 =======
+
+Below are described the REST endpoints available that you can use to search for countries
 
 All
 ---------------
@@ -22,7 +30,7 @@ https://restcountries.eu/rest/v2/all
 Name
 ---------------
 
-Search by country name. It can be the native name or partial name.
+Search by country name. It can be the native name or partial name
 
 ``` javascript
 https://restcountries.eu/rest/v2/name/{name}
@@ -39,7 +47,7 @@ https://restcountries.eu/rest/v2/name/united
 Full Name
 ---------------
 
-Search by country full name.
+Search by country full name
 
 ``` javascript
 https://restcountries.eu/rest/v2/name/{name}?fullText=true
@@ -52,7 +60,7 @@ https://restcountries.eu/rest/v2/name/aruba?fullText=true
 Code
 ---------------
 
-Search by ISO 3166-1 2-letter or 3-letter country code.
+Search by ISO 3166-1 2-letter or 3-letter country code
 
 ``` javascript
 https://restcountries.eu/rest/v2/alpha/{code}
@@ -139,8 +147,12 @@ https://restcountries.eu/rest/v2/region/{region}
 https://restcountries.eu/rest/v2/region/europe
 ```
 
-Example
+Response Example
 ---------------
+
+``` html
+https://restcountries.eu/rest/v2/name/afghanistan
+```
 
 ``` json
 [{
@@ -194,3 +206,6 @@ Example
 ```
 
 [dist]: https://github.com/fayder/restcountries/
+[Twitter]: https://twitter.com/restcountries
+[mailing list]: http://eepurl.com/cC-h2v
+[donating]: #donation
