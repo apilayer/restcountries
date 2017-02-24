@@ -9,7 +9,7 @@ $(function () {
 
 		var stripeHandler = StripeCheckout.configure({
 		  key: 'pk_test_ZEAAuFImBxBGFGYqTr2Q4Nkr',
-		  image: '../img/restc.png',
+		  image: 'https://dl.dropboxusercontent.com/u/15115409/restc.png',
 		  locale: 'auto',
 		  // billingAddress: true,
 		  panelLabel: 'Contribute',
@@ -60,9 +60,9 @@ $(function () {
 		    name: 'REST Countries',
 		    description: '',
 		    currency: 'eur',
-		    amount: 20000
+		    amount: 2000
 		});
-            restc.amount = 20000;
+            restc.amount = 2000;
 			e.preventDefault();
         });
 
@@ -71,9 +71,9 @@ $(function () {
 		    name: 'REST Countries',
 		    description: '',
 		    currency: 'eur',
-		    amount: 50000
+		    amount: 5000
 		});
-            restc.amount = 50000;
+            restc.amount = 5000;
             e.preventDefault();
         });
 
@@ -82,9 +82,9 @@ $(function () {
 		    name: 'REST Countries',
 		    description: '',
 		    currency: 'eur',
-		    amount: 70000
+		    amount: 7000
 		});
-		  	restc.amount = 70000;
+		  	restc.amount = 7000;
             e.preventDefault();
         });
 
@@ -93,9 +93,9 @@ $(function () {
 		    name: 'REST Countries',
 		    description: '',
 		    currency: 'eur',
-		    amount: 100000
+		    amount: 10000
 		});
-		  	restc.amount = 100000;
+		  	restc.amount = 10000;
             e.preventDefault();
         });
 
