@@ -7,20 +7,19 @@ $(function () {
 	'use strict';
 	$(document).on('flatdoc:ready', function() {
 
-		if (location.hostname != "localhost" && location.hostname != "127.0.0.1" && location.protocol != 'https') {
-			location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+		if (location.hostname != "localhost" && location.hostname != "127.0.0.1" && location.protocol != 'https:') {
+			location.href = location.href.replace("http://", "https://");
 		}
 
 		var stripeHandler = StripeCheckout.configure({
-		  key: 'pk_test_ZEAAuFImBxBGFGYqTr2Q4Nkr',
+		  key: 'pk_live_lKuAMSLFxniueaO1AcVD81HB',
 		  image: 'https://dl.dropboxusercontent.com/u/15115409/restc.png',
 		  locale: 'auto',
-		  // billingAddress: true,
+		  billingAddress: true,
 		  panelLabel: 'Contribute',
 		  token: function(token) {
 		    // You can access the token ID with `token.id`.
 		    // Get the token ID to your server-side code for use.
-		    console.log(token);
 		    $.ajax({
 		    	url: 'https://restcountries.eu/contribute',
 		    	type: 'POST',
@@ -28,7 +27,7 @@ $(function () {
     			dataType: "json",
     			data: JSON.stringify({"token": token.id, "amount": restc.amount}),
     			success: function(data, textStatus, jqXHR) {
-
+    				console.log("Contribution success")
     			},
     			error: function(jqXHR, textStatus, errorThrown) {
     				console.log(errorThrown);
