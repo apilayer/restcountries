@@ -11,7 +11,7 @@ Get information about countries via a RESTful API
 
 Contribute!
 ---------------
-**570€ per year** aprox. is what cost me to maintain and update REST Countries. Please help me cover these costs so I can keep improving this service.
+**570€ per year** aprox. is the cost to maintain and update REST Countries. Please help me cover these costs so I can keep improving this service.
 
 [€ 5 >][five] [€ 10 >][ten] [€ 20 >][twenty]
 
