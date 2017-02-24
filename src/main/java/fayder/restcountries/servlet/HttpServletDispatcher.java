@@ -8,6 +8,6 @@ import javax.servlet.annotation.WebServlet;
 
 @WebServlet(
 		name ="RestEasy", 
-		urlPatterns = {"/rest/*"}, 
+		urlPatterns = {"/rest/*", "/contribute"},
 		initParams = {@WebInitParam(name="resteasy.scan", value="true")})
 public class HttpServletDispatcher extends org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher {}

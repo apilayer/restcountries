@@ -1,15 +1,21 @@
 REST Countries
 =======
 
-Get information about countries via a RESTful API https://restcountries.eu
+Get information about countries via a RESTful API
 
 [![Build Status](https://travis-ci.org/fayder/restcountries.svg?branch=master)](https://travis-ci.org/fayder/restcountries)
+
+*Current version: 2.0.0*
+
+*Previous version: [v1.1.2]*
 
 Contribute!
 ---------------
 **570€ per year** aprox. is what cost me to maintain and update REST Countries. Please help me cover these costs so I can keep improving this service.
 
-[Contribute]
+[€ 5 >][five] [€ 10 >][ten] [€ 20 >][twenty]
+
+[€ 50 >][fifty] [€ 70 >][seventy] [€ 100 >][hundred]
 
 ### 2017 costs funded: 0%
 
@@ -106,7 +112,7 @@ https://restcountries.eu/rest/v2/currency/cop
 Language
 ---------------
 
-Search by ISO 639-1 language code
+Search by ISO 639-1 language code.
 
 ``` javascript
 https://restcountries.eu/rest/v2/lang/{et}
@@ -208,6 +214,7 @@ https://restcountries.eu/rest/v2/name/afghanistan
 	}]
 }]
 ```
+
 Sources
 =======
 * [@mledoze]
@@ -245,3 +252,10 @@ License
 [REST Countries Ruby]: https://github.com/davidesantangelo/restcountry
 [REST Countries Go]: https://github.com/alediaferia/gocountries
 [REST Countries Python]: https://github.com/SteinRobert/python-restcountries
+[v1.1.2]: /v1
+[five]: #five
+[ten]: #ten
+[twenty]: #twenty
+[fifty]: #fifty
+[seventy]: #seventy
+[hundred]: #hundred

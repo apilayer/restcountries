@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>vaeke</groupId>
     <artifactId>restcountries</artifactId>
-    <version>1.1.2</version>
+    <version>2.0.0</version>
     <packaging>war</packaging>
     <name>restcountries</name>
     <description>REST interface to get data about countries</description>
@@ -41,6 +41,13 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.7</version>
+        </dependency>
+
+        <!-- stripe -->
+        <dependency>
+            <groupId>com.stripe</groupId>
+            <artifactId>stripe-java</artifactId>
+            <version>3.5.0</version>
         </dependency>
 
         <!-- logging -->
