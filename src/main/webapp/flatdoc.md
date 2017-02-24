@@ -5,6 +5,8 @@ Get information about countries via a RESTful API
 
 [![Build Status](https://travis-ci.org/fayder/restcountries.svg?branch=master)](https://travis-ci.org/fayder/restcountries)
 
+*Previous version: [v1.1.2]*
+
 Contribute!
 ---------------
 **570€ per year** aprox. is what cost me to maintain and update REST Countries. Please help me cover these costs so I can keep improving this service.
@@ -12,7 +14,6 @@ Contribute!
 [€ 5 >][five] [€ 10 >][ten] [€ 20 >][twenty]
 
 [€ 50 >][fifty] [€ 70 >][seventy] [€ 100 >][hundred]
-
 
 ### 2017 costs funded: 0%
 
@@ -109,7 +110,7 @@ https://restcountries.eu/rest/v2/currency/cop
 Language
 ---------------
 
-Search by ISO 639-1 language code
+Search by ISO 639-1 language code.
 
 ``` javascript
 https://restcountries.eu/rest/v2/lang/{et}
@@ -212,10 +213,44 @@ https://restcountries.eu/rest/v2/name/afghanistan
 }]
 ```
 
+Sources
+=======
+* [@mledoze]
+* [List of countries]
+* [Languages]
+* [Currencies]
+* [Area]
+
+Similar projects
+=======
+* [REST Countries Node.js]
+* [REST Countries Ruby]
+* [REST Countries Go]
+* [REST Countries Python]
+* [world-currencies]
+
+License
+=======
+[Mozilla Public License] MPL
+
 [dist]: https://github.com/fayder/restcountries/
 [Twitter]: https://twitter.com/restcountries
 [mailing list]: http://eepurl.com/cC-h2v
 [contribute]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V5AJAEMKE6A3E
+[@mledoze]: https://github.com/mledoze/countries
+[List of countries]: https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes
+[Languages]: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+[Currencies]: https://en.wikipedia.org/wiki/List_of_circulating_currencies
+[Area]: https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area
+[Population]: https://en.wikipedia.org/wiki/List_of_countries_by_population
+[Gini coefficient]: http://en.wikipedia.org/wiki/List_of_countries_by_income_equality
+[Mozilla Public License]: http://www.mozilla.org/MPL/
+[world-currencies]: https://github.com/wiredmax/world-currencies
+[REST Countries Node.js]: https://github.com/aredo/restcountries
+[REST Countries Ruby]: https://github.com/davidesantangelo/restcountry
+[REST Countries Go]: https://github.com/alediaferia/gocountries
+[REST Countries Python]: https://github.com/SteinRobert/python-restcountries
+[v1.1.2]: /v1
 [five]: #five
 [ten]: #ten
 [twenty]: #twenty

@@ -7,6 +7,10 @@ $(function () {
 	'use strict';
 	$(document).on('flatdoc:ready', function() {
 
+		if (location.hostname != "localhost" && location.hostname != "127.0.0.1" && location.protocol != 'https') {
+			location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+		}
+
 		var stripeHandler = StripeCheckout.configure({
 		  key: 'pk_test_ZEAAuFImBxBGFGYqTr2Q4Nkr',
 		  image: 'https://dl.dropboxusercontent.com/u/15115409/restc.png',
