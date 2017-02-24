@@ -32,9 +32,7 @@ public class StripeRest {
             return getResponse(Response.Status.BAD_REQUEST);
         }
 
-        LOG.debug("Contribute: " + contribution.getAmount());
-
-        Stripe.apiKey = "sk_test_08xfMJcllko0WiYiBDE1DJck";
+        Stripe.apiKey = "";
         Map<String, Object> params = new HashMap<>();
         params.put("amount", contribution.getAmount());
         params.put("currency", "eur");
