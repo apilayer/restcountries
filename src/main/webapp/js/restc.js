@@ -7,30 +7,101 @@ $(function () {
 	'use strict';
 	$(document).on('flatdoc:ready', function() {
 
-		var handler = StripeCheckout.configure({
-		  key: 'pk_live_lKuAMSLFxniueaO1AcVD81HB',
-		  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+		var stripeHandler = StripeCheckout.configure({
+		  key: 'pk_test_ZEAAuFImBxBGFGYqTr2Q4Nkr',
+		  image: '../img/restc.png',
 		  locale: 'auto',
+		  // billingAddress: true,
+		  panelLabel: 'Contribute',
 		  token: function(token) {
 		    // You can access the token ID with `token.id`.
 		    // Get the token ID to your server-side code for use.
+		    console.log(token);
+		    $.ajax({
+		    	url: 'https://restcountries.eu/contribute',
+		    	type: 'POST',
+		    	contentType: "application/json; charset=utf-8",
+    			dataType: "json",
+    			data: JSON.stringify({"token": token.id, "amount": restc.amount}),
+    			success: function(data, textStatus, jqXHR) {
+
+    			},
+    			error: function(jqXHR, textStatus, errorThrown) {
+    				console.log(errorThrown);
+    			}
+		    });
 		  }
 		});
 
-        var donationLink = $('a[href="#donation"]');
-        donationLink.click(function(e) {
-            handler.open({
+        $('a[href="#five"]').click(function(e) {
+        	stripeHandler.open({
 		    name: 'REST Countries',
 		    description: '',
 		    currency: 'eur',
-		    amount: 2000
-		  });
-		  e.preventDefault();
+		    amount: 500
+		});
+            restc.amount = 500;
+            e.preventDefault();
+        });
+
+        $('a[href="#ten"]').click(function(e) {
+            stripeHandler.open({
+		    name: 'REST Countries',
+		    description: '',
+		    currency: 'eur',
+		    amount: 1000
+		});
+            restc.amount = 1000;
+            e.preventDefault();
+        });
+
+        $('a[href="#twenty"]').click(function(e) {
+            stripeHandler.open({
+		    name: 'REST Countries',
+		    description: '',
+		    currency: 'eur',
+		    amount: 20000
+		});
+            restc.amount = 20000;
+			e.preventDefault();
+        });
+
+        $('a[href="#fifty"]').click(function(e) {
+            stripeHandler.open({
+		    name: 'REST Countries',
+		    description: '',
+		    currency: 'eur',
+		    amount: 50000
+		});
+            restc.amount = 50000;
+            e.preventDefault();
+        });
+
+        $('a[href="#seventy"]').click(function(e) {
+            stripeHandler.open({
+		    name: 'REST Countries',
+		    description: '',
+		    currency: 'eur',
+		    amount: 70000
+		});
+		  	restc.amount = 70000;
+            e.preventDefault();
+        });
+
+        $('a[href="#hundred"]').click(function(e) {
+            stripeHandler.open({
+		    name: 'REST Countries',
+		    description: '',
+		    currency: 'eur',
+		    amount: 100000
+		});
+		  	restc.amount = 100000;
+            e.preventDefault();
         });
 
         // Close Checkout on page navigation:
 		window.addEventListener('popstate', function() {
-		  handler.close();
+		  stripeHandler.close();
 		});
     });
 });

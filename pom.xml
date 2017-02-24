@@ -43,6 +43,13 @@
             <version>2.7</version>
         </dependency>
 
+        <!-- stripe -->
+        <dependency>
+            <groupId>com.stripe</groupId>
+            <artifactId>stripe-java</artifactId>
+            <version>3.5.0</version>
+        </dependency>
+
         <!-- logging -->
         <dependency>
             <groupId>org.slf4j</groupId>

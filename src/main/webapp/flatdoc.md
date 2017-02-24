@@ -7,13 +7,20 @@ Get information about countries via a RESTful API
 
 Contribute!
 ---------------
-Maintining and updating REST Countries costs me around 360€ per year. Please consider [donating] so I can cover those expenses.
+**570€ per year** aprox. is what cost me to maintain and update REST Countries. Please help me cover these costs so I can keep improving this service.
+
+[€ 5 >][five] [€ 10 >][ten] [€ 20 >][twenty]
+
+[€ 50 >][fifty] [€ 70 >][seventy] [€ 100 >][hundred]
+
+
+### 2017 costs funded: 0%
 
 Stay up-to-date
 ---------------
 Follow us on [Twitter]
 
-Subscribe to the [mailing list]
+Or subscribe to the [mailing list]
 
 API Endpoints
 =======
@@ -208,4 +215,10 @@ https://restcountries.eu/rest/v2/name/afghanistan
 [dist]: https://github.com/fayder/restcountries/
 [Twitter]: https://twitter.com/restcountries
 [mailing list]: http://eepurl.com/cC-h2v
-[donating]: #donation
+[contribute]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V5AJAEMKE6A3E
+[five]: #five
+[ten]: #ten
+[twenty]: #twenty
+[fifty]: #fifty
+[seventy]: #seventy
+[hundred]: #hundred
