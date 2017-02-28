@@ -17,7 +17,7 @@ Contribute!
 
 [€ 50 >][fifty] [€ 70 >][seventy] [€ 100 >][hundred]
 
-### 2017 costs funded: 0%
+### 2017 costs funded: 3.5%
 
 Stay up-to-date
 ---------------
