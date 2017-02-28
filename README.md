@@ -15,7 +15,7 @@ Contribute!
 
 Stay up-to-date
 ---------------
-Follow us on [Twitter]
+Follow RESTCountries on [Twitter]
 
 Or subscribe to the [mailing list]
 
