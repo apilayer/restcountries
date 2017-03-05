@@ -26,8 +26,6 @@ public class BaseCountry {
 
     private String subregion;
 
-    private CountryTranslations translations;
-
     private Integer population;
 
     private List<Double> latlng;
@@ -124,14 +122,6 @@ public class BaseCountry {
 
     public void setSubregion(String subregion) {
         this.subregion = subregion;
-    }
-
-    public CountryTranslations getTranslations() {
-        return translations;
-    }
-
-    public void setTranslations(CountryTranslations translations) {
-        this.translations = translations;
     }
 
     public Integer getPopulation() {

@@ -12,6 +12,7 @@ public class Country extends BaseCountry {
 
     private List<Currency> currencies;
     private List<Language> languages;
+    private Translations translations;
 
     public List<Currency> getCurrencies() {
         return currencies;
@@ -39,5 +40,9 @@ public class Country extends BaseCountry {
     @JsonIgnore
     public String getSubregion() {
         return super.getSubregion();
+    }
+
+    public Translations getTranslations() {
+        return translations;
     }
 }
