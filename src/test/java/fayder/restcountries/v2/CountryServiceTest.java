@@ -1,6 +1,7 @@
 package fayder.restcountries.v2;
 
 import fayder.restcountries.v2.domain.Country;
+import fayder.restcountries.v2.domain.Translations;
 import fayder.restcountries.v2.rest.CountryService;
 import org.junit.Assert;
 import org.junit.Test;
@@ -152,5 +153,19 @@ public class CountryServiceTest {
         for (Country country : countries) {
             Assert.assertEquals("french", country.getDemonym().toLowerCase());
         }
+    }
+
+    @Test
+    public void translations() throws Exception {
+        Country country = CountryService.getInstance().getByAlpha("COL");
+        Assert.assertNotNull(country);
+        Translations translations = country.getTranslations();
+        Assert.assertEquals("Kolumbien", translations.getDe());
+        Assert.assertEquals("Colombia", translations.getEs());
+        Assert.assertEquals("Colombie", translations.getFr());
+        Assert.assertEquals("コロンビア", translations.getJa());
+        Assert.assertEquals("Colombia", translations.getIt());
+        Assert.assertEquals("Colômbia", translations.getBr());
+        Assert.assertEquals("Colômbia", translations.getPt());
     }
 }
