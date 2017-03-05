@@ -208,6 +208,19 @@ https://restcountries.eu/rest/v2/name/afghanistan
 	}]
 }]
 ```
+
+Filter Response
+=======
+
+You can filter the output of your request to include only the specified fields.
+
+``` javascript
+https://restcountries.eu/rest/v2/{service}?fields={field};{field};{field}
+```
+``` html
+https://restcountries.eu/rest/v2/all?fields=name;capital;currencies
+```
+
 Sources
 =======
 * [@mledoze]
