@@ -39,7 +39,7 @@ $(function () {
         $('a[href="#five"]').click(function(e) {
         	stripeHandler.open({
 		    name: 'REST Countries',
-		    description: '',
+		    description: 'Secured by Stripe',
 		    currency: 'eur',
 		    amount: 500
 		});
@@ -50,7 +50,7 @@ $(function () {
         $('a[href="#ten"]').click(function(e) {
             stripeHandler.open({
 		    name: 'REST Countries',
-		    description: '',
+		    description: 'Secured by Stripe',
 		    currency: 'eur',
 		    amount: 1000
 		});
@@ -61,7 +61,7 @@ $(function () {
         $('a[href="#twenty"]').click(function(e) {
             stripeHandler.open({
 		    name: 'REST Countries',
-		    description: '',
+		    description: 'Secured by Stripe',
 		    currency: 'eur',
 		    amount: 2000
 		});
@@ -72,7 +72,7 @@ $(function () {
         $('a[href="#fifty"]').click(function(e) {
             stripeHandler.open({
 		    name: 'REST Countries',
-		    description: '',
+		    description: 'Secured by Stripe',
 		    currency: 'eur',
 		    amount: 5000
 		});
@@ -83,7 +83,7 @@ $(function () {
         $('a[href="#seventy"]').click(function(e) {
             stripeHandler.open({
 		    name: 'REST Countries',
-		    description: '',
+		    description: 'Secured by Stripe',
 		    currency: 'eur',
 		    amount: 7000
 		});
@@ -94,7 +94,7 @@ $(function () {
         $('a[href="#hundred"]').click(function(e) {
             stripeHandler.open({
 		    name: 'REST Countries',
-		    description: '',
+		    description: 'Secured by Stripe',
 		    currency: 'eur',
 		    amount: 10000
 		});
