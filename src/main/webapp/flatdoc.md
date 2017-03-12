@@ -235,6 +235,11 @@ Sources
 * [Currencies]
 * [Area]
 
+2017 Costs Contributors
+=======
+* Hannes Etzelstorfer
+* Paul Oliver
+
 Similar projects
 =======
 * [REST Countries Node.js]
