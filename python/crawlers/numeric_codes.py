@@ -20,7 +20,7 @@ def __getHTML(url):
 
 def __extractData(html):
     data = {}
-    table = html.find('table', class_='wikitable')
+    table = html.findAll('table', class_='wikitable')[1]
     for row in table:
         nameLink = row.find('a')
         if nameLink != -1:
