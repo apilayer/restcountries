@@ -11,7 +11,7 @@ Contribute!
 
 [Contribute]
 
-### 2017 costs funded: 5.26%
+### 2017 costs funded: 6.14%
 
 Stay up-to-date
 ---------------
