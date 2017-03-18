@@ -13,21 +13,14 @@ public class Country extends BaseCountry {
     private List<Currency> currencies;
     private List<Language> languages;
     private Translations translations;
+    private String flag;
 
     public List<Currency> getCurrencies() {
         return currencies;
     }
 
-    public void setCurrencies(List<Currency> currencies) {
-        this.currencies = currencies;
-    }
-
     public List<Language> getLanguages() {
         return languages;
-    }
-
-    public void setLanguages(List<Language> languages) {
-        this.languages = languages;
     }
 
     @Override
@@ -44,5 +37,9 @@ public class Country extends BaseCountry {
 
     public Translations getTranslations() {
         return translations;
+    }
+
+    public String getFlag() {
+        return flag;
     }
 }
