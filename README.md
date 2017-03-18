@@ -155,7 +155,7 @@ Response Example
 ---------------
 
 ``` html
-https://restcountries.eu/rest/v2/name/afghanistan
+https://restcountries.eu/rest/v2/alpha/col
 ```
 
 ``` json
