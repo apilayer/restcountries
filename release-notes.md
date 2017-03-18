@@ -1,2 +1,0 @@
-- Updated population data
-- Using support@restcountries.eu in website
