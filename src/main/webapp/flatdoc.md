@@ -240,6 +240,7 @@ Sources
 
 Similar projects
 =======
+* [Countries of the world]
 * [REST Countries Node.js]
 * [REST Countries Ruby]
 * [REST Countries Go]
@@ -267,6 +268,7 @@ License
 [REST Countries Ruby]: https://github.com/davidesantangelo/restcountry
 [REST Countries Go]: https://github.com/alediaferia/gocountries
 [REST Countries Python]: https://github.com/SteinRobert/python-restcountries
+[Countries of the world]: http://countries.petethompson.net
 [v1.1.2]: /v1
 [five]: #five
 [ten]: #ten

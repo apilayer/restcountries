@@ -231,6 +231,7 @@ Sources
 
 Similar projects
 =======
+* [Countries of the word]
 * [REST Countries Node.js]
 * [REST Countries Ruby]
 * [REST Countries Go]
@@ -258,3 +259,4 @@ License
 [REST Countries Ruby]: https://github.com/davidesantangelo/restcountry
 [REST Countries Go]: https://github.com/alediaferia/gocountries
 [REST Countries Python]: https://github.com/SteinRobert/python-restcountries
+[Countries of the world]: http://countries.petethompson.net
