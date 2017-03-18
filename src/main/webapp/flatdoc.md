@@ -8,9 +8,7 @@ Get information about countries via a RESTful API
 *Current version: 2.0.0*  
 *Previous version: [v1.1.2]*
 
-> Successful requests 2017  
-> Jan: 17,971,335.00  
-> Feb: 20,797,954.00
+> 20,797,954.00 successful requests in Feb.
 
 Contribute!
 ---------------
