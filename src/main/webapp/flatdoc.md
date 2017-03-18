@@ -10,7 +10,7 @@ Get information about countries via a RESTful API
 
 > 20,797,954.00 successful requests in Feb.
 
-Contribute!
+Donate!
 ---------------
 **570€ per year** aprox. is the cost to maintain and update REST Countries. Please help me cover these costs so I can keep improving this service.
 
