@@ -5,14 +5,12 @@ Get information about countries via a RESTful API
 
 [![Build Status](https://travis-ci.org/fayder/restcountries.svg?branch=master)](https://travis-ci.org/fayder/restcountries)
 
-*Current version: 2.0.0*  
+*Current version: 2.0.1*  
 *Previous version: [v1.1.2]*
 
-> Successful requests 2017  
-> Jan: 17,971,335.00  
-> Feb: 20,797,954.00
+> 20,797,954.00 successful requests in Feb.
 
-Contribute!
+Donate!
 ---------------
 **570€ per year** aprox. is the cost to maintain and update REST Countries. Please help me cover these costs so I can keep improving this service.
 
@@ -240,6 +238,7 @@ Sources
 
 Similar projects
 =======
+* [Countries of the world]
 * [REST Countries Node.js]
 * [REST Countries Ruby]
 * [REST Countries Go]
@@ -267,6 +266,7 @@ License
 [REST Countries Ruby]: https://github.com/davidesantangelo/restcountry
 [REST Countries Go]: https://github.com/alediaferia/gocountries
 [REST Countries Python]: https://github.com/SteinRobert/python-restcountries
+[Countries of the world]: http://countries.petethompson.net
 [v1.1.2]: /v1
 [five]: #five
 [ten]: #ten

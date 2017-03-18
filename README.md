@@ -5,11 +5,11 @@ Get information about countries via a RESTful API https://restcountries.eu
 
 [![Build Status](https://travis-ci.org/fayder/restcountries.svg?branch=master)](https://travis-ci.org/fayder/restcountries)
 
-Contribute!
+Donate!
 ---------------
 **570€ per year** aprox. is the cost to maintain and update REST Countries. Please help me cover these costs so I can keep improving this service.
 
-[Contribute]
+[donate]
 
 ### 2017 costs funded: 6.14%
 
@@ -231,6 +231,7 @@ Sources
 
 Similar projects
 =======
+* [Countries of the word]
 * [REST Countries Node.js]
 * [REST Countries Ruby]
 * [REST Countries Go]
@@ -244,7 +245,7 @@ License
 [dist]: https://github.com/fayder/restcountries/
 [Twitter]: https://twitter.com/restcountries
 [mailing list]: http://eepurl.com/cC-h2v
-[contribute]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V5AJAEMKE6A3E
+[donate]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V5AJAEMKE6A3E
 [@mledoze]: https://github.com/mledoze/countries
 [List of countries]: https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes
 [Languages]: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
@@ -258,3 +259,4 @@ License
 [REST Countries Ruby]: https://github.com/davidesantangelo/restcountry
 [REST Countries Go]: https://github.com/alediaferia/gocountries
 [REST Countries Python]: https://github.com/SteinRobert/python-restcountries
+[Countries of the world]: http://countries.petethompson.net
