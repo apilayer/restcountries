@@ -166,54 +166,46 @@ https://restcountries.eu/rest/v2/name/afghanistan
 ```
 
 ``` json
-[{
-	"name": "Afghanistan",
-	"topLevelDomain": [".af"],
-	"alpha2Code": "AF",
-	"alpha3Code": "AFG",
-	"callingCodes": ["93"],
-	"capital": "Kabul",
-	"altSpellings": ["AF", "Afġānistān"],
-	"region": "Asia",
-	"subregion": "Southern Asia",
-	"translations": {
-		"de": "Afghanistan",
-		"es": "Afganistán",
-		"fr": "Afghanistan",
-		"ja": "アフガニスタン",
-		"it": "Afghanistan"
-	},
-	"population": 27657145,
-	"latlng": [33.0, 65.0],
-	"demonym": "Afghan",
-	"area": 652230.0,
-	"gini": 27.8,
-	"timezones": ["UTC+04:30"],
-	"borders": ["IRN", "PAK", "TKM", "UZB", "TJK", "CHN"],
-	"nativeName": "افغانستان",
-	"numericCode": "004",
+{
+	"name": "Colombia",
+	"topLevelDomain": [".co"],
+	"alpha2Code": "CO",
+	"alpha3Code": "COL",
+	"callingCodes": ["57"],
+	"capital": "Bogotá",
+	"altSpellings": ["CO", "Republic of Colombia", "República de Colombia"],
+	"region": "Americas",
+	"population": 48759958,
+	"latlng": [4.0, -72.0],
+	"demonym": "Colombian",
+	"area": 1141748.0,
+	"gini": 55.9,
+	"timezones": ["UTC-05:00"],
+	"borders": ["BRA", "ECU", "PAN", "PER", "VEN"],
+	"nativeName": "Colombia",
+	"numericCode": "170",
 	"currencies": [{
-		"code": "AFN",
-		"name": "Afghan afghani",
-		"symbol": "؋"
+		"code": "COP",
+		"name": "Colombian peso",
+		"symbol": "$"
 	}],
 	"languages": [{
-		"iso639_1": "ps",
-		"iso639_2": "pus",
-		"name": "Pashto",
-		"nativeName": "پښتو"
-	}, {
-		"iso639_1": "uz",
-		"iso639_2": "uzb",
-		"name": "Uzbek",
-		"nativeName": "Oʻzbek"
-	}, {
-		"iso639_1": "tk",
-		"iso639_2": "tuk",
-		"name": "Turkmen",
-		"nativeName": "Türkmen"
-	}]
-}]
+		"iso639_1": "es",
+		"iso639_2": "spa",
+		"name": "Spanish",
+		"nativeName": "Español"
+	}],
+	"translations": {
+		"de": "Kolumbien",
+		"es": "Colombia",
+		"fr": "Colombie",
+		"ja": "コロンビア",
+		"it": "Colombia",
+		"br": "Colômbia",
+		"pt": "Colômbia"
+	},
+	"flag": "https://restcountries.eu/data/col.svg"
+}
 ```
 
 Filter Response
