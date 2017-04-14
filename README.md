@@ -9,7 +9,7 @@ Donate!
 ---------------
 **570€ per year** aprox. is the cost to maintain and update REST Countries. Please help me cover these costs so I can keep improving this service.
 
-[donate]
+[Donate]
 
 ### 2017 costs funded: 23.68%
 
@@ -237,7 +237,7 @@ License
 [dist]: https://github.com/fayder/restcountries/
 [Twitter]: https://twitter.com/restcountries
 [mailing list]: http://eepurl.com/cC-h2v
-[donate]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V5AJAEMKE6A3E
+[Donate]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V5AJAEMKE6A3E
 [@mledoze]: https://github.com/mledoze/countries
 [List of countries]: https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes
 [Languages]: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
