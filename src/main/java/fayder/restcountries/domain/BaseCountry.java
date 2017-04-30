@@ -1,7 +1,5 @@
 package fayder.restcountries.domain;
 
-import fayder.restcountries.v1.domain.CountryTranslations;
-
 import java.util.List;
 
 public class BaseCountry {
