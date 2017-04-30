@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package fayder.restcountries.v2.domain;
 
+import com.google.gson.annotations.SerializedName;
 import fayder.restcountries.domain.BaseCountry;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
@@ -14,6 +15,8 @@ public class Country extends BaseCountry {
     private List<Language> languages;
     private Translations translations;
     private String flag;
+    @SerializedName("european_union")
+    private boolean europeanUnion;
 
     public List<Currency> getCurrencies() {
         return currencies;
@@ -41,5 +44,9 @@ public class Country extends BaseCountry {
 
     public String getFlag() {
         return flag;
+    }
+
+    public boolean isEuropeanUnion() {
+        return europeanUnion;
     }
 }

@@ -1,7 +1,6 @@
 # This is only for countriesV2
 # 1- load countries-input.json
-# 2- crawl,parse and update population
-# 3- crawl,parse and update gini
+# 2- crawl,parse and update json
 # 4- save json string in new file
 
 import json
