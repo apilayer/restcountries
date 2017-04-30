@@ -293,7 +293,9 @@ public class CountryRest {
             "nativeName",
             "numericCode",
             "currencies",
-            "languages"
+            "languages",
+            "flag",
+            "tradeBlocs"
     };
 
     private boolean isEmpty(String value) {
