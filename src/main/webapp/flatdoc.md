@@ -5,7 +5,7 @@ Get information about countries via a RESTful API
 
 [![Build Status](https://travis-ci.org/fayder/restcountries.svg?branch=master)](https://travis-ci.org/fayder/restcountries)
 
-*Current version: 2.0.1*  
+*Current version: 2.0.2*  
 *Previous version: [v1.1.2]*
 
 > 20,797,954.00 successful requests in Feb.
