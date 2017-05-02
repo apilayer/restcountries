@@ -1,12 +1,9 @@
 package fayder.restcountries.v2;
 
-import fayder.restcountries.v2.domain.Country;
-import fayder.restcountries.v2.domain.Translations;
+import fayder.restcountries.v2.domain.*;
 import fayder.restcountries.v2.rest.CountryService;
 import org.junit.Assert;
 import org.junit.Test;
-import fayder.restcountries.v2.domain.Currency;
-import fayder.restcountries.v2.domain.Language;
 
 import java.util.List;
 
@@ -152,6 +149,18 @@ public class CountryServiceTest {
         Assert.assertFalse(countries.isEmpty());
         for (Country country : countries) {
             Assert.assertEquals("french", country.getDemonym().toLowerCase());
+        }
+    }
+
+    @Test
+    public void getByRegionalBloc() throws Exception {
+        List<Country> countries = CountryService.getInstance().getByRegionalBloc("eu");
+        Assert.assertNotNull(countries);
+        Assert.assertFalse(countries.isEmpty());
+        for(Country country : countries) {
+            for (RegionalBloc regionalBloc : country.getRegionalBlocs()) {
+                Assert.assertTrue(regionalBloc.getAcronym().toLowerCase().equals("eu"));
+            }
         }
     }
 
