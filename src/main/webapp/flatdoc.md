@@ -158,6 +158,32 @@ https://restcountries.eu/rest/v2/region/{region}
 https://restcountries.eu/rest/v2/region/europe
 ```
 
+Regional Bloc
+---------------
+
+Search by regional bloc:
+
+- EU (European Union)
+- EFTA (European Free Trade Association)
+- CARICOM (Caribbean Community)
+- PA (Pacific Alliance)
+- AU (African Union)
+- USAN (Union of South American Nations)
+- EEU (Eurasian Economic Union)
+- AL (Arab League)
+- ASEAN (Association of Southeast Asian Nations)
+- CAIS (Central American Integration System)
+- CEFTA (Central European Free Trade Agreement)
+- NAFTA (North American Free Trade Agreement)
+- SAARC (South Asian Association for Regional Cooperation)
+
+``` javascript
+https://restcountries.eu/rest/v2/regionalbloc/{regionalbloc}
+```
+``` html
+https://restcountries.eu/rest/v2/regionalbloc/eu
+```
+
 Response Example
 ---------------
 
@@ -166,7 +192,7 @@ https://restcountries.eu/rest/v2/alpha/col
 ```
 
 ``` json
-{
+[{
 	"name": "Colombia",
 	"topLevelDomain": [".co"],
 	"alpha2Code": "CO",
@@ -175,6 +201,7 @@ https://restcountries.eu/rest/v2/alpha/col
 	"capital": "Bogotá",
 	"altSpellings": ["CO", "Republic of Colombia", "República de Colombia"],
 	"region": "Americas",
+	"subregion": "South America",
 	"population": 48759958,
 	"latlng": [4.0, -72.0],
 	"demonym": "Colombian",
@@ -204,8 +231,19 @@ https://restcountries.eu/rest/v2/alpha/col
 		"br": "Colômbia",
 		"pt": "Colômbia"
 	},
-	"flag": "https://restcountries.eu/data/col.svg"
-}
+	"flag": "https://restcountries.eu/data/col.svg",
+	"regionalBlocs": [{
+		"acronym": "PA",
+		"name": "Pacific Alliance",
+		"otherAcronyms": [],
+		"otherNames": ["Alianza del Pacífico"]
+	}, {
+		"acronym": "USAN",
+		"name": "Union of South American Nations",
+		"otherAcronyms": ["UNASUR", "UNASUL", "UZAN"],
+		"otherNames": ["Unión de Naciones Suramericanas", "União de Nações Sul-Americanas", "Unie van Zuid-Amerikaanse Naties", "South American Union"]
+	}]
+}]
 ```
 
 Filter Response
