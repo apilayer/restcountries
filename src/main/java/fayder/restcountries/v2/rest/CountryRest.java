@@ -207,6 +207,22 @@ public class CountryRest {
         }
     }
 
+    @GET
+    @Path("regionalbloc/{regionalbloc}")
+    public Object getByRegionalBloc(@PathParam("regionalbloc") String regionalBlock, @QueryParam("fields") String fields) {
+        LOG.info("Getting by regional bloc " + regionalBlock);
+        try {
+            List<Country> countries = CountryService.getInstance().getByRegionalBloc(regionalBlock);
+            if (!countries.isEmpty()) {
+                return parsedCountries(countries, fields);
+            }
+            return getResponse(Response.Status.NOT_FOUND);
+        } catch (Exception e) {
+            LOG.error(e.getMessage(), e);
+            return getResponse(Response.Status.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @POST
     public Object doPOST() {
         LOG.info("Handling POST Request");
@@ -295,7 +311,7 @@ public class CountryRest {
             "currencies",
             "languages",
             "flag",
-            "tradeBlocs"
+            "regionalBlocs"
     };
 
     private boolean isEmpty(String value) {
