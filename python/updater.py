@@ -10,7 +10,7 @@ from crawlers import gini
 from crawlers import currencies
 from crawlers import languages
 from crawlers import numeric_codes
-
+from crawlers import regional_blocs
 
 def getCountriesJSON():
     inputJsonFile = open('countries-input.json')
@@ -31,4 +31,5 @@ countriesJSON = gini.update(countriesJSON)
 countriesJSON = currencies.update(countriesJSON)
 countriesJSON = languages.update(countriesJSON)
 countriesJSON = numeric_codes.update(countriesJSON)
+# countriesJSON = regional_blocs.update(countriesJSON)
 saveCountriesJSON(countriesJSON)

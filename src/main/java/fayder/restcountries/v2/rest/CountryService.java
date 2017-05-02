@@ -7,6 +7,8 @@ import fayder.restcountries.rest.CountryServiceHelper;
 import fayder.restcountries.v2.domain.Country;
 import fayder.restcountries.v2.domain.Currency;
 import fayder.restcountries.v2.domain.Language;
+import fayder.restcountries.v2.domain.RegionalBloc;
+import org.apache.commons.codec.binary.StringUtils;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
@@ -107,6 +109,19 @@ public class CountryService {
         for (Country country : countries) {
             if (country.getDemonym().toLowerCase().equals(CountryServiceHelper.normalize(demonym.toLowerCase()))) {
                 result.add(country);
+            }
+        }
+        return result;
+    }
+
+    public List<Country> getByRegionalBloc(String regionalBloc) {
+        List<Country> result = new ArrayList<>();
+        for (Country country : countries) {
+            for (RegionalBloc countryRegionalBloc : country.getRegionalBlocs()) {
+                if (countryRegionalBloc.getAcronym().toUpperCase().equals(regionalBloc.toUpperCase())
+                        || countryRegionalBloc.getOtherAcronyms().contains(regionalBloc.toUpperCase())) {
+                    result.add(country);
+                }
             }
         }
         return result;
