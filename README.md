@@ -270,7 +270,7 @@ Similar projects
 
 License
 =======
-[Mozilla Public License] MPL
+[Mozilla Public License] MPL 2.0
 
 [dist]: https://github.com/fayder/restcountries/
 [Twitter]: https://twitter.com/restcountries
