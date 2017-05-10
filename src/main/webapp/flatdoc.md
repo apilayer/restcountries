@@ -277,7 +277,7 @@ Similar projects
 
 License
 =======
-[Mozilla Public License] MPL
+[Mozilla Public License] 2.0 MPL
 
 [dist]: https://github.com/fayder/restcountries/
 [Twitter]: https://twitter.com/restcountries
