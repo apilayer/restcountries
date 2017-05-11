@@ -8,8 +8,6 @@ Get information about countries via a RESTful API
 *Current version: 2.0.2*  
 *Previous version: [v1.1.2]*
 
-> 20,522,609.00 successful requests in April
-
 Donate!
 ---------------
 **570€ per year** aprox. is the cost to maintain and update REST Countries. Please help me cover these costs so I can keep improving this service.
@@ -19,6 +17,28 @@ Donate!
 [€ 50 >][fifty] [€ 70 >][seventy] [€ 100 >][hundred]
 
 ### 2017 costs funded: 24.56%
+
+Users
+---------------
+RESTCountries has over 1200 users, including:
+
+[TTÜ]
+
+[Spotify International Pricing Index]
+
+[Gorillaz]
+
+[Wanderlust]
+
+[Xero]
+
+[FxPro]
+
+[SKROSS]
+
+[onefinestay]
+
+[Much Better Adventures]
 
 Stay up-to-date
 ---------------
@@ -277,7 +297,7 @@ Similar projects
 
 License
 =======
-[Mozilla Public License] 2.0 MPL
+[Mozilla Public License] MPL 2.0
 
 [dist]: https://github.com/fayder/restcountries/
 [Twitter]: https://twitter.com/restcountries
@@ -304,3 +324,12 @@ License
 [fifty]: #fifty
 [seventy]: #seventy
 [hundred]: #hundred
+[TTÜ]: https://www.ttu.ee/studying/tut_admission/programmes-in-tut/ask-us/
+[Spotify International Pricing Index]: http://mts.io/2014/05/07/spotify-pricing-index/
+[Gorillaz]: http://www.gorillaz.com/
+[Wanderlust]: https://wanderlust.com/
+[Xero]: https://www.xero.com/
+[FxPro]: http://www.fxpro.com/
+[onefinestay]: https://www.onefinestay.com/
+[Much Better Adventures]: https://www.muchbetteradventures.com
+[SKROSS]: http://www.skross.com/en

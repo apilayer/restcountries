@@ -13,6 +13,28 @@ Donate!
 
 ### 2017 costs funded: 24.56%
 
+Users
+---------------
+RESTCountries has over 1200 users, including:
+
+[TTÜ]
+
+[Spotify International Pricing Index]
+
+[Gorillaz]
+
+[Wanderlust]
+
+[Xero]
+
+[FxPro]
+
+[SKROSS]
+
+[onefinestay]
+
+[Much Better Adventures]
+
 Stay up-to-date
 ---------------
 Follow RESTCountries on [Twitter]
@@ -290,3 +312,12 @@ License
 [REST Countries Go]: https://github.com/alediaferia/gocountries
 [REST Countries Python]: https://github.com/SteinRobert/python-restcountries
 [Countries of the world]: http://countries.petethompson.net
+[TTÜ]: https://www.ttu.ee/studying/tut_admission/programmes-in-tut/ask-us/
+[Spotify International Pricing Index]: http://mts.io/2014/05/07/spotify-pricing-index/
+[Gorillaz]: http://www.gorillaz.com/
+[Wanderlust]: https://wanderlust.com/
+[Xero]: https://www.xero.com/
+[FxPro]: http://www.fxpro.com/
+[onefinestay]: https://www.onefinestay.com/
+[Much Better Adventures]: https://www.muchbetteradventures.com
+[SKROSS]: http://www.skross.com/en
