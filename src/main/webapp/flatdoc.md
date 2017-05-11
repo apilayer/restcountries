@@ -310,7 +310,7 @@ License
 [Area]: https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area
 [Population]: https://en.wikipedia.org/wiki/List_of_countries_by_population
 [Gini coefficient]: http://en.wikipedia.org/wiki/List_of_countries_by_income_equality
-[Mozilla Public License]: http://www.mozilla.org/MPL/
+[Mozilla Public License]: https://www.mozilla.org/en-US/MPL/2.0/
 [world-currencies]: https://github.com/wiredmax/world-currencies
 [REST Countries Node.js]: https://github.com/aredo/restcountries
 [REST Countries Ruby]: https://github.com/davidesantangelo/restcountry
