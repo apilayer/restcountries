@@ -283,7 +283,7 @@ Sources
 
 Similar projects
 =======
-* [Countries of the word]
+* [Countries of the world]
 * [REST Countries Node.js]
 * [REST Countries Ruby]
 * [REST Countries Go]
