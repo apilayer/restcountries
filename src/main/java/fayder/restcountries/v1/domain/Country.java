@@ -18,23 +18,11 @@ public class Country extends BaseCountry {
         return currencies;
     }
 
-    public void setCurrencies(List<String> currencies) {
-        this.currencies = currencies;
-    }
-
     public List<String> getLanguages() {
         return languages;
     }
 
-    public void setLanguages(List<String> languages) {
-        this.languages = languages;
-    }
-
     public CountryTranslations getTranslations() {
         return translations;
-    }
-
-    public void setTranslations(CountryTranslations translations) {
-        this.translations = translations;
     }
 }
