@@ -3,18 +3,17 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package fayder.restcountries.v2.rest;
 
-import fayder.restcountries.rest.CountryServiceHelper;
+import fayder.restcountries.rest.CountryServiceBase;
 import fayder.restcountries.v2.domain.Country;
 import fayder.restcountries.v2.domain.Currency;
 import fayder.restcountries.v2.domain.Language;
 import fayder.restcountries.v2.domain.RegionalBloc;
-import org.apache.commons.codec.binary.StringUtils;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CountryService {
+public class CountryService extends CountryServiceBase {
 
     private static final Logger LOG = Logger.getLogger(CountryService.class);
 
@@ -37,37 +36,37 @@ public class CountryService {
     }
 
     public Country getByAlpha(String alpha) {
-        return CountryServiceHelper.getByAlpha(alpha, countries);
+        return super.getByAlpha(alpha, countries);
     }
 
     @SuppressWarnings("unchecked")
     public List<Country> getByCodeList(String codeList) {
-        return (List<Country>) CountryServiceHelper.getByCodeList(codeList, countries);
+        return (List<Country>) super.getByCodeList(codeList, countries);
     }
 
     @SuppressWarnings("unchecked")
     public List<Country> getByName(String name, boolean isFullText) {
-        return (List<Country>) CountryServiceHelper.getByName(name, isFullText, countries);
+        return (List<Country>) super.getByName(name, isFullText, countries);
     }
 
     @SuppressWarnings("unchecked")
     public List<Country> getByCallingCode(String callingcode) {
-        return (List<Country>) CountryServiceHelper.getByCallingCode(callingcode, countries);
+        return (List<Country>) super.getByCallingCode(callingcode, countries);
     }
 
     @SuppressWarnings("unchecked")
     public List<Country> getByCapital(String capital) {
-        return (List<Country>) CountryServiceHelper.getByCapital(capital, countries);
+        return (List<Country>) super.getByCapital(capital, countries);
     }
 
     @SuppressWarnings("unchecked")
     public List<Country> getByRegion(String region) {
-        return (List<Country>) CountryServiceHelper.getByRegion(region, countries);
+        return (List<Country>) super.getByRegion(region, countries);
     }
 
     @SuppressWarnings("unchecked")
     public List<Country> getBySubRegion(String subregion) {
-        return (List<Country>) CountryServiceHelper.getBySubregion(subregion, countries);
+        return (List<Country>) super.getBySubregion(subregion, countries);
     }
 
     public List<Country> getByCurrency(String currency) {
@@ -107,7 +106,7 @@ public class CountryService {
     public List<Country> getByDemonym(String demonym) {
         List<Country> result = new ArrayList<>();
         for (Country country : countries) {
-            if (country.getDemonym().toLowerCase().equals(CountryServiceHelper.normalize(demonym.toLowerCase()))) {
+            if (country.getDemonym().toLowerCase().equals(normalize(demonym.toLowerCase()))) {
                 result.add(country);
             }
         }
@@ -129,6 +128,6 @@ public class CountryService {
 
     @SuppressWarnings("unchecked")
     private void initialize() {
-        countries = (List<Country>) CountryServiceHelper.loadJson("countriesV2.json", Country.class);
+        countries = (List<Country>) super.loadJson("countriesV2.json", Country.class);
     }
 }
