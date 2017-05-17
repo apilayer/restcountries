@@ -16,11 +16,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CountryServiceHelper {
+public class CountryServiceBase {
 
-    private static final Logger LOG = Logger.getLogger(CountryServiceHelper.class);
+    private static final Logger LOG = Logger.getLogger(CountryServiceBase.class);
 
-    public static <T extends BaseCountry> T getByAlpha(String alpha, List<T> countries) {
+    protected <T extends BaseCountry> T getByAlpha(String alpha, List<T> countries) {
         int alphaLength = alpha.length();
         for (T country : countries) {
             if (alphaLength == 2) {
@@ -36,7 +36,7 @@ public class CountryServiceHelper {
         return null;
     }
 
-    public static List<? extends BaseCountry> getByCodeList(String codeList, List<? extends BaseCountry> countries) {
+    protected List<? extends BaseCountry> getByCodeList(String codeList, List<? extends BaseCountry> countries) {
         List<BaseCountry> result = new ArrayList<>();
         if(codeList == null) return result;
 
@@ -49,7 +49,7 @@ public class CountryServiceHelper {
         return result;
     }
 
-    public static List<? extends BaseCountry> getByName(String name, boolean fullText, List<? extends BaseCountry> countries) {
+    protected List<? extends BaseCountry> getByName(String name, boolean fullText, List<? extends BaseCountry> countries) {
         if(fullText) {
             return fulltextSearch(name, countries);
         } else {
@@ -57,7 +57,7 @@ public class CountryServiceHelper {
         }
     }
 
-    public static List<? extends BaseCountry> getByCallingCode(String callingCode, List<? extends BaseCountry> countries) {
+    protected List<? extends BaseCountry> getByCallingCode(String callingCode, List<? extends BaseCountry> countries) {
         List<BaseCountry> result = new ArrayList<>();
         for(BaseCountry country : countries) {
             for(String c : country.getCallingCodes()) {
@@ -68,7 +68,7 @@ public class CountryServiceHelper {
         return result;
     }
 
-    public static List<? extends BaseCountry> getByCapital(String capital, List<? extends BaseCountry> countries) {
+    protected List<? extends BaseCountry> getByCapital(String capital, List<? extends BaseCountry> countries) {
         List<BaseCountry> result = new ArrayList<>();
         for(BaseCountry country : countries) {
             if(normalize(country.getCapital().toLowerCase()).contains(normalize(capital.toLowerCase()))) {
@@ -78,7 +78,7 @@ public class CountryServiceHelper {
         return result;
     }
 
-    public static List<? extends BaseCountry> getByRegion(String region, List<? extends BaseCountry> countries) {
+    protected List<? extends BaseCountry> getByRegion(String region, List<? extends BaseCountry> countries) {
         List<BaseCountry> result = new ArrayList<>();
         for(BaseCountry country : countries) {
             if(country.getRegion().toLowerCase().equals(region.toLowerCase())) {
@@ -88,7 +88,7 @@ public class CountryServiceHelper {
         return result;
     }
 
-    public static List<? extends BaseCountry> getBySubregion(String subregion, List<? extends BaseCountry> countries) {
+    protected List<? extends BaseCountry> getBySubregion(String subregion, List<? extends BaseCountry> countries) {
         List<BaseCountry> result = new ArrayList<>();
         for(BaseCountry country : countries) {
             if(country.getSubregion().toLowerCase().equals(subregion.toLowerCase())) {
@@ -98,26 +98,7 @@ public class CountryServiceHelper {
         return result;
     }
 
-    public static List<? extends BaseCountry> loadJson(String filename, Class<? extends BaseCountry> clazz) {
-        LOG.debug("Loading JSON " + filename);
-        List<BaseCountry> countries = new ArrayList<>();
-        InputStream is = CountryServiceHelper.class.getClassLoader().getResourceAsStream(filename);
-        Gson gson = new Gson();
-        JsonReader reader;
-        try {
-            reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
-            reader.beginArray();
-            while(reader.hasNext()) {
-                BaseCountry country = gson.fromJson(reader, clazz);
-                countries.add(country);
-            }
-        } catch (Exception e) {
-            LOG.error("Could not load JSON " + filename);
-        }
-        return countries;
-    }
-
-    private static List<? extends BaseCountry> fulltextSearch(String name, List<? extends BaseCountry> countries) {
+    private List<? extends BaseCountry> fulltextSearch(String name, List<? extends BaseCountry> countries) {
         // Using 2 different 'for' loops to give priority to 'name' matches over alternative spellings
         List<BaseCountry> result = new ArrayList<>();
         for (BaseCountry country : countries) {
@@ -136,7 +117,7 @@ public class CountryServiceHelper {
         return result;
     }
 
-    private static List<? extends BaseCountry> substringSearch(String name, List<? extends BaseCountry> countries) {
+    private List<? extends BaseCountry> substringSearch(String name, List<? extends BaseCountry> countries) {
         // Using 2 different 'for' loops to give priority to 'name' matches over alternative spellings
         List<BaseCountry> result = new ArrayList<>();
         for(BaseCountry country : countries) {
@@ -155,8 +136,27 @@ public class CountryServiceHelper {
         return result;
     }
 
-    public static String normalize(String string) {
+    protected String normalize(String string) {
         return Normalizer.normalize(string, Normalizer.Form.NFD)
                 .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
+    }
+
+    protected List<? extends BaseCountry> loadJson(String filename, Class<? extends BaseCountry> clazz) {
+        LOG.debug("Loading JSON " + filename);
+        List<BaseCountry> countries = new ArrayList<>();
+        InputStream is = CountryServiceBase.class.getClassLoader().getResourceAsStream(filename);
+        Gson gson = new Gson();
+        JsonReader reader;
+        try {
+            reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
+            reader.beginArray();
+            while(reader.hasNext()) {
+                BaseCountry country = gson.fromJson(reader, clazz);
+                countries.add(country);
+            }
+        } catch (Exception e) {
+            LOG.error("Could not load JSON " + filename);
+        }
+        return countries;
     }
 }
