@@ -38,19 +38,19 @@ public class CountryServiceBase {
 
     protected List<? extends BaseCountry> getByCodeList(String codeList, List<? extends BaseCountry> countries) {
         List<BaseCountry> result = new ArrayList<>();
-        if(codeList == null) return result;
+        if (codeList == null) return result;
 
         List<String> codes = Arrays.asList(codeList.split(ICountryRestSymbols.SEMICOLON));
-        for(String code : codes) {
+        for (String code : codes) {
             BaseCountry country = getByAlpha(code, countries);
-            if(!result.contains(country))
+            if (country != null && !result.contains(country))
                 result.add(country);
         }
         return result;
     }
 
     protected List<? extends BaseCountry> getByName(String name, boolean fullText, List<? extends BaseCountry> countries) {
-        if(fullText) {
+        if (fullText) {
             return fulltextSearch(name, countries);
         } else {
             return substringSearch(name, countries);
@@ -59,9 +59,9 @@ public class CountryServiceBase {
 
     protected List<? extends BaseCountry> getByCallingCode(String callingCode, List<? extends BaseCountry> countries) {
         List<BaseCountry> result = new ArrayList<>();
-        for(BaseCountry country : countries) {
-            for(String c : country.getCallingCodes()) {
-                if(c.equals(callingCode))
+        for (BaseCountry country : countries) {
+            for (String c : country.getCallingCodes()) {
+                if (c.equals(callingCode))
                     result.add(country);
             }
         }
@@ -70,8 +70,8 @@ public class CountryServiceBase {
 
     protected List<? extends BaseCountry> getByCapital(String capital, List<? extends BaseCountry> countries) {
         List<BaseCountry> result = new ArrayList<>();
-        for(BaseCountry country : countries) {
-            if(normalize(country.getCapital().toLowerCase()).contains(normalize(capital.toLowerCase()))) {
+        for (BaseCountry country : countries) {
+            if (normalize(country.getCapital().toLowerCase()).contains(normalize(capital.toLowerCase()))) {
                 result.add(country);
             }
         }
@@ -80,8 +80,8 @@ public class CountryServiceBase {
 
     protected List<? extends BaseCountry> getByRegion(String region, List<? extends BaseCountry> countries) {
         List<BaseCountry> result = new ArrayList<>();
-        for(BaseCountry country : countries) {
-            if(country.getRegion().toLowerCase().equals(region.toLowerCase())) {
+        for (BaseCountry country : countries) {
+            if (country.getRegion().toLowerCase().equals(region.toLowerCase())) {
                 result.add(country);
             }
         }
@@ -90,8 +90,8 @@ public class CountryServiceBase {
 
     protected List<? extends BaseCountry> getBySubregion(String subregion, List<? extends BaseCountry> countries) {
         List<BaseCountry> result = new ArrayList<>();
-        for(BaseCountry country : countries) {
-            if(country.getSubregion().toLowerCase().equals(subregion.toLowerCase())) {
+        for (BaseCountry country : countries) {
+            if (country.getSubregion().toLowerCase().equals(subregion.toLowerCase())) {
                 result.add(country);
             }
         }
@@ -120,15 +120,15 @@ public class CountryServiceBase {
     private List<? extends BaseCountry> substringSearch(String name, List<? extends BaseCountry> countries) {
         // Using 2 different 'for' loops to give priority to 'name' matches over alternative spellings
         List<BaseCountry> result = new ArrayList<>();
-        for(BaseCountry country : countries) {
-            if(normalize(country.getName().toLowerCase()).contains(normalize(name.toLowerCase()))) {
+        for (BaseCountry country : countries) {
+            if (normalize(country.getName().toLowerCase()).contains(normalize(name.toLowerCase()))) {
                 result.add(country);
             }
         }
-        for(BaseCountry country : countries) {
+        for (BaseCountry country : countries) {
             for (String alternative : country.getAltSpellings()) {
-                if( normalize(alternative.toLowerCase()).contains(normalize(name.toLowerCase()))
-                        && !result.contains(country) ) {
+                if (normalize(alternative.toLowerCase()).contains(normalize(name.toLowerCase()))
+                        && !result.contains(country)) {
                     result.add(country);
                 }
             }
@@ -150,7 +150,7 @@ public class CountryServiceBase {
         try {
             reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
             reader.beginArray();
-            while(reader.hasNext()) {
+            while (reader.hasNext()) {
                 BaseCountry country = gson.fromJson(reader, clazz);
                 countries.add(country);
             }
