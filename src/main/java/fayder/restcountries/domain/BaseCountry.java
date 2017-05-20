@@ -4,27 +4,25 @@ import java.util.List;
 
 public class BaseCountry {
 
-    private String name;
+    protected String name;
 
     private List<String> topLevelDomain;
 
-    private String alpha2Code;
+    protected String alpha2Code;
 
     private String alpha3Code;
 
     private List<String> callingCodes;
 
-    private String capital;
+    protected String capital;
 
     private List<String> altSpellings;
 
-    private String relevance;
+    protected String region;
 
-    private String region;
+    protected String subregion;
 
-    private String subregion;
-
-    private Integer population;
+    protected Integer population;
 
     private List<Double> latlng;
 
@@ -32,13 +30,13 @@ public class BaseCountry {
 
     private Double area;
 
-    private Double gini;
+    protected Double gini;
 
     private List<String> timezones;
 
-    private List<String> borders;
+    protected List<String> borders;
 
-    private String nativeName;
+    protected String nativeName;
 
     private String numericCode;
 
@@ -68,10 +66,6 @@ public class BaseCountry {
 
     public List<String> getAltSpellings() {
         return altSpellings;
-    }
-
-    public String getRelevance() {
-        return relevance;
     }
 
     public String getRegion() {
