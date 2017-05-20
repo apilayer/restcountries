@@ -19,5 +19,5 @@ def remove(prop, country):
 
 countriesJSON = getCountriesJSON()
 for country in countriesJSON:
-    remove('currency', country)
+    remove('relevance', country)
 saveCountriesJSON(countriesJSON)
