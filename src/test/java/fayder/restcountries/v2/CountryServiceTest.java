@@ -5,6 +5,8 @@ import fayder.restcountries.v2.rest.CountryService;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CountryServiceTest {
@@ -61,6 +63,47 @@ public class CountryServiceTest {
         Assert.assertFalse(countries.isEmpty());
         Assert.assertEquals("Norway", countries.get(0).getName());
     }
+    
+    @Test
+  	public void getByNameWithRelevance() throws Exception {
+  		System.out.println("Running Test getByNameWithRelevance");
+  		
+  		// No match
+  		String query = "No match";
+  		List<String> expectedNames = new ArrayList<>();
+  		testSubstringSearchByRelevance(query, expectedNames);
+  		
+  		// Exact match in alternative spellings is more relevant than partial match in country name.
+  		query = "UK";
+  		expectedNames = Arrays.asList("United Kingdom of Great Britain and Northern Ireland", "Ukraine", "Cook Islands", 
+  				"Korea (Democratic People's Republic of)");
+  		testSubstringSearchByRelevance(query, expectedNames);
+  		
+  		// Partial match in country name (at any position) is more relevant than partial match in alternative spellings
+  		query = "kin";
+  		expectedNames = Arrays.asList("Burkina Faso", "United Kingdom of Great Britain and Northern Ireland", "Bahrain",
+  				"Belgium", "Bhutan", "Cambodia", "Congo (Democratic Republic of the)", "Denmark", "Jordan", "Lesotho",
+  				"Marshall Islands", "Morocco", "Norway", "Saudi Arabia", "Spain", "Swaziland", "Sweden", "Thailand");
+  		testSubstringSearchByRelevance(query, expectedNames);
+  		
+  		// Another example.
+  		query = "ote";
+  		expectedNames = Arrays.asList("Côte d'Ivoire", "New Zealand");
+  		testSubstringSearchByRelevance(query, expectedNames);
+  	}
+  	
+  	private void testSubstringSearchByRelevance(String query, List<String> result) {
+  		System.out.println("testing \"" + query + "\"");
+  		List<Country> countries = CountryService.getInstance().getByName(query, false);
+  		Assert.assertNotNull(countries);
+  		Assert.assertEquals(countries.size(), result.size());
+  		List<String> countryNames = new ArrayList<>();
+  		for(int i=0; i<countries.size(); i++) {
+  			countryNames.add(countries.get(i).getName());
+  			System.out.println(countryNames.get(i));
+  		}
+  		Assert.assertTrue(result.equals(countryNames));
+  	}
 
     @Test
     public void getByNamePriority() throws Exception {

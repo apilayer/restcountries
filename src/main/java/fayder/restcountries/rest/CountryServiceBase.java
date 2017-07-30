@@ -6,7 +6,9 @@ package fayder.restcountries.rest;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import fayder.restcountries.domain.BaseCountry;
+import fayder.restcountries.domain.CountryNameRelevance;
 import fayder.restcountries.domain.ICountryRestSymbols;
+import fayder.restcountries.domain.SortedMultimap;
 import org.apache.log4j.Logger;
 
 import java.io.InputStream;
@@ -53,7 +55,7 @@ public class CountryServiceBase {
         if(fullText) {
             return fulltextSearch(name, countries);
         } else {
-            return substringSearch(name, countries);
+            return substringSearchByRelevance(name, countries);
         }
     }
 
@@ -135,8 +137,25 @@ public class CountryServiceBase {
         }
         return result;
     }
+    
+    private List<? extends BaseCountry> substringSearchByRelevance(String name, List<? extends BaseCountry> countries) {
+    	String normName = normalize(name.toLowerCase());
+    	// Sort in reverse order since higher relevance should be returned first
+    	SortedMultimap<CountryNameRelevance, BaseCountry> countriesByRelevance = new SortedMultimap<>(true);
+        
+        for(BaseCountry country : countries) {
+        	CountryNameRelevance relevance = CountryNameRelevance.calculateCountryRelevance(country, normName);
+        	            
+            if(relevance != null) {
+            	countriesByRelevance.put(relevance, country);
+            }
+        }
+        
+        List<BaseCountry> result = countriesByRelevance.values();
+		return result;
+    }
 
-    protected String normalize(String string) {
+	protected String normalize(String string) {
         return Normalizer.normalize(string, Normalizer.Form.NFD)
                 .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
     }
