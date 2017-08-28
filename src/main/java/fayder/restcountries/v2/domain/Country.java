@@ -24,12 +24,6 @@ public class Country extends BaseCountry {
         return languages;
     }
 
-    @Override
-    @JsonIgnore
-    public String getRelevance() {
-        return super.getRelevance();
-    }
-
     public Translations getTranslations() {
         return translations;
     }

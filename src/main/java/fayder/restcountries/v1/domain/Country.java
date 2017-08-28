@@ -13,6 +13,7 @@ public class Country extends BaseCountry {
     private List<String> currencies;
     private List<String> languages;
     private CountryTranslations translations;
+    private String relevance;
 
     public List<String> getCurrencies() {
         return currencies;
@@ -24,5 +25,9 @@ public class Country extends BaseCountry {
 
     public CountryTranslations getTranslations() {
         return translations;
+    }
+
+    public String getRelevance() {
+        return relevance;
     }
 }
