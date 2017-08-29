@@ -134,7 +134,7 @@ public class CountryServiceTest {
         Assert.assertFalse(countries.isEmpty());
         for (Country country : countries) {
             for (Language language : country.getLanguages()) {
-                if(language.getIso639_1().equals("es")) {
+                if (language.getIso639_1().equals("es")) {
                     return;
                 }
             }
@@ -157,11 +157,14 @@ public class CountryServiceTest {
         List<Country> countries = CountryService.getInstance().getByRegionalBloc("eu");
         Assert.assertNotNull(countries);
         Assert.assertFalse(countries.isEmpty());
-        for(Country country : countries) {
+        for (Country country : countries) {
             for (RegionalBloc regionalBloc : country.getRegionalBlocs()) {
-                Assert.assertTrue(regionalBloc.getAcronym().toLowerCase().equals("eu"));
+                if (regionalBloc.getAcronym().toLowerCase().equals("eu")) {
+                    return;
+                }
             }
         }
+        Assert.fail();
     }
 
     @Test
