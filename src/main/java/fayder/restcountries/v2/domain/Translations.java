@@ -11,6 +11,7 @@ public class Translations extends CountryTranslations {
     private String pt;
     private String nl;
     private String hr;
+    private String fa;
 
     public String getBr() {
         return br;
@@ -26,5 +27,9 @@ public class Translations extends CountryTranslations {
 
     public String getHr() {
         return hr;
+    }
+
+    public String getFa() {
+        return fa;
     }
 }
