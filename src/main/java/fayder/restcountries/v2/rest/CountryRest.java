@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Provider
-@Path("{a:rest/v2-alpha|rest/v2}")
+@Path("/v2")
 @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 public class CountryRest {
 

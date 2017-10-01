@@ -25,7 +25,7 @@ import fayder.restcountries.domain.ResponseEntity;
 import com.google.gson.Gson;
 
 @Provider
-@Path("rest/v1")
+@Path("/v1")
 @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 public class CountryRest {
 
