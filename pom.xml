@@ -104,45 +104,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>com.google.code.maven-replacer-plugin</groupId>
-                <artifactId>replacer</artifactId>
-                <version>1.5.2</version>
-                <executions>
-                    <execution>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>replace</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <includes>
-                        <include>src/main/webapp/**.html</include>
-                    </includes>
-                    <replacements>
-                        <replacement>
-                            <token>PROJECT_VERSION</token>
-                            <value>${project.version}</value>
-                        </replacement>
-                        <replacement>
-                            <token>http://localhost:8080</token>
-                            <value>https://restcountries.eu</value>
-                        </replacement>
-                    </replacements>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.17</version>
-                <configuration>
-                    <excludes>
-                        <exclude>**/*RestTest.java</exclude>
-                        <exclude>**/*DataTest.java</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.3</version>
