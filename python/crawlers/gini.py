@@ -1,0 +1,57 @@
+from bs4 import BeautifulSoup
+import urllib2
+
+URL_GINI = 'https://en.wikipedia.org/wiki/List_of_countries_by_income_equality'
+
+
+def update(countriesJSON):
+    html = __getHTML(URL_GINI)
+    soup = BeautifulSoup(html, "html.parser")
+    giniData = __extractGiniData(soup)
+
+    return __updateJSON(countriesJSON, giniData)
+
+
+def __extractGiniData(html):
+    giniData = {}
+    tables = html.find_all('table')
+    innerTables = tables[0].find_all('table')
+    rows = innerTables[1].find_all('tr')
+    for i, row in enumerate(rows):
+        if i > 2:
+            href = row.find('a')
+            if href is not None:
+                country = href.get_text().encode('utf-8')
+                values = row.find_all('td')
+                gini = values[3].get_text() 
+                giniData[country] = gini
+
+    # for i, row in enumerate(html.table):
+    #     for j, column in enumerate(row):
+    #         if j == 3:
+    #             href = column.find('a')
+    #             if href is not None:
+    #                 country = href.get_text().encode('utf-8')
+            # if j == 8:
+            #     gini = column.get_text()
+            #     print(country, gini)
+            #     giniData[country] = gini
+
+    return giniData
+
+
+def __updateJSON(countriesJSON, giniData):
+    for country in giniData:
+        for countryJSON in countriesJSON:
+            if country == countryJSON['name']['common'].encode('utf-8'):
+                if giniData[country]:
+                    countryJSON['gini'] = float(giniData[country])
+
+    return countriesJSON
+
+
+def __getHTML(url):
+    usock = urllib2.urlopen(url)
+    data = usock.read()
+    usock.close()
+    return data

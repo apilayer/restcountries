@@ -26,8 +26,8 @@ def saveCountriesJSON(countriesJSON):
         json.dump(countriesJSON, outputJsonFile)
 
 countriesJSON = getCountriesJSON()
-countriesJSON = population.update(countriesJSON)
-# countriesJSON = gini.update(countriesJSON)
+# countriesJSON = population.update(countriesJSON)
+countriesJSON = gini.update(countriesJSON)
 # countriesJSON = currencies.update(countriesJSON)
 # countriesJSON = languages.update(countriesJSON)
 # countriesJSON = numeric_codes.update(countriesJSON)

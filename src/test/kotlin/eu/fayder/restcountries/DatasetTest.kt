@@ -4,6 +4,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import eu.fayder.restcountries.domain.Country
 import org.junit.Before
+import org.junit.Test
 
 class DatasetTest {
     private lateinit var countries: List<Country>
@@ -15,5 +16,19 @@ class DatasetTest {
         countries = Gson().fromJson<List<Country>>(content, countriesType)
     }
 
-    
+    @Test
+    fun population() {
+        println("-- Empty Population --")
+        countries
+                .filter { it.population == 0 }
+                .forEach { println(it.name.common) }
+    }
+
+    @Test
+    fun gini() {
+        println("-- Empty Gini --")
+        countries
+                .filter { it.gini == null }
+                .forEach { println(it.name.common) }
+    }
 }
