@@ -1,6 +1,6 @@
 package eu.fayder.restcountries.domain
 
-data class Translation
+data class Translations
 (
         val deu: Name?,
         val fra: Name?,
