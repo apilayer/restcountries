@@ -26,17 +26,6 @@ def __extractGiniData(html):
                 gini = values[3].get_text() 
                 giniData[country] = gini
 
-    # for i, row in enumerate(html.table):
-    #     for j, column in enumerate(row):
-    #         if j == 3:
-    #             href = column.find('a')
-    #             if href is not None:
-    #                 country = href.get_text().encode('utf-8')
-            # if j == 8:
-            #     gini = column.get_text()
-            #     print(country, gini)
-            #     giniData[country] = gini
-
     return giniData
 
 
