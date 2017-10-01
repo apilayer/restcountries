@@ -5,8 +5,7 @@ Get information about countries via a RESTful API
 
 [![Build Status](https://travis-ci.org/fayder/restcountries.svg?branch=master)](https://travis-ci.org/fayder/restcountries)
 
-*Current version: 2.0.3*
-*Deprecated version: [v1.1.2]*
+*Current version: 2.0.4*
 
 Donate!
 ---------------
