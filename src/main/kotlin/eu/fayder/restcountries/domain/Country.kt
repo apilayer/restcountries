@@ -7,8 +7,7 @@ data class Country
         val flag: String,
 
         // From mledoze
-        val names: Names
-//        val translations: Translations,
-//        val cioc: String
-//        val landlocked: Boolean,
+        val names: Names,
+        val translations: Translations,
+        val cioc: String
 ) : BaseCountry()
