@@ -21,7 +21,7 @@ class DatasetTest {
         println("-- Empty Population --")
         countries
                 .filter { it.population == null || it.population == 0 }
-                .forEach { println(it.name.common) }
+                .forEach { println(it.name) }
     }
 
     @Test
@@ -29,7 +29,7 @@ class DatasetTest {
         println("-- Empty Gini --")
         countries
                 .filter { it.gini == null }
-                .forEach { println(it.name.common) }
+                .forEach { println(it.name) }
     }
 
     @Test
@@ -37,6 +37,6 @@ class DatasetTest {
         println("-- Empty Currencies --")
         countries
                 .filter { it.currencies == null || it.currencies!!.isEmpty() }
-                .forEach { println(it.name.common) }
+                .forEach { println(it.name) }
     }
 }
