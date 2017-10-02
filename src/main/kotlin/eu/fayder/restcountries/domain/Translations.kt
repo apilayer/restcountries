@@ -2,17 +2,17 @@ package eu.fayder.restcountries.domain
 
 data class Translations
 (
-        val deu: Name?,
-        val fra: Name?,
-        val hrv: Name?,
-        val ita: Name?,
-        val jpn: Name?,
-        val nld: Name?,
-        val por: Name?,
-        val rus: Name?,
-        val slk: Name?,
-        val spa: Name?,
-        val fin: Name?,
-        val est: Name?,
-        val zho: Name?
+        val deu: Names?,
+        val fra: Names?,
+        val hrv: Names?,
+        val ita: Names?,
+        val jpn: Names?,
+        val nld: Names?,
+        val por: Names?,
+        val rus: Names?,
+        val slk: Names?,
+        val spa: Names?,
+        val fin: Names?,
+        val est: Names?,
+        val zho: Names?
 )

@@ -1,6 +1,6 @@
 package eu.fayder.restcountries.domain
 
-data class Name
+data class Names
 (
         val common: String,
         val official: String
