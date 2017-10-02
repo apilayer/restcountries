@@ -6,4 +6,7 @@ import eu.fayder.restcountries.v3.domain.Country
 
 object CountryService : CountryServiceBase(){
     private var countries: MutableList<out BaseCountry>? = loadJson("countriesV3.json", Country::class.java)
+    fun getAll() : MutableList<out BaseCountry>? {
+        return countries
+    }
 }

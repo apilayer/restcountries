@@ -1,6 +1,6 @@
 package eu.fayder.restcountries.v3.rest
 
-import eu.fayder.restcountries.v2.rest.CountryService
+import eu.fayder.restcountries.domain.BaseCountry
 import javax.ws.rs.GET
 import javax.ws.rs.Path
 import javax.ws.rs.Produces
@@ -14,7 +14,7 @@ import javax.ws.rs.ext.Provider
 class CountryRest {
 
     @GET
-    fun getCountries(@QueryParam("fields") fields: String): Any {
-        return CountryService.getInstance().all
+    fun getCountries(@QueryParam("fields") fields: String?): MutableList<out BaseCountry>? {
+        return CountryService.getAll()
     }
 }
