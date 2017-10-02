@@ -27,10 +27,11 @@ $(function () {
     			dataType: "json",
     			data: JSON.stringify({"token": token.id, "amount": restc.amount}),
     			success: function(data, textStatus, jqXHR) {
-    				console.log("Contribution success")
+    				console.log("Contribution success");
     			},
     			error: function(jqXHR, textStatus, errorThrown) {
     				console.log(errorThrown);
+    				alert("Your contribution failed. Please contact support@restcountries.eu");
     			}
 		    });
 		  }
