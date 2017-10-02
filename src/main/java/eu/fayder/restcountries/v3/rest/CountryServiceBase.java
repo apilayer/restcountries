@@ -1,12 +1,12 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-package eu.fayder.restcountries.rest;
+package eu.fayder.restcountries.v3.rest;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-import eu.fayder.restcountries.domain.BaseCountry;
-import eu.fayder.restcountries.domain.ICountryRestSymbols;
+import eu.fayder.restcountries.v3.domain.BaseCountry;
+import eu.fayder.restcountries.v3.domain.ICountryRestSymbols;
 import org.apache.log4j.Logger;
 
 import java.io.InputStream;

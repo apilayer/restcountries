@@ -2,7 +2,7 @@ package eu.fayder.restcountries
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import eu.fayder.restcountries.domain.Country
+import eu.fayder.restcountries.v3.domain.Country
 import org.junit.Before
 import org.junit.Test
 

@@ -5,7 +5,7 @@ package eu.fayder.restcountries.v1.domain;
 
 import java.util.List;
 
-import eu.fayder.restcountries.domain.BaseCountry;
+import eu.fayder.restcountries.v3.domain.BaseCountry;
 
 public class Country extends BaseCountry {
 

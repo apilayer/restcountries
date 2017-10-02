@@ -5,7 +5,7 @@ package eu.fayder.restcountries;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-import eu.fayder.restcountries.domain.BaseCountry;
+import eu.fayder.restcountries.v3.domain.BaseCountry;
 import org.junit.Before;
 import org.junit.Test;
 

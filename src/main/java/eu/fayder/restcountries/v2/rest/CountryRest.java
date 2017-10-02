@@ -4,9 +4,9 @@
 package eu.fayder.restcountries.v2.rest;
 
 import com.google.gson.*;
-import eu.fayder.restcountries.domain.ResponseEntity;
+import eu.fayder.restcountries.v3.domain.ResponseEntity;
 import eu.fayder.restcountries.v2.domain.Country;
-import eu.fayder.restcountries.domain.ICountryRestSymbols;
+import eu.fayder.restcountries.v3.domain.ICountryRestSymbols;
 import org.apache.log4j.Logger;
 
 import javax.ws.rs.*;

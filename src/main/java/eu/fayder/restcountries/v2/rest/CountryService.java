@@ -5,7 +5,7 @@ package eu.fayder.restcountries.v2.rest;
 
 import eu.fayder.restcountries.v2.domain.Country;
 import eu.fayder.restcountries.v2.domain.Language;
-import eu.fayder.restcountries.rest.CountryServiceBase;
+import eu.fayder.restcountries.v3.rest.CountryServiceBase;
 import eu.fayder.restcountries.v2.domain.Currency;
 import eu.fayder.restcountries.v2.domain.RegionalBloc;
 import org.apache.log4j.Logger;

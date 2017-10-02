@@ -1,4 +1,4 @@
-package eu.fayder.restcountries.domain
+package eu.fayder.restcountries.v3.domain
 
 data class Translations
 (
