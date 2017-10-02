@@ -9,4 +9,4 @@ backup/
 .idea/
 *.iml
 google*.html
-src/main/java/fayder/restcountries/v2/rest/StripeRest.java
+src/main/java/eu/fayder/restcountries/v2/rest/StripeRest.java
