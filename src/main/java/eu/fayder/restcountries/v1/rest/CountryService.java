@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 package eu.fayder.restcountries.v1.rest;
 
-import eu.fayder.restcountries.v3.rest.CountryServiceBase;
+import eu.fayder.restcountries.rest.CountryServiceBase;
 import eu.fayder.restcountries.v1.domain.Country;
 import org.apache.log4j.Logger;
 

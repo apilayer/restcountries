@@ -1,4 +1,4 @@
-package eu.fayder.restcountries.v3.domain;
+package eu.fayder.restcountries.domain;
 
 import java.util.List;
 

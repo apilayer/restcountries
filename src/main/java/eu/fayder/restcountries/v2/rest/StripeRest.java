@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.stripe.Stripe;
 import com.stripe.exception.*;
 import com.stripe.model.Charge;
-import eu.fayder.restcountries.v3.domain.ResponseEntity;
+import eu.fayder.restcountries.domain.ResponseEntity;
 import eu.fayder.restcountries.v2.domain.Contribution;
 import org.apache.log4j.Logger;
 

@@ -16,7 +16,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.ext.Provider;
 
-import eu.fayder.restcountries.v3.domain.ResponseEntity;
+import eu.fayder.restcountries.domain.ResponseEntity;
 import eu.fayder.restcountries.v1.domain.Country;
 import org.apache.log4j.Logger;
 
