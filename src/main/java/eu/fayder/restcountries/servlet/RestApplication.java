@@ -15,6 +15,7 @@ public class RestApplication extends Application {
     public RestApplication() {
         singletons.add(new CountryRest());
         singletons.add(new eu.fayder.restcountries.v2.rest.CountryRest());
+        singletons.add(new eu.fayder.restcountries.v3.rest.CountryRest());
         singletons.add(new StripeRest());
     }
 
