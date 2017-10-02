@@ -13,7 +13,7 @@ $(function () {
 
 		var stripeHandler = StripeCheckout.configure({
 		  key: 'pk_live_lKuAMSLFxniueaO1AcVD81HB',
-		  image: 'https://dl.dropboxusercontent.com/u/15115409/restc.png',
+		  image: 'https://restcountries.eu/img/rc-icon.png',
 		  locale: 'auto',
 		  billingAddress: true,
 		  panelLabel: 'Contribute',
