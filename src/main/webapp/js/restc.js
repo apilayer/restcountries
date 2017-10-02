@@ -21,7 +21,7 @@ $(function () {
 		    // You can access the token ID with `token.id`.
 		    // Get the token ID to your server-side code for use.
 		    $.ajax({
-		    	url: 'https://restcountries.eu/contribute',
+		    	url: 'https://restcountries.eu/rest/contribute',
 		    	type: 'POST',
 		    	contentType: "application/json; charset=utf-8",
     			dataType: "json",
