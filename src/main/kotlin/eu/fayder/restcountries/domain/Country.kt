@@ -12,7 +12,6 @@ data class Country
         val capital: String,
         val region: String,
         val tld: List<String>,
-//        val currencies: List<Currency>,
         @SerializedName("callingCode")
         val callingCodes: List<String>,
 //        val languages: List<Language>,
@@ -23,6 +22,7 @@ data class Country
         val borders: List<String>,
         val area: Float?,
         val flag: String,
-        val population: Int,
-        val gini: Float?
+        val population: Int?,
+        val gini: Float?,
+        val currencies: List<Currency>?
 )

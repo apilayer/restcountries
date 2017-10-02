@@ -20,7 +20,7 @@ class DatasetTest {
     fun population() {
         println("-- Empty Population --")
         countries
-                .filter { it.population == 0 }
+                .filter { it.population == null || it.population == 0 }
                 .forEach { println(it.name.common) }
     }
 
@@ -29,6 +29,14 @@ class DatasetTest {
         println("-- Empty Gini --")
         countries
                 .filter { it.gini == null }
+                .forEach { println(it.name.common) }
+    }
+
+    @Test
+    fun currencies() {
+        println("-- Empty Currencies --")
+        countries
+                .filter { it.currencies == null || it.currencies!!.isEmpty() }
                 .forEach { println(it.name.common) }
     }
 }
