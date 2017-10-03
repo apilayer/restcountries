@@ -32,14 +32,13 @@ public class StripeRest {
             return getResponse(Response.Status.BAD_REQUEST);
         }
 
-        LOG.debug("Contribute: " + contribution.getAmount());
+        LOG.debug("Contribute: " + contribution.toString());
 
         Stripe.apiKey = "";
         Map<String, Object> params = new HashMap<>();
         params.put("amount", contribution.getAmount());
         params.put("currency", "eur");
         params.put("description", "REST Countries");
-        params.put("email", contribution.getEmail());
         params.put("source", contribution.getToken());
 
         try {

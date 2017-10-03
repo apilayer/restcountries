@@ -20,4 +20,12 @@ public class Contribution {
     public String getEmail() {
         return email;
     }
+
+    @Override
+    public String toString() {
+        return "Contribution{" +
+                "amount=" + amount +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
