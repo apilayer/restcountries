@@ -5,7 +5,7 @@ Get information about countries via a RESTful API
 
 [![Build Status](https://travis-ci.org/fayder/restcountries.svg?branch=master)](https://travis-ci.org/fayder/restcountries)
 
-*Current version: 2.0.4*
+*Current version: 2.0.5*
 
 Donate!
 ---------------
@@ -261,7 +261,8 @@ https://restcountries.eu/rest/v2/alpha/col
 		"name": "Union of South American Nations",
 		"otherAcronyms": ["UNASUR", "UNASUL", "UZAN"],
 		"otherNames": ["Unión de Naciones Suramericanas", "União de Nações Sul-Americanas", "Unie van Zuid-Amerikaanse Naties", "South American Union"]
-	}]
+	}],
+    "cioc": "COL"
 }]
 ```
 

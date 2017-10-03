@@ -14,6 +14,7 @@ public class Country extends BaseCountry {
     private Translations translations;
     private String flag;
     private List<RegionalBloc> regionalBlocs;
+    private String cioc;
 
     public List<Currency> getCurrencies() {
         return currencies;
@@ -33,5 +34,9 @@ public class Country extends BaseCountry {
 
     public List<RegionalBloc> getRegionalBlocs() {
         return regionalBlocs;
+    }
+
+    public String getCioc() {
+        return cioc;
     }
 }
