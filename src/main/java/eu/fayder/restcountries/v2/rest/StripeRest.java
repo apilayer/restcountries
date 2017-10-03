@@ -39,6 +39,7 @@ public class StripeRest {
         params.put("amount", contribution.getAmount());
         params.put("currency", "eur");
         params.put("description", "REST Countries");
+        params.put("email", contribution.getEmail());
         params.put("source", contribution.getToken());
 
         try {

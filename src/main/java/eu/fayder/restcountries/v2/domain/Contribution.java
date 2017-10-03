@@ -7,6 +7,7 @@ public class Contribution {
 
     private int amount;
     private String token;
+    private String email;
 
     public int getAmount() {
         return amount;
@@ -14,5 +15,9 @@ public class Contribution {
 
     public String getToken() {
         return token;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }
