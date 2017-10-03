@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>eu.fayder</groupId>
     <artifactId>restcountries</artifactId>
-    <version>2.0.4</version>
+    <version>2.0.5</version>
     <packaging>war</packaging>
     <name>restcountries</name>
     <description>REST interface to get data about countries</description>
