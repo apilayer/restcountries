@@ -6,6 +6,7 @@ import com.stripe.exception.*;
 import com.stripe.model.Charge;
 import eu.fayder.restcountries.domain.ResponseEntity;
 import eu.fayder.restcountries.v2.domain.Contribution;
+import org.apache.http.util.TextUtils;
 import org.apache.log4j.Logger;
 
 import javax.ws.rs.Consumes;
@@ -28,7 +29,7 @@ public class StripeRest {
 
     @POST
     public Object contribute(Contribution contribution) {
-        if (contribution == null || contribution.getToken() == null || contribution.getAmount() < 500) {
+        if (contribution == null || TextUtils.isBlank(contribution.getToken())) {
             return getResponse(Response.Status.BAD_REQUEST);
         }
 
