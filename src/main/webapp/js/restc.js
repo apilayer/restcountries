@@ -25,12 +25,12 @@ $(function () {
 		    	type: 'POST',
 		    	contentType: "application/json; charset=utf-8",
     			dataType: "json",
-    			data: JSON.stringify({"token": token.id, "email": token.email, "amount": restc.amount}),
+    			data: JSON.stringify({"token": token.id, "amount": restc.amount}),
     			success: function(data, textStatus, jqXHR) {
     				console.log("Contribution success");
     			},
     			error: function(jqXHR, textStatus, errorThrown) {
-    				console.log(errorThrown);
+    				console.log(textStatus);
     				alert("Your contribution failed. Please contact support@restcountries.eu");
     			}
 		    });
