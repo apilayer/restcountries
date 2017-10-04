@@ -29,11 +29,11 @@ public class StripeRest {
 
     @POST
     public Object contribute(Contribution contribution) {
+        LOG.debug("Contribution: " + contribution);
+
         if (contribution == null || TextUtils.isBlank(contribution.getToken())) {
             return getResponse(Response.Status.BAD_REQUEST);
         }
-
-        LOG.debug("Contribute: " + contribution.toString());
 
         Stripe.apiKey = "";
         Map<String, Object> params = new HashMap<>();
