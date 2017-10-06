@@ -305,7 +305,8 @@ public class CountryRest {
             "currencies",
             "languages",
             "flag",
-            "regionalBlocs"
+            "regionalBlocs",
+            "cioc"
     };
 
     private boolean isEmpty(String value) {
