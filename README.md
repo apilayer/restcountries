@@ -7,11 +7,7 @@ Get information about countries via a RESTful API https://restcountries.eu
 
 Donate!
 ---------------
-**570€ per year** aprox. is the cost to maintain and update REST Countries. Please help me cover these costs so I can keep improving this service.
-
-[Donate]
-
-### 2017 costs funded: 24.56%
+The restcountries project has been accquired by @apilayer, one of the leading providers of API microservices. We will keep supporting restcountries and providing it as a free solution for developers. We will finance this project fully and have turned off the donations feature.
 
 Users
 ---------------
