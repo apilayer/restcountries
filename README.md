@@ -285,6 +285,7 @@ Similar projects
 * [REST Countries Go]
 * [REST Countries Python]
 * [world-currencies]
+* [REST Countries .NET Core]
 
 License
 =======
@@ -317,3 +318,4 @@ License
 [onefinestay]: https://www.onefinestay.com/
 [Much Better Adventures]: https://www.muchbetteradventures.com
 [SKROSS]: http://www.skross.com/en
+[REST Countries .NET Core]: https://github.com/99darshan/DotNetCoreRESTCountry
