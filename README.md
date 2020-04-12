@@ -32,6 +32,7 @@ Get information about countries via a RESTful API http://restcountries.eu
 * [REST Countries Ruby]
 * [REST Countries Go]
 * [world-currencies]
+* [REST Countries .NET Core]
 
 #### Sources
 * JSON Data is taken mostly from [@mledoze]
@@ -52,3 +53,4 @@ Get information about countries via a RESTful API http://restcountries.eu
 [REST Countries Node.js]: https://github.com/aredo/restcountries
 [REST Countries Ruby]: https://github.com/davidesantangelo/restcountry
 [REST Countries Go]: https://github.com/alediaferia/gocountries
+[REST Countries .NET Core]: https://github.com/99darshan/DotNetCoreRESTCountry
