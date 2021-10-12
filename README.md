@@ -1,3 +1,8 @@
+⚠ restcountries.eu is not supported anymore ⚠
+-------
+
+> Message from apilayer support: We no longer support restcountries.eu; however, we do offer a free tier of a similar API on countrylayer.com. See https://countrylayer.com/documentation/
+
 REST Countries
 =======
 
