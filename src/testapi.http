@@ -1,0 +1,49 @@
+GET https://localhost:7136/countries/all
+
+###
+
+GET https://localhost:7136/countries/alpha/DE
+
+###
+
+GET https://localhost:7136/countries/alpha/DEU
+
+###
+
+GET https://localhost:7136/countries/alpha/D
+
+###
+
+GET https://localhost:7136/countries/alpha/DEUS
+
+###
+
+GET https://localhost:7136/countries/alpha?codes=DE;US;FRA
+
+###
+
+GET https://localhost:7136/countries/region/europe
+
+###
+
+GET https://localhost:7136/countries/capital/berlin
+
+###
+
+GET https://localhost:7136/countries/name/united
+
+###
+
+GET https://localhost:7136/countries/name/France?FullText=true
+
+###
+
+https://localhost:7136/countries/regionalBloc/EU
+
+###
+
+https://localhost:7136/countries/callingCode/44
+
+###
+
+https://localhost:7136/countries/lang/de

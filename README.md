@@ -1,41 +1,11 @@
 REST Countries
 =======
 
-Get information about countries via a RESTful API https://restcountries.eu
+Get information about countries via a RESTful API https://restcountries.axa-assistance.de
+
+This is a C# port of https://travis-ci.org/fayder/restcountries.svg?branch=master
 
 [![Build Status](https://travis-ci.org/fayder/restcountries.svg?branch=master)](https://travis-ci.org/fayder/restcountries)
-
-Donate!
----------------
-The restcountries project has been acquired by apilayer, one of the leading providers of API microservices. We will keep supporting restcountries and providing it as a free solution for developers. We will finance this project fully and have turned off the donations feature.
-
-Users
----------------
-RESTCountries has over 1200 users, including:
-
-[TTÜ]
-
-[Spotify International Pricing Index]
-
-[Gorillaz]
-
-[Wanderlust]
-
-[Xero]
-
-[FxPro]
-
-[SKROSS]
-
-[onefinestay]
-
-[Much Better Adventures]
-
-Stay up-to-date
----------------
-Follow RESTCountries on [Twitter]
-
-Or subscribe to the [mailing list]
 
 API Endpoints
 =======
@@ -257,18 +227,6 @@ https://restcountries.eu/rest/v2/alpha/col
 }]
 ```
 
-Filter Response
-=======
-
-You can filter the output of your request to include only the specified fields.
-
-``` javascript
-https://restcountries.eu/rest/v2/{service}?fields={field};{field};{field}
-```
-``` html
-https://restcountries.eu/rest/v2/all?fields=name;capital;currencies
-```
-
 Sources
 =======
 * [@mledoze]
@@ -291,10 +249,6 @@ License
 =======
 [Mozilla Public License] MPL 2.0
 
-[dist]: https://github.com/fayder/restcountries/
-[Twitter]: https://twitter.com/restcountries
-[mailing list]: http://eepurl.com/cC-h2v
-[Donate]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V5AJAEMKE6A3E
 [@mledoze]: https://github.com/mledoze/countries
 [List of countries]: https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes
 [Languages]: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
