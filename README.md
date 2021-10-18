@@ -16,7 +16,7 @@ All
 ---------------
 
 ``` html
-https://restcountries.eu/rest/v2/all
+https://restcountries.axa-assistance.de/countries/all
 ```
 
 Name
@@ -25,15 +25,15 @@ Name
 Search by country name. It can be the native name or partial name
 
 ``` javascript
-https://restcountries.eu/rest/v2/name/{name}
+https://restcountries.axa-assistance.de/countries/name/{name}
 ```
 
 ``` html
-https://restcountries.eu/rest/v2/name/eesti
+https://restcountries.axa-assistance.de/countries/name/eesti
 ```
 
 ``` html
-https://restcountries.eu/rest/v2/name/united
+https://restcountries.axa-assistance.de/countries/name/united
 ```
 
 Full Name
@@ -42,11 +42,11 @@ Full Name
 Search by country full name
 
 ``` javascript
-https://restcountries.eu/rest/v2/name/{name}?fullText=true
+https://restcountries.axa-assistance.de/countries/name/{name}?fullText=true
 ```
 
 ``` html
-https://restcountries.eu/rest/v2/name/aruba?fullText=true
+https://restcountries.axa-assistance.de/countries/name/aruba?fullText=true
 ```
 
 Code
@@ -55,15 +55,15 @@ Code
 Search by ISO 3166-1 2-letter or 3-letter country code
 
 ``` javascript
-https://restcountries.eu/rest/v2/alpha/{code}
+https://restcountries.axa-assistance.de/countries/alpha/{code}
 ```
 
 ``` html
-https://restcountries.eu/rest/v2/alpha/co
+https://restcountries.axa-assistance.de/countries/alpha/co
 ```
 
 ``` html
-https://restcountries.eu/rest/v2/alpha/col
+https://restcountries.axa-assistance.de/countries/alpha/col
 ```
 
 List of codes
@@ -72,11 +72,11 @@ List of codes
 Search by list of ISO 3166-1 2-letter or 3-letter country codes
 
 ``` javascript
-https://restcountries.eu/rest/v2/alpha?codes={code};{code};{code}
+https://restcountries.axa-assistance.de/countries/alpha?codes={code};{code};{code}
 ```
 
 ``` html
-https://restcountries.eu/rest/v2/alpha?codes=col;no;ee
+https://restcountries.axa-assistance.de/countries/alpha?codes=col;no;ee
 ```
 
 Currency
@@ -85,10 +85,10 @@ Currency
 Search by ISO 4217 currency code
 
 ``` javascript
-https://restcountries.eu/rest/v2/currency/{currency}
+https://restcountries.axa-assistance.de/countries/currency/{currency}
 ```
 ``` html
-https://restcountries.eu/rest/v2/currency/cop
+https://restcountries.axa-assistance.de/countries/currency/cop
 ```
 
 Language
@@ -97,10 +97,10 @@ Language
 Search by ISO 639-1 language code
 
 ``` javascript
-https://restcountries.eu/rest/v2/lang/{et}
+https://restcountries.axa-assistance.de/countries/lang/{et}
 ```
 ``` html
-https://restcountries.eu/rest/v2/lang/es
+https://restcountries.axa-assistance.de/countries/lang/es
 ```
 
 Capital city
@@ -109,10 +109,10 @@ Capital city
 Search by capital city
 
 ``` javascript
-https://restcountries.eu/rest/v2/capital/{capital}
+https://restcountries.axa-assistance.de/countries/capital/{capital}
 ```
 ``` html
-https://restcountries.eu/rest/v2/capital/tallinn
+https://restcountries.axa-assistance.de/countries/capital/tallinn
 ```
 
 Calling code
@@ -121,10 +121,10 @@ Calling code
 Search by calling code
 
 ``` javascript
-https://restcountries.eu/rest/v2/callingcode/{callingcode}
+https://restcountries.axa-assistance.de/countries/callingcode/{callingcode}
 ```
 ``` html
-https://restcountries.eu/rest/v2/callingcode/372
+https://restcountries.axa-assistance.de/countries/callingcode/372
 ```
 
 Region
@@ -133,10 +133,10 @@ Region
 Search by region: Africa, Americas, Asia, Europe, Oceania
 
 ``` javascript
-https://restcountries.eu/rest/v2/region/{region}
+https://restcountries.axa-assistance.de/countries/region/{region}
 ```
 ``` html
-https://restcountries.eu/rest/v2/region/europe
+https://restcountries.axa-assistance.de/countries/region/europe
 ```
 
 Regional Bloc
@@ -159,72 +159,105 @@ Search by regional bloc:
 - SAARC (South Asian Association for Regional Cooperation)
 
 ``` javascript
-https://restcountries.eu/rest/v2/regionalbloc/{regionalbloc}
+https://restcountries.axa-assistance.de/countries/regionalbloc/{regionalbloc}
 ```
 ``` html
-https://restcountries.eu/rest/v2/regionalbloc/eu
+https://restcountries.axa-assistance.de/countries/regionalbloc/eu
 ```
 
 Response Example
 ---------------
 
 ``` html
-https://restcountries.eu/rest/v2/alpha/col
+https://restcountries.axa-assistance.de/countries/alpha/col
 ```
 
 ``` json
-[[{
-	"name": "Colombia",
-	"topLevelDomain": [".co"],
-	"alpha2Code": "CO",
-	"alpha3Code": "COL",
-	"callingCodes": ["57"],
-	"capital": "Bogotá",
-	"altSpellings": ["CO", "Republic of Colombia", "República de Colombia"],
-	"region": "Americas",
-	"subregion": "South America",
-	"population": 48759958,
-	"latlng": [4.0, -72.0],
-	"demonym": "Colombian",
-	"area": 1141748.0,
-	"gini": 55.9,
-	"timezones": ["UTC-05:00"],
-	"borders": ["BRA", "ECU", "PAN", "PER", "VEN"],
-	"nativeName": "Colombia",
-	"numericCode": "170",
-	"currencies": [{
-		"code": "COP",
-		"name": "Colombian peso",
-		"symbol": "$"
-	}],
-	"languages": [{
-		"iso639_1": "es",
-		"iso639_2": "spa",
-		"name": "Spanish",
-		"nativeName": "Español"
-	}],
-	"translations": {
-		"de": "Kolumbien",
-		"es": "Colombia",
-		"fr": "Colombie",
-		"ja": "コロンビア",
-		"it": "Colombia",
-		"br": "Colômbia",
-		"pt": "Colômbia"
-	},
-	"flag": "https://restcountries.eu/data/col.svg",
-	"regionalBlocs": [{
-		"acronym": "PA",
-		"name": "Pacific Alliance",
-		"otherAcronyms": [],
-		"otherNames": ["Alianza del Pacífico"]
-	}, {
-		"acronym": "USAN",
-		"name": "Union of South American Nations",
-		"otherAcronyms": ["UNASUR", "UNASUL", "UZAN"],
-		"otherNames": ["Unión de Naciones Suramericanas", "União de Nações Sul-Americanas", "Unie van Zuid-Amerikaanse Naties", "South American Union"]
-	}]
-}]
+[
+  {
+    "name": "Germany",
+    "topLevelDomain": [
+      ".de"
+    ],
+    "alpha2Code": "DE",
+    "alpha3Code": "DEU",
+    "callingCodes": [
+      "49"
+    ],
+    "capital": "Berlin",
+    "altSpellings": [
+      "DE",
+      "Federal Republic of Germany",
+      "Bundesrepublik Deutschland"
+    ],
+    "subRegion": "Central Europe",
+    "region": "Europe",
+    "population": 83240525,
+    "latlng": [
+      51,
+      9
+    ],
+    "demonym": "German",
+    "area": 357114,
+    "timezones": [
+      "UTC+01:00"
+    ],
+    "borders": [
+      "AUT",
+      "BEL",
+      "CZE",
+      "DNK",
+      "FRA",
+      "LUX",
+      "NLD",
+      "POL",
+      "CHE"
+    ],
+    "nativeName": "Deutschland",
+    "numericCode": "276",
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "languages": [
+      {
+        "iso639_1": "de",
+        "iso639_2": "deu",
+        "name": "German",
+        "nativeName": "Deutsch"
+      }
+    ],
+    "translations": {
+      "br": "Alemanha",
+      "pt": "Alemanha",
+      "nl": "Duitsland",
+      "hr": "Njemačka",
+      "fa": "آلمان",
+      "de": "Deutschland",
+      "es": "Alemania",
+      "fr": "Allemagne",
+      "ja": "ドイツ",
+      "it": "Germania",
+      "hu": "Grúzia"
+    },
+    "flags": {
+      "svg": "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg",
+      "png": "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/320px-Flag_of_Germany.svg.png"
+    },
+    "flag": "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg",
+    "cioc": "GER",
+    "regionalBlocs": [
+      {
+        "acronym": "EU",
+        "name": "European Union"
+      }
+    ],
+    "independent": true
+  }
+]
 ```
 
 Sources
