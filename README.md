@@ -169,7 +169,7 @@ Response Example
 ---------------
 
 ``` html
-https://restcountries.azurewebsites.net/countries/alpha/col
+https://restcountries.azurewebsites.net/countries/alpha/deu
 ```
 
 ``` json
