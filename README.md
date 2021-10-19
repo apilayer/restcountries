@@ -3,7 +3,7 @@ REST Countries
 
 Get information about countries via a RESTful API https://restcountries.azurewebsites.net
 
-This is a C# port of https://github.com/apilayer/restcountries
+This is a C# port of https://github.com/apilayer/restcountries to a minimal REST API in .NET 6
 
 ![Deployment](https://github.com/jprimke/restcountries/actions/workflows/restcountries.yml/badge.svg)
 
