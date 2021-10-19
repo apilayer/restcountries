@@ -111,4 +111,7 @@ app.MapGet("countries/regionalBloc/{bloc:alpha}",
 app.MapGet("countries/topleveldoamin/{topleveldomain:alpha}",
            (CountryRepository repository, string topleveldomain) => repository.Countries.Where(c => c.TopLevelDomain.Any(t => t.ToLower() == topleveldomain.ToLower())));
 
+app.MapGet("countries/cioc/{cioc:alpha}",
+           (CountryRepository repository, string cioc) => repository.Countries.Where(c => c.Cioc.ToLower() == cioc.ToLower()));
+
 app.Run();
