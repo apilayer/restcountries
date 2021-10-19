@@ -1,7 +1,7 @@
 REST Countries
 =======
 
-Get information about countries via a RESTful API https://restcountries.primsoft.net
+Get information about countries via a RESTful API https://restcountries.azurewebsites.net
 
 This is a C# port of https://travis-ci.org/fayder/restcountries.svg?branch=master
 
@@ -16,7 +16,7 @@ All
 ---------------
 
 ``` html
-https://restcountries.primsoft.net/countries/all
+https://restcountries.azurewebsites.net/countries/all
 ```
 
 Name
@@ -25,15 +25,15 @@ Name
 Search by country name. It can be the native name or partial name
 
 ``` javascript
-https://restcountries.primsoft.net/countries/name/{name}
+https://restcountries.azurewebsites.net/countries/name/{name}
 ```
 
 ``` html
-https://restcountries.primsoft.net/countries/name/eesti
+https://restcountries.azurewebsites.net/countries/name/eesti
 ```
 
 ``` html
-https://restcountries.primsoft.net/countries/name/united
+https://restcountries.azurewebsites.net/countries/name/united
 ```
 
 Full Name
@@ -42,11 +42,11 @@ Full Name
 Search by country full name
 
 ``` javascript
-https://restcountries.primsoft.net/countries/name/{name}?fullText=true
+https://restcountries.azurewebsites.net/countries/name/{name}?fullText=true
 ```
 
 ``` html
-https://restcountries.primsoft.net/countries/name/aruba?fullText=true
+https://restcountries.azurewebsites.net/countries/name/aruba?fullText=true
 ```
 
 Code
@@ -55,15 +55,15 @@ Code
 Search by ISO 3166-1 2-letter or 3-letter country code
 
 ``` javascript
-https://restcountries.primsoft.net/countries/alpha/{code}
+https://restcountries.azurewebsites.net/countries/alpha/{code}
 ```
 
 ``` html
-https://restcountries.primsoft.net/countries/alpha/co
+https://restcountries.azurewebsites.net/countries/alpha/co
 ```
 
 ``` html
-https://restcountries.primsoft.net/countries/alpha/col
+https://restcountries.azurewebsites.net/countries/alpha/col
 ```
 
 List of codes
@@ -72,11 +72,11 @@ List of codes
 Search by list of ISO 3166-1 2-letter or 3-letter country codes
 
 ``` javascript
-https://restcountries.primsoft.net/countries/alpha?codes={code};{code};{code}
+https://restcountries.azurewebsites.net/countries/alpha?codes={code};{code};{code}
 ```
 
 ``` html
-https://restcountries.primsoft.net/countries/alpha?codes=col;no;ee
+https://restcountries.azurewebsites.net/countries/alpha?codes=col;no;ee
 ```
 
 Currency
@@ -85,10 +85,10 @@ Currency
 Search by ISO 4217 currency code
 
 ``` javascript
-https://restcountries.primsoft.net/countries/currency/{currency}
+https://restcountries.azurewebsites.net/countries/currency/{currency}
 ```
 ``` html
-https://restcountries.primsoft.net/countries/currency/cop
+https://restcountries.azurewebsites.net/countries/currency/cop
 ```
 
 Language
@@ -97,10 +97,10 @@ Language
 Search by ISO 639-1 language code
 
 ``` javascript
-https://restcountries.primsoft.net/countries/lang/{et}
+https://restcountries.azurewebsites.net/countries/lang/{et}
 ```
 ``` html
-https://restcountries.primsoft.net/countries/lang/es
+https://restcountries.azurewebsites.net/countries/lang/es
 ```
 
 Capital city
@@ -109,10 +109,10 @@ Capital city
 Search by capital city
 
 ``` javascript
-https://restcountries.primsoft.net/countries/capital/{capital}
+https://restcountries.azurewebsites.net/countries/capital/{capital}
 ```
 ``` html
-https://restcountries.primsoft.net/countries/capital/tallinn
+https://restcountries.azurewebsites.net/countries/capital/tallinn
 ```
 
 Calling code
@@ -121,10 +121,10 @@ Calling code
 Search by calling code
 
 ``` javascript
-https://restcountries.primsoft.net/countries/callingcode/{callingcode}
+https://restcountries.azurewebsites.net/countries/callingcode/{callingcode}
 ```
 ``` html
-https://restcountries.primsoft.net/countries/callingcode/372
+https://restcountries.azurewebsites.net/countries/callingcode/372
 ```
 
 Region
@@ -133,10 +133,10 @@ Region
 Search by region: Africa, Americas, Asia, Europe, Oceania
 
 ``` javascript
-https://restcountries.primsoft.net/countries/region/{region}
+https://restcountries.azurewebsites.net/countries/region/{region}
 ```
 ``` html
-https://restcountries.primsoft.net/countries/region/europe
+https://restcountries.azurewebsites.net/countries/region/europe
 ```
 
 Regional Bloc
@@ -159,17 +159,17 @@ Search by regional bloc:
 - SAARC (South Asian Association for Regional Cooperation)
 
 ``` javascript
-https://restcountries.primsoft.net/countries/regionalbloc/{regionalbloc}
+https://restcountries.azurewebsites.net/countries/regionalbloc/{regionalbloc}
 ```
 ``` html
-https://restcountries.primsoft.net/countries/regionalbloc/eu
+https://restcountries.azurewebsites.net/countries/regionalbloc/eu
 ```
 
 Response Example
 ---------------
 
 ``` html
-https://restcountries.primsoft.net/countries/alpha/col
+https://restcountries.azurewebsites.net/countries/alpha/col
 ```
 
 ``` json
