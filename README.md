@@ -5,7 +5,7 @@ Get information about countries via a RESTful API https://restcountries.azureweb
 
 This is a C# port of https://github.com/apilayer/restcountries to a minimal REST API in .NET 6
 
-![Deployment](https://github.com/jprimke/restcountries/actions/workflows/restcountries.yml/badge.svg)
+[![Build and deploy .NET Core app to Azure Linux WebApp restcountries](https://github.com/jprimke/restcountries/actions/workflows/restcountries.yml/badge.svg?branch=main)](https://github.com/jprimke/restcountries/actions/workflows/restcountries.yml)
 
 API Endpoints
 =======
