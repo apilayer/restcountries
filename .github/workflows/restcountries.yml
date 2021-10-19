@@ -2,7 +2,7 @@ name: Build and deploy .NET Core app to Linux WebApp restcountries
 on:
   push:
     branches:
-    - master
+    - main
 env:
   AZURE_WEBAPP_NAME: restcountries
   AZURE_WEBAPP_PACKAGE_PATH: src/RestCountries.API/publish
