@@ -3,7 +3,7 @@ REST Countries
 
 Get information about countries via a RESTful API https://restcountries.azurewebsites.net
 
-This is a C# port of https://travis-ci.org/fayder/restcountries.svg?branch=master
+This is a C# port of https://github.com/apilayer/restcountries
 
 ![Deployment](https://github.com/jprimke/restcountries/actions/workflows/restcountries.yml/badge.svg)
 
