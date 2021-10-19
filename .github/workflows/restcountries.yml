@@ -1,4 +1,4 @@
-name: Build and deploy .NET Core app to Linux WebApp restcountries
+name: Build and deploy .NET Core app to Azure Linux WebApp restcountries
 on:
   push:
     branches:
