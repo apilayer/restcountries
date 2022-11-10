@@ -1,16 +1,23 @@
 REST Countries
+
 =======
 
 Get information about countries via a RESTful API https://restcountries.eu
 
+
 [![Build Status](https://travis-ci.org/fayder/restcountries.svg?branch=master)](https://travis-ci.org/fayder/restcountries)
 
+
 Donate!
+
 ---------------
+
 The restcountries project has been acquired by apilayer, one of the leading providers of API microservices. We will keep supporting restcountries and providing it as a free solution for developers. We will finance this project fully and have turned off the donations feature.
 
 Users
+
 ---------------
+
 RESTCountries has over 1200 users, including:
 
 [TTÜ]
@@ -32,17 +39,21 @@ RESTCountries has over 1200 users, including:
 [Much Better Adventures]
 
 Stay up-to-date
+
 ---------------
+
 Follow RESTCountries on [Twitter]
 
 Or subscribe to the [mailing list]
 
 API Endpoints
+
 =======
 
 Below are described the REST endpoints available that you can use to search for countries
 
 All
+
 ---------------
 
 ``` html
@@ -50,6 +61,7 @@ https://restcountries.eu/rest/v2/all
 ```
 
 Name
+
 ---------------
 
 Search by country name. It can be the native name or partial name
@@ -80,6 +92,7 @@ https://restcountries.eu/rest/v2/name/aruba?fullText=true
 ```
 
 Code
+
 ---------------
 
 Search by ISO 3166-1 2-letter or 3-letter country code
@@ -97,6 +110,7 @@ https://restcountries.eu/rest/v2/alpha/col
 ```
 
 List of codes
+
 ---------------
 
 Search by list of ISO 3166-1 2-letter or 3-letter country codes
@@ -110,6 +124,7 @@ https://restcountries.eu/rest/v2/alpha?codes=col;no;ee
 ```
 
 Currency
+
 ---------------
 
 Search by ISO 4217 currency code
@@ -122,6 +137,7 @@ https://restcountries.eu/rest/v2/currency/cop
 ```
 
 Language
+
 ---------------
 
 Search by ISO 639-1 language code
@@ -134,6 +150,7 @@ https://restcountries.eu/rest/v2/lang/es
 ```
 
 Capital city
+
 ---------------
 
 Search by capital city
@@ -146,6 +163,7 @@ https://restcountries.eu/rest/v2/capital/tallinn
 ```
 
 Calling code
+
 ---------------
 
 Search by calling code
@@ -158,6 +176,7 @@ https://restcountries.eu/rest/v2/callingcode/372
 ```
 
 Region
+
 ---------------
 
 Search by region: Africa, Americas, Asia, Europe, Oceania
@@ -170,6 +189,7 @@ https://restcountries.eu/rest/v2/region/europe
 ```
 
 Regional Bloc
+
 ---------------
 
 Search by regional bloc:
@@ -196,6 +216,7 @@ https://restcountries.eu/rest/v2/regionalbloc/eu
 ```
 
 Response Example
+
 ---------------
 
 ``` html
@@ -258,6 +279,7 @@ https://restcountries.eu/rest/v2/alpha/col
 ```
 
 Filter Response
+
 =======
 
 You can filter the output of your request to include only the specified fields.
@@ -270,7 +292,9 @@ https://restcountries.eu/rest/v2/all?fields=name;capital;currencies
 ```
 
 Sources
+
 =======
+
 * [@mledoze]
 * [List of countries]
 * [Languages]
@@ -278,7 +302,9 @@ Sources
 * [Area]
 
 Similar projects
+
 =======
+
 * [Countries of the world]
 * [REST Countries Node.js]
 * [REST Countries Ruby]
@@ -288,7 +314,9 @@ Similar projects
 * [REST Countries C#](https://github.com/egbakou/RESTCountries.NET)
 
 License
+
 =======
+
 [Mozilla Public License] MPL 2.0
 
 [dist]: https://github.com/fayder/restcountries/
@@ -318,3 +346,5 @@ License
 [onefinestay]: https://www.onefinestay.com/
 [Much Better Adventures]: https://www.muchbetteradventures.com
 [SKROSS]: http://www.skross.com/en
+
+
