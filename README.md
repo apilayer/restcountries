@@ -286,6 +286,7 @@ Similar projects
 * [REST Countries Python]
 * [world-currencies]
 * [REST Countries C#](https://github.com/egbakou/RESTCountries.NET)
+* [RestCountriesNext.js](https://github.com/Chamaxonline/RestCountriesNext.js)
 
 License
 =======
