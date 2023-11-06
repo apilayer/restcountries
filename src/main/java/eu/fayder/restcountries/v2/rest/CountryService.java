@@ -115,11 +115,16 @@ public class CountryService extends CountryServiceBase {
 
     public List<Country> getByRegionalBloc(String regionalBloc) {
         List<Country> result = new ArrayList<>();
-        for (Country country : countries) {
-            for (RegionalBloc countryRegionalBloc : country.getRegionalBlocs()) {
-                if (countryRegionalBloc.getAcronym().toUpperCase().equals(regionalBloc.toUpperCase())
-                        || countryRegionalBloc.getOtherAcronyms().contains(regionalBloc.toUpperCase())) {
-                    result.add(country);
+        if (countries != null && !countries.isEmpty()) {
+            for (Country country : countries) {
+                List<RegionalBloc> countryRegionalBlocs = country.getRegionalBlocs();
+                if (countryRegionalBlocs != null && !countryRegionalBlocs.isEmpty()) {
+                    for (RegionalBloc countryRegionalBloc : country.getRegionalBlocs()) {
+                        if (countryRegionalBloc.getAcronym().toUpperCase().equals(regionalBloc.toUpperCase())
+                                || countryRegionalBloc.getOtherAcronyms().contains(regionalBloc.toUpperCase())) {
+                            result.add(country);
+                        }
+                    }
                 }
             }
         }
